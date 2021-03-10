@@ -13,8 +13,8 @@
         $sql2 = "INSERT INTO Respuestas (ID_pregunta, ID_usuario, respuesta) VALUES (1,1,'" . htmlspecialchars($_GET["compra"]) . "')";
         $sql3 = "INSERT INTO Respuestas (ID_pregunta, ID_usuario, respuesta) VALUES (1,1,'" . htmlspecialchars($_GET["compra2019"]) . "')";
         $sql4 = "INSERT INTO Respuestas (ID_pregunta, ID_usuario, respuesta) VALUES (1,1,'" . htmlspecialchars($_GET["compra2020"]) . "')";
-        $sql5 = "INSERT INTO Respuestas (ID_pregunta, ID_usuario, respuesta) VALUES (1,1,'" . implode(",",$_GET["plataforma"] . "')";
-        $sql6 = "INSERT INTO Respuestas (ID_pregunta, ID_usuario, respuesta) VALUES (1,1,'" . implode(",",$_GET["categoria"] . "')";
+        $sql5 = "INSERT INTO Respuestas (ID_pregunta, ID_usuario, respuesta) VALUES (1,1,'" . implode(",",$_GET["plataforma"]) . "')";
+        $sql6 = "INSERT INTO Respuestas (ID_pregunta, ID_usuario, respuesta) VALUES (1,1,'" . implode(",",$_GET["categoria"]) . "')";
 
         if ($conn->query($sql1) === TRUE) {
             echo "Confianza: ". htmlspecialchars($_GET["confianza"]) . "<br>";
