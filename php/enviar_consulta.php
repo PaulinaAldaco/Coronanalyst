@@ -47,7 +47,7 @@
         }
       
         if ($conn->query($sql6) === TRUE) {
-            echo "Categorias: ". implode(",",$_GET["plataforma"]) . "<br>";
+            echo "Categorias: ". implode(",",$_GET["categoria"]) . "<br>";
         } else {
             echo "Error: " . $sql6 . "<br>" . $conn->error;
         }
