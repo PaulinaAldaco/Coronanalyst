@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>Iniciar sesión</title>
+    <link rel="stylesheet" href="./estilos/stylelogin.css"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body onload='document.loginForm.email.focus()'>
+    <header id="main-header">
+      
+    <script>
+      function ValidateEmail(inputText){
+        var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if(inputText.value.match(mailformat)){
+          document.loginForm.email.focus();
+          createCookie("gfg", "valid", "10");
+          return true;
+        }else{
+          alert("Correo electrónico inválido");
+          document.loginForm.email.focus();
+          createCookie("gfg", "invalid", "10");
+          return false;
+          }
+      }
+
+      // Function to create the cookie 
+      function createCookie(name, value, days) { 
+          var expires; 
+            
+          if (days) { 
+              var date = new Date(); 
+              date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); 
+              expires = "; expires=" + date.toGMTString(); 
+          } 
+          else { 
+              expires = ""; 
+          } 
+            
+          document.cookie = escape(name) + "=" +  
+              escape(value) + expires + "; path=/"; 
+      } 
+    </script>
+
+		<a id="logo-header" href="#">
+            <img class="logo-header" src="./imagenes/logo_coronanalyst.jpeg">
+		</a> <!-- / #logo-header -->
+
+		<nav>
+			<ul>
+				<li><a href="#">Inicio</a></li>
+				<li><a href="#">Sobre nosotros</a></li>
+				<li><a href="#">Registrate</a></li>
+        <li><a href="#">Iniciar sesión</a></li>
+			</ul>
+		</nav><!-- / nav -->
+
+	</header><!-- / #main-header -->
+
+
+  <h2>Bienvenido</h2>
+
+  <form action="./php/login.php" method="post" name = "loginForm">
+    <div class="imgcontainer">
+      <img src="https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="email"><b>Correo electrónico</b></label>
+      <input type="text" id = "email" placeholder="Ingresa correo electrónico" name="email" required>
+
+      <label for="contra"><b>Contraseña</b></label>
+      <input type="password" id = "contra" placeholder="Ingresa contraseña" name="contra" required>
+          
+      <button type="submit" name = "but_submit" id="but_submit" onclick="ValidateEmail(document.loginForm.email)"> Iniciar sesión </button> 
+      <!--<input type="submit" value = "Iniciar sesión">-->
+    </div>
+
+  </form>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <span class="psw"><a href="#">¿No tienes cuenta? Registrate aquí</a></span>
+    <br>
+  </div>
+
+  <footer id="main-footer">
+      <p>Blue Desert   Coronanayst</p>
+  </footer> <!-- / #main-footer -->
+</body>
+</html>
