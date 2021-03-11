@@ -32,12 +32,12 @@
     #submit_button {
         display:block; 
         margin:auto; 
-        background-color: #4a5a63;
+        background-color: #2d96d3;;
         color: white;
-        font-weight: 600;
-        font-size: 20px;
-        border-radius: 6px;
-        padding: 15px;
+        padding: 14px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
     }
 
     #images2 {
