@@ -4,10 +4,10 @@ if($_POST){
    $contra=$_POST['contra'];
    
    
-   $servername = "localhost";
-   $username = "root";
-   $password = "";
-   $db="test";
+   $servername = "den1.mysql4.gear.host";
+   $username = "coronanalystdb";
+   $password = "Bx62?_Qbte5H";
+   $db="coronanalystdb";
    
    $conexion = new mysqli($servername, $username, $password,$db);
    if ($conexion->connect_error) {
