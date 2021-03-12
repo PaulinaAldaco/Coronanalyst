@@ -18,3 +18,18 @@ function deRequireCb(Name) {
         }
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    var elements = document.getElementsByName("plataforma[]");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].oninvalid = function(e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Por favor, selecciona al menos una opción");
+            }
+        };
+        elements[i].oninput = function(e) {
+            e.target.setCustomValidity("");
+        };
+    }
+})
