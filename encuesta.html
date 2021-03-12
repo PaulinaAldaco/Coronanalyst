@@ -8,13 +8,13 @@
 
 </head>
 
-<body> 
+<body>
 	
 	<header id="main-header">
 		
 		<a id="logo-header" href="#">
-            <img  src="./imagenes/logo_coronanalyst.jpeg">
-		</a> 
+            <img class="logo-header" src="./imagenes/logo_coronanalyst.jpeg">
+		</a> <!-- / #logo-header -->
 
 		<!--<nav>
 			<ul>
@@ -27,7 +27,7 @@
 
         <script src="js/checkboxValidator.js"></script> 
 
-	</header>
+	</header><!-- / #main-header -->
 
 	
 	<section id="main-content">
@@ -42,7 +42,7 @@
 			</header>
 
             <fieldset>
-                <legend>¿En qué nivel se encuentra su confianza en las compras en linea? (Tome como referencia 1 como lo mas bajo y 5 como lo mas alto)</legend>
+                <legend for="11719556">¿En qué nivel se encuentra su confianza en las compras en linea? (Tome como referencia 1 como lo mas bajo y 5 como lo mas alto)</legend>
                 <div class="form-group">
                     <div class="radio">
                         <label>
@@ -78,7 +78,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>¿Alguna vez ha realizado una compra por internet?</legend>
+                <legend for="1064628181">¿Alguna vez ha realizado una compra por internet?</legend>
                 <div class="form-group">
                     <div class="radio">
                         <label>
@@ -96,7 +96,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>¿Cuántas compras por internet realizó en 2019?'</legend>
+                <legend for="675512174">¿Cuántas compras por internet realizó en 2019?'</legend>
                 <div class="form-group">
                     <div class="radio">
                         <label>
@@ -126,7 +126,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>¿Cuántas compras por internet realizó en 2020?</legend>
+                <legend for="850993641">¿Cuántas compras por internet realizó en 2020?</legend>
                 <div class="form-group">
                     <div class="radio">
                         <label>
@@ -156,7 +156,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>Seleccione las plataformas de venta por internet en las que confía</legend>
+                <legend for="2094440194">Seleccione las plataformas de venta por internet en las que confía</legend>
                 <div class="form-group">
                     <div class="checkbox">
                         <label>
@@ -198,41 +198,41 @@
             </fieldset>
 
             <fieldset>
-                <legend>¿De cuáles de las siguientes categorías ha realizado compras por internet?</legend>
+                <legend for="84950281">¿De cuáles de las siguientes categorías ha realizado compras por internet?</legend>
                 <div class="form-group">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="categoria[]" value="Libros" >
+                            <input type="checkbox" name="categoria[]" value="Libros" onclick="deRequireCb('categoria[]')" required>
                             Libros
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="categoria[]" value="Deportes" >
+                            <input type="checkbox" name="categoria[]" value="Deportes" onclick="deRequireCb('categoria[]')" required>
                             Deportes
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="categoria[]" value="Audio y video" >
+                            <input type="checkbox" name="categoria[]" value="Audio y video" onclick="deRequireCb('categoria[]')" required>
                             Audio y video
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="categoria[]" value="Videojuegos" >
+                            <input type="checkbox" name="categoria[]" value="Videojuegos" onclick="deRequireCb('categoria[]')" required>
                             Videojuegos
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="categoria[]" value="Ropa" >
+                            <input type="checkbox" name="categoria[]" value="Ropa" onclick="deRequireCb('categoria[]')" required>
                             Ropa
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="categoria[]" value="Otro" >
+                            <input type="checkbox" name="categoria[]" value="Otro" onclick="deRequireCb('categoria[]')" required>
                             Otro
                         </label>
                     </div>
@@ -242,16 +242,16 @@
             <button id="submit_button" type="submit">Enviar respuestas</button>
         
 
-		</form> 
+		</form> <!-- /article -->
 
         
 	 
-	</section> 
+	</section> <!-- / #main-content -->
 	
 	
 	<footer id="main-footer">
 		<p>Blue Desert   Coronanayst</p>
-	</footer> 
+	</footer> <!-- / #main-footer -->
 
 	
 </body>
