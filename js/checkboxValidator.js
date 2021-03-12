@@ -11,7 +11,7 @@ function deRequireCb(Name) {
     if (atLeastOneChecked === true) {
         for (i=0; i<elements.length; i++) {
             elements[i].required = false;
-            elements[i].setAttribute("isvalid", "true")
+            elements[i].setCustomValidity("");
         }
     } else {
         for (i=0; i<elements.length; i++) {
