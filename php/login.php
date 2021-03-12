@@ -23,14 +23,14 @@ if($_POST){
          $_SESSION['logueado'] = TRUE;
          $_SESSION['usuario'] = $row['correo'];
 
-         header('Location: ./encuesta.html');
+         header('Location: /Coronanalyst/encuesta.html');
      }
    } else {
 
     if($_COOKIE["gfg"] == "valid"){
       echo "<center><div><p style='color:#FF0000';>Usuario o contraseña incorrecto, intentalo de nuevo.<br><a href=login.html>Ir a inicio de sesión.</a></p></div></center>";
     }else{
-      header('Location: ./index.html');
+      header('Location: /Coronanalyst/index.html');
     }
     
    }
