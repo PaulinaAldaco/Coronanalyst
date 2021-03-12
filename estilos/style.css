@@ -12,7 +12,7 @@
     h1 {
         font-size: 2.3em;
         line-height: 1.3em;
-        margin: 15px 0;
+        margin: 2% 0;
         text-align: center;
         font-weight: 300;
     }
@@ -119,7 +119,7 @@
     #main-content {
         background: white;
         width: 90%;
-        max-width: 800px;
+        max-width: 60%;
         margin: 20px auto;
         box-shadow: 0 0 10px rgba(0,0,0,.1);
     }
