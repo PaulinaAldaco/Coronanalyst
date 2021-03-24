@@ -5,7 +5,7 @@ function Header(){
     return(
         <div id="main-header">
             <a id="logo-header" href="#">
-            <img class="logo-header" src="./images/logo_coronanalyst.jpeg"/>
+            <img class="logo-header"/>
 		    </a> 
 
             <nav class="navbar navbar-dark bg-primary">
