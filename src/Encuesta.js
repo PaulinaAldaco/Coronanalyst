@@ -209,6 +209,8 @@ function Encuesta(){
                     </div>
                 </div>
             </fieldset>
+
+            <button id="submit_button" type="submit">Enviar respuestas</button>
             </form>
 
             <Footer/>
