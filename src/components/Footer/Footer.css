@@ -1,0 +1,14 @@
+#main-footer {
+    background: rgb(12, 11, 56);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 0px;
+  }
+    #main-footer p {
+        margin: 0;
+    }
+    
+    #main-footer a {
+        color: rgb(255, 255, 255);
+    }
