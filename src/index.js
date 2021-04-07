@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Login from './Login';
 import Encuesta from './Encuesta';
+import Registro from './pantallas/registro';
+import SesionCerrada from './pantallas/sesion_cerrada';
 import reportWebVitals from './reportWebVitals';
+import App from "./App"
+import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Login />
+    <Router>
+      <Login/>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,15 +1,22 @@
 import './Login.css';
-import Header from './components/Header/Header';
+import './components/Header/Header.css';
+import logo from './imagenes/logo_coronanalyst.jpeg'
+import formImage from './imagenes/form.png'; // with import
 import Footer from './components/Footer/Footer';
 
 function Encuesta(){
     return(
+        <div>
+        <div id="main-header">
+        <a id="logo-header" href="#">
+        <img class="logo-header" src={logo}/>
+		</a> 
+        </div>
         <section id = "main-content">
-            <Header/>
             <form action = "php/enviar_consulta.php">
                 <h1>Responde las siguientes preguntas</h1>
                 <div id="images2" href="#">
-                    <img id="images2" src="./imagenes/form.png" alt="form" />
+                    <img id="images2" src={formImage} alt="form" />
                 </div>
                 <fieldset>
                 <legend>¿En qué nivel se encuentra su confianza en las compras en linea? (Tome como referencia 1 como lo mas bajo y 5 como lo mas alto)</legend>
@@ -212,9 +219,9 @@ function Encuesta(){
 
             <button id="submit_button" type="submit">Enviar respuestas</button>
             </form>
-
-            <Footer/>
         </section>
+        <Footer/>
+        </div>
          
     )
 
