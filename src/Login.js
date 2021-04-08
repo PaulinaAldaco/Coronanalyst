@@ -7,7 +7,7 @@ function Login() {
   return (
    
     <div>
-    <Header/>
+    
     <div class="split left">
         <div class="centered">
         <h1>¡Bienvenido!</h1>
@@ -29,7 +29,7 @@ function Login() {
         <button>Regresar a inicio</button>
         </div>
     </div>
-    <Footer/>
+   
     </div>
   );
 }
