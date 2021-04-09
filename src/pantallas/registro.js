@@ -104,7 +104,7 @@ function Registro() {
           <label for="contra"><b>Contraseña</b></label>
           <input type="password" id = "contra" placeholder="Ingresa contraseña" name="contra" required />
               
-          <button type="submit" name = "button" onclick="ValidateEmail(document.loginForm.email)"> Iniciar sesión </button> 
+          <button class="button" type="submit" name = "button" onclick="ValidateEmail(document.loginForm.email)"> Registrarme </button> 
         </div>
         </form>
       </section>

@@ -2,20 +2,18 @@ body {
     margin: 0;
     padding: 0;
     font-family: Helvetica, Arial, sans-serif;
-    color: #666;
-    background: #f2f2f2; 
+    background: white; 
     font-size: 1em;
     line-height: 1.5em
 }
 
-h2{
+h1{
     text-align: center;
-    padding-top: 10%;
 }
 
 #main-content {
     background: white;
-    margin: 20px auto;
+    margin-top: 8%;
 }
 
 input[type=text], input[type=password] {
@@ -30,13 +28,12 @@ input[type=text], input[type=password] {
 img {
     max-width: 100%;
     height: auto;
-
     display:block; 
     margin:auto; 
 }
 
 
-button {
+.button {
   background-color: #2d96d3;
   color: white;
   padding: 14px 20px;
@@ -46,7 +43,7 @@ button {
   width: 100%;
 }
 
-button:hover {
+.button:hover {
   opacity: 0.8;
 }
 

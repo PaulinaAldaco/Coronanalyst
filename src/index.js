@@ -6,15 +6,13 @@ import Encuesta from './Encuesta';
 import Registro from './pantallas/registro';
 import SesionCerrada from './pantallas/sesion_cerrada';
 import reportWebVitals from './reportWebVitals';
-import App from "./App"
 import { BrowserRouter as Router } from "react-router-dom";
 
+//<React.StrictMode>
 ReactDOM.render(
-  <React.StrictMode>
     <Router>
       <Registro/>
-    </Router>
-  </React.StrictMode>,
+    </Router> ,
   document.getElementById('root')
 );
 
