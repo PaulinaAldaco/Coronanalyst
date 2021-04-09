@@ -6,12 +6,15 @@ function SesionCerrada() {
    
     <div>
 
-    <div class="split left">
+  <div class="split left">
         <div class="centered">
         <h1>Sesión cerrada</h1>
         <p>Introduce tu correo y contraseña para acceder</p>
         <form>
-            <input type = "text"/>
+
+            <input type="text" id = "email" placeholder="Correo electrónico" name="email" required />
+            <input type="password" id = "contra" placeholder="Contraseña" name="contra" required />
+            
             <input type = "submit" value="Entrar"/>
         </form>
         </div>

@@ -2,7 +2,7 @@ import './registro.css';
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer';
 
-function Registro() {
+/*function Registro() {
   return (
     <div>
     <Header />
@@ -85,6 +85,33 @@ function Registro() {
     </div>
   );
 }
+*/
 
+function Registro() {
+    return (
+     
+      <div>
+      <Header/>
+      <section id="main-content">
+        <h1>Regístrate</h1>
+        <form>
+        <div id="imgcontainer">
+          <img src="http://ww2.aeeh.es/wp-content/uploads/2013/08/form_icon_256031.png" alt="registro" class="registro"/>
+        </div>
+        <div class="container">
+          <label for="email"><b>Correo electrónico</b></label>
+          <input type="text" id = "email" placeholder="Ingresa correo electrónico" name="email" required />
+          <label for="contra"><b>Contraseña</b></label>
+          <input type="password" id = "contra" placeholder="Ingresa contraseña" name="contra" required />
+              
+          <button type="submit" name = "button" onclick="ValidateEmail(document.loginForm.email)"> Iniciar sesión </button> 
+        </div>
+        </form>
+      </section>
+      <Footer/>
+      </div>
+
+    );
+}
 
 export default Registro;

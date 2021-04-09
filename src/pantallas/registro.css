@@ -1,105 +1,78 @@
-* {box-sizing: border-box}
-
-/* style the container */
-.container {
-  position: relative;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px 0 30px 0;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #666;
+    background: #f2f2f2; 
+    font-size: 1em;
+    line-height: 1.5em
 }
 
-/* style inputs and link buttons */
-input,
-.btn {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 4px;
-  margin: 5px 0;
-  opacity: 0.85;
-  display: inline-block;
-  font-size: 17px;
-  line-height: 20px;
-  text-decoration: none; /* remove underline from anchors */
-}
-
-input:hover,
-.btn:hover {
-  opacity: 1;
-}
-
-/* style the submit button */
-input[type=submit] {
-  background-color: #0040FF;
-  color: white;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #4369da;
-}
-
-/* Two-column layout */
-.col {
-  float: left;
-  width: 50%;
-  margin: auto;
-  padding: 0 50px;
-  margin-top: 6px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* vertical line */
-.vl {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  border: 2px solid #ddd;
-  height: 175px;
-}
-
-/* text inside the vertical line */
-.inner {
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #f1f1f1;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  padding: 8px 10px;
-}
-
-/* hide some text on medium and large screens */
-.hide-md-lg {
-  display: none;
-}
-
-/* bottom container */
-.bottom-container {
-  text-align: center;
-  background-color: #666;
-  border-radius: 0px 0px 4px 4px;
-}
-
-/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 650px) {
-  .col {
-    width: 100%;
-    margin-top: 0;
-  }
-  /* hide the vertical line */
-  .vl {
-    display: none;
-  }
-  /* show the hidden text on small screens */
-  .hide-md-lg {
-    display: block;
+h2{
     text-align: center;
+    padding-top: 10%;
+}
+
+#main-content {
+    background: white;
+    margin: 20px auto;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+
+    display:block; 
+    margin:auto; 
+}
+
+
+button {
+  background-color: #2d96d3;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.registro {
+  width: 20%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
   }
+
 }
