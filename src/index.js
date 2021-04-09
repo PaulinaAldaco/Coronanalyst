@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import MyContextProvider from './contexts/MyContext';
 import './index.css';
 import Login from './Login';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Login />
+    <MyContextProvider>
+      <Login />
+    </MyContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

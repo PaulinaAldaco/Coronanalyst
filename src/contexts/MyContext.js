@@ -1,10 +1,14 @@
 import React, { createContext,Component } from "react";
-import axios from 'axios'
+import axios, {AxiosError} from 'axios'
 export const MyContext = createContext();
 
 // Create Axios instance and define the base URL
 const Axios = axios.create({
-    baseURL: 'http://localhost/api/',
+    baseURL: 'http://localhost/servicios/api/',
+    // headers: {
+    //     'Access-Control-Allow-Origin': '*',
+    //     'Access-Control-Allow-Headers': '*'
+    // },
 });
 
 class MyContextProvider extends Component{
@@ -51,13 +55,22 @@ class MyContextProvider extends Component{
 
 
     loginUser = async (user) => {
-
         // Sending the user Login request
-        const login = await Axios.post('iniciar-sesion.php',{
-            email:user.email,
-            password:user.password
-        });
-        return login.data;
+        console.log("Starting request");
+        try {
+            //Axios.defaults.headers.get['Content-Type'] ='application/json;charset=utf-8';
+            //Axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
+            const login = await Axios.post('login.php',{
+                email:user.email,
+                password:user.password
+            });
+            console.log("Completed");
+            console.log(login.data);
+            return login.data;
+        }
+        catch (error) {
+            console.log(Object.keys(error), error.message);
+        }
     }
 
     // Checking user logged in or not
