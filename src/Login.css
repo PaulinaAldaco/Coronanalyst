@@ -9,11 +9,11 @@ body {
   line-height: 1.5em
 }
 
-form {border: 3px solid #f1f1f1;}
+form {border: 0% solid #f1f1f1;}
 
-h2{
-  text-align: center;
-  padding-top: 5%;
+h1{
+  font-size: 300%;
+  color: #333333;
 }
 
 #main-content {
@@ -44,7 +44,7 @@ img {
 
 
 button {
-background-color: #2d96d3;;
+background-color: #02044b;
 color: white;
 padding: 14px 20px;
 margin: 8px 0;
@@ -53,35 +53,55 @@ cursor: pointer;
 width: 100%;
 }
 
-button:hover {
-opacity: 0.8;
-}
-
-.imgcontainer {
-text-align: center;
-margin: 24px 0 12px 0;
-}
-
-img.avatar {
-width: 10%;
-border-radius: 50%;
-}
-
-.container {
-padding: 16px;
-}
-
-span.psw {
-float: right;
-padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-      display: block;
-      float: none;
-    }
+button:hover{
+  opacity: 0.5;
 }
 
 
+ /* Split the screen in half */
+ .split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: #02044b;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 120%;
+} 
+
+input[type=submit] {
+  background-color: #0040FF;
+  color: white;
+  cursor: pointer;
+}
+
+
+#ref{
+  color: #0040FF;
+}

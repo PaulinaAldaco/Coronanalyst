@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './images/logo_coronanalyst.jpeg'
 import './Login.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -70,31 +70,31 @@ function Login() {
   return (
    
     <div>
-    <Header/>
-    <section id="main-content">
-      <h2>¡Bienvenido!</h2>
-      <form onSubmit={submitForm} noValidate>
-      <div id="imgcontainer">
-        <img src="https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png" alt="Avatar" class="avatar"/>
+
+      <div className="split left">
+        <div className="centered">
+          <h1>¡Bienvenido!</h1>
+          <p>Introduce tu correo y contraseña para acceder</p>
+          <form onSubmit={submitForm} noValidate>
+
+            <input type="email" id="email" name="email" required placeholder="Ingresa correo electrónico" value={state.userInfo.email} onChange={onChangeValue}/>
+            <input type="password" id="password" name="password" required placeholder="Ingresa contraseña" value={state.userInfo.password} onChange={onChangeValue} />
+              
+            <button type="submit" name="but_submit" id="but_submit"> Iniciar sesión </button>
+          </form>
+          {errorMsg}
+          {successMsg}
+          <b><p><a href="#" id="ref">¿No tienes cuenta? Registrate aquí</a></p></b>
+        </div>
       </div>
 
-      <div class="container">
-        <label for="email"><b>Correo electrónico</b></label>
-        <input type="email" id="email" name="email" required placeholder="Ingresa correo electrónico" value={state.userInfo.email} onChange={onChangeValue}/>
-        <label for="password"><b>Contraseña</b></label>
-        <input type="password" id="password" name="password" required placeholder="Ingresa contraseña" value={state.userInfo.password} onChange={onChangeValue} />
-        {errorMsg}
-        {successMsg}
-        <button type="submit" name="but_submit" id="but_submit"> Iniciar sesión </button> 
+      <div className="split right">
+        <div className="centered">
+          <img src={logo} alt="Logo coronanalyst"/>
+          <button>Regresar a inicio</button>
+        </div>
       </div>
-      </form>
-      <div class="container" >
-        <span class="psw"><a href="#">¿No tienes cuenta? Registrate aquí</a></span>
-        <br/>
-      </div>
-    </section>
 
-    <Footer/>
     </div>
   );
 }
