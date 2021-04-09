@@ -1,0 +1,17 @@
+p {
+    text-align: justify;
+}
+
+h1 {
+    text-align: center;
+}
+
+img{ 
+    width: 400px;
+}
+
+.b1 {
+    margin: 5px;
+    display: inline-block;
+    width: 48%;
+}
