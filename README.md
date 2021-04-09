@@ -1,6 +1,57 @@
-# Getting Started with Create React App
+# Coronanalyst
+
+Coronanalyst web page, made with the purpose of collecting information on changes in consumers' shopping habits due to the COVID-19 pandemic.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Uses npm and composer for package management.
+
+## Frontend
+React - Javascript
+
+## Backend
+PHP
+
+## Install dependencies (run for the first time)
+1. In root directory run: `npm install`
+2. Get into api directory: `cd api`
+3. Run: `composer install`
+4. Make sure .env file is present in api directory and contains correct database credentials
+
+## Running the app
+1. If running backend in xampp: make sure Apache is started
+2. If using local database: make sure MySQL is running
+3. In root directory run: `npm start` to start client app in development mode
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser
+
+## Resources
+- Fullstack tutorial: https://www.youtube.com/watch?v=Gu-Fl1zIVbE
+- React+PHP+API Login/Registration: https://www.w3jar.com/react-js-php-mysql-db-login-registration-system/
+- JSON Web Token Info: https://jwt.io/introduction
+- Component Info: https://reactjs.org/docs/components-and-props.html
+- State and Lifecycle Info: https://reactjs.org/docs/state-and-lifecycle.html
+
+Extra:
+- Another Login/Register: https://www.youtube.com/watch?v=W-sZo6Gtx_E
+- PHP dotenv: https://packagist.org/packages/vlucas/phpdotenv
+- https://www.w3schools.com/react/react_intro.asp
+- https://blog.bitsrc.io/how-to-build-a-contact-form-with-react-js-and-php-d5977c17fec0
+- https://www.youtube.com/watch?v=96DuZ33NX_Y
+- https://www.youtube.com/watch?v=Y4NHqDp88lA
+- https://drive.google.com/file/d/1Fn43usif0WWG3uggKxN6JpmwhbCBAvj9/view
+- https://reactjs.org/tutorial/tutorial.html
+
+### Concepts
+- Components
+- Context
+- State
+- JWT
+- Axios
+- HTTP requests
+
+\
+
+# Yarn
 
 ## Available Scripts
 

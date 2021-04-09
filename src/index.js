@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import MyContextProvider from './contexts/MyContext';
 import './index.css';
 import Login from './Login';
 import Encuesta from './Encuesta';
@@ -10,9 +11,11 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 //<React.StrictMode>
 ReactDOM.render(
-    <Router>
-      <Registro/>
-    </Router> ,
+  <React.StrictMode>
+    <MyContextProvider>
+      <Login />
+    </MyContextProvider>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
