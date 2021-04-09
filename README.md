@@ -1,6 +1,29 @@
-# Getting Started with Create React App
+# Coronanalyst
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Uses npm and composer for package management.
+
+## Frontend
+React - Javascript
+
+## Backend
+PHP
+
+## Install dependencies (run for the first time)
+1. In root directory run: `npm install`
+2. Get into api directory: `cd api`
+3. Run: `composer install`
+4. Make sure .env file is present in api directory and contains correct database credentials
+
+## Running the app
+1. If running backend in xampp: make sure Apache is started
+2. If using local database: make sure MySQL is running
+3. In root directory run: `npm start` to start client app in development mode
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser
+
+.\.\
+# Yarn
 
 ## Available Scripts
 
