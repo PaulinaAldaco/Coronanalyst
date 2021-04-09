@@ -1,10 +1,10 @@
 import React, { createContext,Component } from "react";
-import axios, {AxiosError} from 'axios'
+import axios from 'axios'
 export const MyContext = createContext();
 
 // Create Axios instance and define the base URL
 const Axios = axios.create({
-    baseURL: 'http://localhost/servicios/api/',
+    baseURL: 'http://localhost/coronanalyst/api/',
     // headers: {
     //     'Access-Control-Allow-Origin': '*',
     //     'Access-Control-Allow-Headers': '*'
