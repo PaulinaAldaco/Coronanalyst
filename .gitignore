@@ -5,6 +5,12 @@
 /.pnp
 .pnp.js
 
+# api dependencies
+/api/vendor
+
+# api environment variables
+api/.env
+
 # testing
 /coverage
 
