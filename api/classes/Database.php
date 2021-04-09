@@ -1,11 +1,24 @@
 <?php
+require "./vendor/autoload.php";
+
 class Database{
     
     // CHANGE THE DB INFO ACCORDING TO YOUR DATABASE
-    private $db_host = 'localhost';
-    private $db_name = 'coronanalyst';
-    private $db_username = 'root';
+    private $db_host = '';
+    private $db_name = '';
+    private $db_username = '';
     private $db_password = '';
+
+    function __construct() {
+        // Load database credentials from environment variables
+        $dotenv = Dotenv\Dotenv::createImmutable('./');
+        $dotenv->load();
+        // Set database credentials
+        $this->db_host = $_ENV['DB_HOST'];
+        $this->db_name = $_ENV['DB_NAME'];
+        $this->db_username = $_ENV['DB_USERNAME'];
+        $this->db_password = $_ENV['DB_PASSWORD'];
+    }
     
     public function dbConnection(){
         try{
@@ -20,3 +33,4 @@ class Database{
           
     }
 }
+?>
