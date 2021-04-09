@@ -1,7 +1,7 @@
 #main-header {
-    background: rgb(12, 11, 56);
+    background:  #02044b;
     color: white;
-    height: 100px;
+    height: 20%;
   }	
     #main-header a {
         color: white;
@@ -10,12 +10,12 @@
   #logo-header {
     float: left;
     padding: 3px 0 0 10px;
-    width: 95px;
-    height: 95px;
+    width: 6%;
     text-decoration: none;
   }
     #logo-header:hover {
-        color: #195c79;
+        color: #0040FF;
+        opacity: 0.6;
     }
     
     #logo-header .site-name {

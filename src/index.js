@@ -3,8 +3,13 @@ import ReactDOM from 'react-dom';
 import MyContextProvider from './contexts/MyContext';
 import './index.css';
 import Login from './Login';
+import Encuesta from './Encuesta';
+import Registro from './pantallas/registro';
+import SesionCerrada from './pantallas/sesion_cerrada';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router } from "react-router-dom";
 
+//<React.StrictMode>
 ReactDOM.render(
   <React.StrictMode>
     <MyContextProvider>
