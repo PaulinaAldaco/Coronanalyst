@@ -4,6 +4,8 @@ require __DIR__.'/../jwt/ExpiredException.php';
 require __DIR__.'/../jwt/SignatureInvalidException.php';
 require __DIR__.'/../jwt/BeforeValidException.php';
 
+require "./vendor/autoload.php";
+
 use \Firebase\JWT\JWT;
 
 class JwtHandler {
@@ -23,7 +25,7 @@ class JwtHandler {
         $this->expire = $this->issuedAt + 3600;
 
         // Set your secret or signature
-        $this->jwt_secrect = "secrect_signature";  
+        $this->jwt_secrect = $_ENV['SECRET_KEY'];  
     }
 
     // ENCODING THE TOKEN
