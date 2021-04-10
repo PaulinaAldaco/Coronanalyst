@@ -1,4 +1,4 @@
-import logo from './images/logo_coronanalyst.jpeg'
+import logo from './imagenes/logo_coronanalyst.jpeg'
 import './Login.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -77,10 +77,10 @@ function Login() {
           <p>Introduce tu correo y contraseña para acceder</p>
           <form onSubmit={submitForm} noValidate>
 
-            <input type="email" id="email" name="email" required placeholder="Ingresa correo electrónico" value={state.userInfo.email} onChange={onChangeValue}/>
+            <input type="text" id="email" name="email" required placeholder="Ingresa correo electrónico" value={state.userInfo.email} onChange={onChangeValue}/>
             <input type="password" id="password" name="password" required placeholder="Ingresa contraseña" value={state.userInfo.password} onChange={onChangeValue} />
               
-            <button type="submit" name="but_submit" id="but_submit"> Iniciar sesión </button>
+            <button type="submit" id = "button" > Iniciar sesión </button>
           </form>
           {errorMsg}
           {successMsg}
@@ -91,13 +91,14 @@ function Login() {
       <div className="split right">
         <div className="centered">
           <img src={logo} alt="Logo coronanalyst"/>
-          <button>Regresar a inicio</button>
+          <button id = "button2">Regresar a inicio</button>
         </div>
       </div>
 
     </div>
   );
 }
+
 
 
 export default Login;
