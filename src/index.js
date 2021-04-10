@@ -13,7 +13,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 ReactDOM.render(
   <React.StrictMode>
     <MyContextProvider>
-      <Login />
+      <Encuesta />
     </MyContextProvider>
   </React.StrictMode>,
   document.getElementById('root')

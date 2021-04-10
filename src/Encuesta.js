@@ -1,17 +1,13 @@
 import './Login.css';
 import './components/Header/Header.css';
-import logo from './imagenes/logo_coronanalyst.jpeg'
-import formImage from './imagenes/form.png'; // with import
+import formImage from './imagenes/form.png'; 
 import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
 
 function Encuesta(){
     return(
         <div>
-        <div id="main-header">
-        <a id="logo-header" href="#">
-        <img class="logo-header" src={logo}/>
-		</a> 
-        </div>
+        <Header />
         <section id = "main-content">
             <form action = "php/enviar_consulta.php">
                 <h1>Responde las siguientes preguntas</h1>
@@ -217,7 +213,7 @@ function Encuesta(){
                 </div>
             </fieldset>
 
-            <button id="submit_button" type="submit">Enviar respuestas</button>
+            <button class="submit_button" type="submit">Enviar respuestas</button>
             </form>
         </section>
         <Footer/>
