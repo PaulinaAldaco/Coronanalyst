@@ -1,6 +1,7 @@
 import './Login.css';
 import './sobreNos.css'
-import logo from "./Logo_blue_desert.jpeg"
+
+import logo from "./images/logo_coronanalyst.jpeg"
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 

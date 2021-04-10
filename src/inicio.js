@@ -10,7 +10,7 @@ function inicio(){
             <Header/>
             <form action = "php/enviar_consulta.php">
                 <main>
-                    <h1>Analizando los efectos del COVID-19 </h1>
+                    <h2>Analizando los efectos del COVID-19 </h2>
 
                     <div class="bloque">
                         <div class="b1">

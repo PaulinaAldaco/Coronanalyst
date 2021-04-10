@@ -4,12 +4,18 @@ import MyContextProvider from './contexts/MyContext';
 import './index.css';
 import Login from './Login';
 import reportWebVitals from './reportWebVitals';
+import sobreNos from './SobreNos';
+import Inicio from './inicio'
 
 ReactDOM.render(
   <React.StrictMode>
     <MyContextProvider>
       <Login />
+
     </MyContextProvider>
+    
+      
+
   </React.StrictMode>,
   document.getElementById('root')
 );
