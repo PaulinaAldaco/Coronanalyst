@@ -44,17 +44,24 @@ img {
 
 
 button {
-background-color: #02044b;
-color: white;
-padding: 14px 20px;
-margin: 8px 0;
-border: none;
-cursor: pointer;
-width: 100%;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
 }
 
 button:hover{
   opacity: 0.5;
+}
+
+#button2{
+  background-color: #02044b;
+}
+
+#button{
+  background-color: #0040FF;
 }
 
 
@@ -94,13 +101,6 @@ button:hover{
 .centered img {
   width: 120%;
 } 
-
-input[type=submit] {
-  background-color: #0040FF;
-  color: white;
-  cursor: pointer;
-}
-
 
 #ref{
   color: #0040FF;
