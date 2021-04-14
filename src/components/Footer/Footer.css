@@ -1,0 +1,17 @@
+#main-footer {
+    background:  #02044b;
+    color: white;
+    position: relative;
+    top: 0px;
+    height: 100px;
+    width: 100%;
+  }
+
+    #main-footer p {
+        margin: 0;
+        text-align: center;
+    }
+    
+    #main-footer a {
+        color: rgb(255, 255, 255);
+    }

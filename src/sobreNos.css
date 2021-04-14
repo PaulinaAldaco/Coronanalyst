@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: white; 
+  font-size: 1em;
+  line-height: 1.5em
+}
+
+p {
+    text-align: justify;
+    padding: 20px 20px 20px 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+img{ 
+    width: 20%;
+    margin-top: 10%;
+}
+
+
+/* Split the screen in half */
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    top: 130px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+    background-color: white;
+  }

@@ -1,0 +1,13 @@
+#logo-header {
+    float:block;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    text-decoration: none;
+    
+  }
+    #logo-header:hover {
+        color: #0040FF;
+        opacity: 0.6;
+    }
+    
