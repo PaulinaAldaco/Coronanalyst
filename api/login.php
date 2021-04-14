@@ -57,7 +57,11 @@ else:
     else:
         try{
             
+<<<<<<< HEAD
+            $fetch_user_by_email = "SELECT * FROM Usuarios WHERE correo=:email";
+=======
             $fetch_user_by_email = "SELECT * FROM usuarios WHERE correo=:email";
+>>>>>>> ac62caa40c8fd302eadd51bebb014748b69c562f
             $query_stmt = $conn->prepare($fetch_user_by_email);
             $query_stmt->bindValue(':email', $email,PDO::PARAM_STR);
             $query_stmt->execute();

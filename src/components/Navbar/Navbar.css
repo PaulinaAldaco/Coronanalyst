@@ -1,0 +1,10 @@
+#logo-header {
+  width: 80px;
+  height: 80px;
+    
+  }
+    #logo-header:hover {
+        color: #0040FF;
+        opacity: 0.6;
+    }
+    

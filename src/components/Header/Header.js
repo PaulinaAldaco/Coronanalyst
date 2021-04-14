@@ -61,12 +61,12 @@ export default Header;*/
 export default function Header() {
   const displayDesktop = () => {
     return(
-    <div id="main-header">
+    <header id="main-header">
       <a id="logo-header" href="#">
         <img class="logo-header" src={logo}/>
       </a> 
 
-      <nav class="navbar navbar-dark bg-primary">
+      <nav>
         <ul>
             <li><a href="#">Inicio</a></li>
             <li><a href="#">Sobre nosotros</a></li>
@@ -74,7 +74,8 @@ export default function Header() {
             <li><a href=">../../Login">Iniciar sesión</a></li>
         </ul>
       </nav>  
-    </div>);
+    </header>
+  );
   };
   
   return (

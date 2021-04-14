@@ -1,3 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: white; 
+  font-size: 1em;
+  line-height: 1.5em
+}
+
+#main-contentSobreNos {
+  background: white;
+  width: 100%;
+  margin: 20px auto;
+  top: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  overflow: hidden;
+}
+
 p {
     text-align: justify;
     padding: 20px 20px 20px 20px;
@@ -7,38 +25,33 @@ h1 {
     text-align: center;
 }
 
-img{ 
+.imgSN{ 
     width: 20%;
     margin-top: 10%;
+    top: 0;
 }
 
-
-#main-content{
-    background-color: white;
-    margin-top: 120px;
-}
 
 /* Split the screen in half */
-.split {
+.splitSN {
     height: 100%;
     width: 50%;
-    position: fixed;
     z-index: 1;
     top: 0;
     overflow-x: hidden;
-    padding-top: 20px;
+    top: 96px;
   }
   
   /* Control the left side */
-  .left {
-    left: 0;
+  .leftSobreNos {
     background-color: rgb(255, 255, 255);
-    margin-top: 120px;
+    display: inline-block;
+    top: 0;
   }
   
   /* Control the right side */
-  .right {
+  .rightSobreNos {
     right: 0;
     background-color: white;
-    margin-top: 120px;
+    display: inline-block;
   }

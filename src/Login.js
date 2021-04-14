@@ -70,7 +70,7 @@ function Login() {
   return (
    
     <div>
-
+      <div>
       <div className="split left">
         <div className="centered">
           <h1>¡Bienvenido!</h1>
@@ -80,7 +80,7 @@ function Login() {
             <input type="text" id="email" name="email" required placeholder="Ingresa correo electrónico" value={state.userInfo.email} onChange={onChangeValue}/>
             <input type="password" id="password" name="password" required placeholder="Ingresa contraseña" value={state.userInfo.password} onChange={onChangeValue} />
               
-            <button type="submit" id = "button" > Iniciar sesión </button>
+            <button type="submit" className = "submit" > Iniciar sesión </button>
           </form>
           {errorMsg}
           {successMsg}
@@ -90,11 +90,11 @@ function Login() {
 
       <div className="split right">
         <div className="centered">
-          <img src={logo} alt="Logo coronanalyst"/>
-          <button id = "button2">Regresar a inicio</button>
+          <img src={logo} alt="Logo coronanalyst" className="imgL"/>
+          <button className="link" >Regresar a inicio</button>
         </div>
       </div>
-
+      </div>
     </div>
   );
 }

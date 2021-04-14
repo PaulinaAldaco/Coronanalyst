@@ -1,16 +1,17 @@
 #main-header {
     background:  #02044b;
     color: white;
-    height: 20%;
+    height: 100px;
   }	
     #main-header a {
         color: white;
     }
   
-  #logo-header {
+  /* #logo-header {
     float: left;
-    padding: 3px 0 0 10px;
-    width: 6%;
+    top: 0;
+    width: 95px;
+    height: 95px;
     text-decoration: none;
   }
     #logo-header:hover {
@@ -29,7 +30,7 @@
         font-weight: 300;
         font-size: 0.8em;
         color: #999;
-    }
+    } */
     
     nav {
         float: right;
