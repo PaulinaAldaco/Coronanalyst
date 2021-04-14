@@ -68,7 +68,7 @@ function SesionCerrada() {
    
     <div>
 
-  <div class="split left">
+  <div class="splitSC leftSC">
         <div class="centered">
         <h1>Sesión cerrada</h1>
         <p>Introduce tu correo y contraseña para acceder</p>
@@ -82,7 +82,7 @@ function SesionCerrada() {
         </div>
     </div>
 
-    <div class="split right">
+    <div class="splitSC rightSC">
         <div class="centered">
         <img src={logo} alt="Logo coronanalyst"/>
         <button>Regresar a inicio</button>

@@ -12,10 +12,9 @@ body {
 form {border: 0% solid #f1f1f1;}
 
 h1{
-  font-size: 300%;
+  font-size: 3vw;
   color: #333333;
 }
-
 
 input[type=text], input[type=password] {
 width: 100%;
@@ -26,7 +25,7 @@ border: 1px solid #ccc;
 box-sizing: border-box;
 }
 
-img {
+.imgL {
   max-width: 100%;
   height: auto;
   display:block; 
@@ -36,23 +35,30 @@ img {
 
 button {
   color: white;
-  padding: 14px 20px;
   margin: 8px 0;
-  border: none;
   cursor: pointer;
-  width: 100%;
+  border-radius: 4px;
+  height: 3em;
+  outline: none;
+  border: none;
+  transition: all 0.2s ease-in-out;
 }
 
 button:hover{
   opacity: 0.5;
 }
 
-#button2{
+.link{
   background-color: #02044b;
+  color: white;
+ 
 }
 
-#button{
-  background-color: #0040FF;
+button.submit{
+  background-color: #256ce1;
+  width: 100%;
+  
+  
 }
 
 
@@ -62,20 +68,23 @@ button:hover{
   width: 50%;
   position: fixed;
   z-index: 1;
-  top: 0;
   overflow-x: hidden;
+  top: 96px;
 }
 
 /* Control the left side */
 .left {
   left: 0;
   background-color: rgb(255, 255, 255);
+  overflow: scroll;
+
 }
 
 /* Control the right side */
 .right {
   right: 0;
-  background-color: #02044b;
+  background: #02044b;
+  overflow: scroll;
 }
 
 /* If you want the content centered horizontally and vertically */
@@ -87,11 +96,19 @@ button:hover{
   text-align: center;
 }
 
+.centered2 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+}
+
 /* Style the image inside the centered container, if needed */
 .centered img {
-  width: 100%;
+  width: 200%;
+  padding: 0 0 0 0;
 } 
 
 #ref{
-  color: #0040FF;
+  color: #256ce1;
 }

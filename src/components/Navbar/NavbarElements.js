@@ -6,12 +6,15 @@ export const Nav = styled.nav`
   background:  #02044b;
   height: 80px;
   display: flex;
-  width: 100%;
   justify-content: space-between;
   padding: 0.5rem calc((100vw - 1000px) / 2);
   z-index: 10;
+  position: sticky;
+  top: 0;
+  width: 80%;
   /* Third Nav */
   /* justify-content: flex-start; */
+
 `;
 
 export const NavLink = styled(Link)`
@@ -26,6 +29,20 @@ export const NavLink = styled(Link)`
     color: #15cdfc;
   }
 `;
+
+export const MobileIcon = styled.div`
+  display: none;
+
+  @media screen and (max-width: 768px){
+    display:block;
+    position: absolute;
+    top: 0;
+    right: 0; 
+    transform: translate (-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+`
 
 export const Bars = styled(FaBars)`
   display: none;

@@ -9,7 +9,9 @@ body {
 
 h1{
     text-align: center;
+    height: fit-content;
 }
+
 
 
 #main-content {
@@ -18,8 +20,9 @@ h1{
   max-width: 60%;
   position: relative;
   margin: 20px auto;
-  top: 80px;
+  top: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,.1);
+  overflow: hidden;
 }
 
 
@@ -34,13 +37,15 @@ input[type=text], input[type=password] {
 
 
 .button {
-  background-color: #2d96d3;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  background-color: #256ce1;
+  border-radius: 4px;
+  color: #fff;
+  height: 3.5em;
+  outline: none;
   border: none;
-  cursor: pointer;
   width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 .button:hover {
@@ -54,6 +59,7 @@ input[type=text], input[type=password] {
 
 img.registro {
   width: 20%;
+  position: relative;
 }
 
 .container {

@@ -7,7 +7,7 @@
         color: white;
     }
   
-  #logo-header {
+  /* #logo-header {
     float: left;
     top: 0;
     width: 95px;
@@ -30,7 +30,7 @@
         font-weight: 300;
         font-size: 0.8em;
         color: #999;
-    }
+    } */
     
     nav {
         float: right;

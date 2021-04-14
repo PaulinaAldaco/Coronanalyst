@@ -1,10 +1,11 @@
 #main-footer {
-    background:  #02044b;
+    background:  #B9D6DA;
     color: white;
-    position: relative;
-    top: 0px;
+    position: static;
+    top: 95%;
     height: 100px;
     width: 100%;
+    z-index: 1;
   }
 
     #main-footer p {

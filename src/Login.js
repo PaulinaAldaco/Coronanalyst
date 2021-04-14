@@ -1,11 +1,19 @@
 import logo from './imagenes/logo_coronanalyst.jpeg'
 import './Login.css';
-import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import React, {useContext, useState} from 'react'
-import {MyContext} from './contexts/MyContext'
+import {MyContext} from './contexts/MyContext';
+import Navbar from './components/Navbar/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
+import {Link as LinkR} from 'react-router-dom';
 
 function Login() {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+    const toggle = () =>{
+        setIsOpen(!isOpen)
+    };
 
   const {toggleNav,loginUser,isLoggedIn} = useContext(MyContext);
 
@@ -30,7 +38,7 @@ function Login() {
         }
     });
     console.log(state);
-  }
+  } 
 
   // On Submit Login From
   const submitForm = async (event) => {
@@ -69,7 +77,10 @@ function Login() {
 
   return (
    
-    <div>
+    <>
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Navbar toggle={toggle} />
+      <div>
       <div className="split left">
         <div className="centered">
           <h1>¡Bienvenido!</h1>
@@ -79,7 +90,7 @@ function Login() {
             <input type="text" id="email" name="email" required placeholder="Ingresa correo electrónico" value={state.userInfo.email} onChange={onChangeValue}/>
             <input type="password" id="password" name="password" required placeholder="Ingresa contraseña" value={state.userInfo.password} onChange={onChangeValue} />
               
-            <button type="submit" id = "button" > Iniciar sesión </button>
+            <button type="submit" className = "submit" > Iniciar sesión </button>
           </form>
           {errorMsg}
           {successMsg}
@@ -89,11 +100,14 @@ function Login() {
 
       <div className="split right">
         <div className="centered">
-          <img src={logo} alt="Logo coronanalyst"/>
-          <button id = "button2">Regresar a inicio</button>
+          <img src={logo} alt="Logo coronanalyst" className="imgL"/>
+          <button>
+            <LinkR className="link" to="/">Regresar a inicio</LinkR>
+          </button>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

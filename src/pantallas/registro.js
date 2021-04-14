@@ -2,10 +2,18 @@ import './registro.css';
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer';
 import React, {useContext,useState} from 'react'
-import {MyContext} from '../contexts/MyContext'
+import {MyContext} from '../contexts/MyContext';
+import Navbar from '../components/Navbar/Navbar';
+import Sidebar from '../components/Sidebar/Sidebar';
 
 
 function Registro() {
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggle = () =>{
+        setIsOpen(!isOpen)
+    };
 
     const {toggleNav,registerUser} = useContext(MyContext);
     const initialState = {
@@ -60,7 +68,9 @@ function Registro() {
     }
     
     return (
-     
+      <>
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Navbar toggle={toggle} />
       <div id="container">
         <form id ="main-content">
         <h1>Regístrate</h1>
@@ -78,6 +88,8 @@ function Registro() {
         </form>
       
       </div>
+      <Footer/>
+      </>
 
     );
 }
