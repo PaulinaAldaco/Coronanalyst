@@ -1,25 +1,30 @@
 import React from 'react';
+import { FaBars } from 'react-icons/fa';
 import {
   Nav,
   NavLink,
   Bars,
+  MobileIcon,
   NavMenu,
   NavBtn,
-  NavBtnLink
+  NavBtnLink 
 } from './NavbarElements';
 import './Navbar.css'
 import logo from "../../imagenes/logo_coronanalyst.jpeg"
 
-const Navbar = () => {
+const Navbar = ({toggle}) => {
   return (
     <>
       <Nav>
         <a>
           <img src={logo} id="logo-header" alt='logo' />
         </a>
-        <Bars />
+        <MobileIcon onClick={toggle}>
+          <FaBars />
+        </MobileIcon>
+        {/* <Bars /> */}
         <NavMenu>
-          <NavLink to='/Inicio' activeStyle>
+          <NavLink to='/' activeStyle>
             Inicio
           </NavLink>
           <NavLink to='/SobreNosotros' activeStyle>

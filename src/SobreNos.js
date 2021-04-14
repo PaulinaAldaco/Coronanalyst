@@ -1,11 +1,22 @@
+import React, {useState} from 'react';
 import './Login.css';
 import './sobreNos.css'
-import logo from "./imagenes/logo_coronanalyst.jpeg"
-import Header from './components/Header/Header';
+import logo from "./imagenes/logo_coronanalyst.jpeg";
+import Navbar from './components/Navbar/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
 
 function SobreNos(){ 
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggle = () =>{
+        setIsOpen(!isOpen)
+    };
+    
     return(
+        <>
+        <Sidebar isOpen={isOpen} toggle={toggle} />
+        <Navbar toggle={toggle} />
         <div>
             <div id = "main-contentSobreNos">
                 <h1>¿Qué es Blue Desert? </h1>
@@ -22,6 +33,7 @@ function SobreNos(){
             </div>
             <Footer/>
         </div>
+        </>
          
     )
 
