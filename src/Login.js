@@ -2,9 +2,8 @@ import logo from './imagenes/logo_coronanalyst.jpeg'
 import './Login.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import Navbar from './components/Header/Navbar'
-import React, {useContext, useState} from 'react';
-import {MyContext} from './contexts/MyContext';
+import React, {useContext, useState} from 'react'
+import {MyContext} from './contexts/MyContext'
 
 function Login() {
 
