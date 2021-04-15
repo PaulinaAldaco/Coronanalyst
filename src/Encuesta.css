@@ -28,14 +28,8 @@
         margin:auto; 
     }
 
-    .submit_button {
-        display:block; 
-        margin:auto; 
-        background-color: #0040FF;
-        color: white;
-        padding: 14px 20px;
-        border: none;
-        cursor: pointer;
+    #submit_button {
+        background-color: #256ce1;
         width: 100%;
     }
 

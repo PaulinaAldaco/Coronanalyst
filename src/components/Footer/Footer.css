@@ -1,16 +1,24 @@
 #main-footer {
-    background: rgb(12, 11, 56);
+    background:  #B9D6DA;
     color: white;
-    text-align: center;
-    padding: 20px;
-    margin-bottom: 0;
-    height: 4em;
+    position: static;
+    top: 95%;
+    height: 100px;
+    width: 100%;
+    z-index: 1;
   }
 
     #main-footer p {
         margin: 0;
+        text-align: center;
     }
     
     #main-footer a {
         color: rgb(255, 255, 255);
     }
+
+.logo-blue{
+    height: 100px;
+    float: right;
+}
+

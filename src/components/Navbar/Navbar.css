@@ -1,0 +1,10 @@
+#logo-nav {
+  height: 85px;
+  margin: 5px 15px;
+    
+  }
+    #logo-nav:hover {
+        color: #0040FF;
+        opacity: 0.6;
+    }
+    

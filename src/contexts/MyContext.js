@@ -5,10 +5,10 @@ export const MyContext = createContext();
 // Create Axios instance and define the base URL
 const Axios = axios.create({
     baseURL: 'http://localhost/coronanalyst/api/',
-    // headers: {
-    //     'Access-Control-Allow-Origin': '*',
-    //     'Access-Control-Allow-Headers': '*'
-    // },
+    headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*'
+    }
 });
 
 class MyContextProvider extends Component{

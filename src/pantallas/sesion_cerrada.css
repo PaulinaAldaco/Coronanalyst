@@ -1,5 +1,5 @@
  /* Split the screen in half */
- .split {
+ .splitSC {
     height: 100%;
     width: 50%;
     position: fixed;
@@ -10,13 +10,13 @@
   }
   
   /* Control the left side */
-  .left {
+  .leftSC {
     left: 0;
     background-color: rgb(255, 255, 255);
   }
   
   /* Control the right side */
-  .right {
+  .rightSC {
     right: 0;
     background-color: #02044b;
   }
@@ -32,15 +32,9 @@
   
   /* Style the image inside the centered container, if needed */
   .centered img {
-    width: 120%;
+    width: 80%;
   } 
 
-  input[type=submit] {
-    background-color: #0040FF;
-    color: white;
-    cursor: pointer;
-  }
+  
 
-  button{
-      background-color: #02044b;
-  }
+  
