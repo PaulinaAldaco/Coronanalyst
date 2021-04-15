@@ -1,10 +1,10 @@
 import './Login.css';
-import './inicio.css'
+import './Inicio.css'
 import grafica from "./graficas.png"
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
-function inicio(){ 
+function Inicio(){ 
     return(
         <div id = "uno">
             <main>
