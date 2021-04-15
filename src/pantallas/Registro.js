@@ -1,5 +1,4 @@
 import './Registro.css';
-import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer';
 import React, {useContext,useState} from 'react'
 import {MyContext} from '../contexts/MyContext';
@@ -77,9 +76,9 @@ function Registro() {
                 <img src="http://ww2.aeeh.es/wp-content/uploads/2013/08/form_icon_256031.png" alt="registro" className="registro"/>
             </div>
             <div class="container">
-                <label for="email"><b>Correo electrónico</b></label>
+                <label className="labelR uno" for="email"><b>Correo electrónico</b></label>
                 <input type="text" id="email" name="email" required placeholder="Ingresa correo electrónico" value={state.userInfo.email} onChange={onChangeValue}/>
-                <label for="contra"><b>Contraseña</b></label>
+                <label className="labelR dos" for="contra"><b>Contraseña</b></label>
                 <input type="password" id="password" name="password" required placeholder="Ingresa contraseña" value={state.userInfo.password} onChange={onChangeValue}/>
                     
                 <button type="submit" className="registrarse"> Registrarme </button> 

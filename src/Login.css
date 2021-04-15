@@ -21,11 +21,6 @@ box-sizing: border-box;
   margin:auto; 
 }
 
-#titulo{
-  top: 230px;
-  position: relative;
-}
-
 button {
   color: white;
   margin: 8px 0;
@@ -99,6 +94,7 @@ button.submit{
   width: 200%;
   padding: 0 0 0 0;
 } 
+
 
 #ref{
   color:  #256ce1;

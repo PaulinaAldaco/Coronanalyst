@@ -16,16 +16,13 @@ const Sidebar = ({isOpen, toggle}) =>{
                     <SidebarLink onClick={toggle} to="/SobreNosotros">
                         Sobre Nosotros
                     </SidebarLink>
-                    <SidebarLink onClick={toggle} to="/Registro">
-                        Iniciar sesión
-                    </SidebarLink>
                     <SidebarLink onClick={toggle} to="/Login">
                         Registrarse
                     </SidebarLink>
                 </SidebarMenu>
                 <SideBtnWrap>
                     <SidebarRoute onClick={toggle} to="/Login">
-                        SignIn
+                        Iniciar sesión
                     </SidebarRoute>
                 </SideBtnWrap>
             </SidebarWrapper>

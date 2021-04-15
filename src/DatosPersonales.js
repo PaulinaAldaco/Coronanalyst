@@ -14,6 +14,7 @@ function DatosPersonales() {
                   <div class="col">
                       <label>Género</label>
                       <select name="genero" id="genero">
+                      <option value="seleccione">Seleccione una opción</option>
                           <option value="Femenino">Femenino</option>
                           <option value="Masculino">Masculino</option>
                           <option value="Otro">Otro</option>
@@ -21,6 +22,7 @@ function DatosPersonales() {
                       <label>Edad</label>
                       <br/>
                       <select name="rangoedad" id="rangoedad">
+                          <option value="seleccione">Seleccione una opción</option>
                           <option value="Menos de 15">1 a 10</option>
                           <option value="15 a 20">11 a 20</option>
                           <option value="21 a 25">21 a 30</option>
@@ -38,6 +40,7 @@ function DatosPersonales() {
                       <br/>
                       <label>Estado civil</label>
                       <select name="estadocivil" id="estadocivil">
+                          <option value="seleccione">Seleccione una opción</option>
                           <option value="Soltero">Soltero</option>
                           <option value="Casado">Casado</option>
                           <option value="Divorciado">Divorciado</option>
@@ -46,6 +49,7 @@ function DatosPersonales() {
                       </select>
                       <label>Nivel máximo de estudios</label>
                       <select name="estudios" id="estudios">
+                      <option value="seleccione">Seleccione una opción</option>
                           <option value="No aplica">No aplica</option>
                           <option value="Primaria">Primaria</option>
                           <option value="Secundaria">Secundaria</option>
@@ -61,6 +65,7 @@ function DatosPersonales() {
                       </div>
                       <label>Ocupación</label>
                       <select name="ocupacion" id="ocupacion">
+                      <option value="seleccione">Seleccione una opción</option>
                           <option value="No aplica">No aplica</option>
                           <option value="Primaria">Primaria</option>
                           <option value="Secundaria">Secundaria</option>
@@ -72,6 +77,8 @@ function DatosPersonales() {
                       <br/>
                        <label>Ingreso económico</label>
                        <select name="ingreso_economico" id="ingreso_economico">
+        
+                       <option value="seleccione">Seleccione una opción</option>
                           <option value="No aplica">No aplica</option>
                           <option value="Primaria">Primaria</option>
                           <option value="Secundaria">Secundaria</option>
@@ -83,6 +90,7 @@ function DatosPersonales() {
                       <br/>
                       <label>Estado</label>
                       <select name="estado" id="estado">
+                      <option value="seleccione">Seleccione una opción</option>
                           <option value="No aplica">No aplica</option>
                           <option value="Primaria">Primaria</option>
                           <option value="Secundaria">Secundaria</option>

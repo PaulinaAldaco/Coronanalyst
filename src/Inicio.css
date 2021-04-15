@@ -4,7 +4,7 @@ body {
     font-family: Helvetica, Arial, sans-serif;
     color: #666;
     background: white; 
-    font-size: 1em;
+    font-size: 1vw;
     line-height: 1.5em
   }
 
@@ -14,8 +14,10 @@ h1 {
 }
 
 .imgInicio{ 
-    width: 250px;
-    padding: 30px;
+    width: 50%;
+    position: relative;
+    left: 15%;
+    top: 10%;
 }
 
 #uno{
@@ -25,23 +27,35 @@ h1 {
 
 .bloque {
     background-color:#EAF8FA;
+    height: 28em;
+    overflow: scroll;
+    position: sticky;
 }
+
 
 .b1 {
     /* margin: 5px; */
+    left: 10%;
     display: inline-block;
     width: 30%;
+    position: relative;
     overflow: hidden;
+    height: 28em;
+   
 }
 .b2 {
     display: inline-block;
     width: 60%;
+    position: absolute;
     overflow: hidden;
+    right: 0;
+    
 
 }
 
+
 .texto {
-    margin: 30px;
+    margin: 0 2em 0 2em;
 }
 
 button {
@@ -57,4 +71,11 @@ button {
 button.linkI{
     background-color: #256ce1;
     height: 3em;
+    position: relative;
+    float: right;
+    margin-right: 3.5em;
+    color: white;
+    font-style: normal;
+    text-decoration: none;
 }
+
