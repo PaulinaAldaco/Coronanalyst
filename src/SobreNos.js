@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import './Login.css';
 import './sobreNos.css'
-import logo from "./imagenes/logo_coronanalyst.jpeg";
-import Navbar from './components/Navbar/Navbar';
-import Sidebar from './components/Sidebar/Sidebar';
+import logo from "./imagenes/logo_blue_desert2.png";
+import Navbar1 from './components/Navbar/Navbar';
+import Sidebar1 from './components/Sidebar/Sidebar';
+import Navbar2 from './components/Navbar/Navbar2';
+import Sidebar2 from './components/Sidebar/Sidebar2';
 import Footer from './components/Footer/Footer';
 
 function SobreNos(){ 
@@ -12,16 +14,30 @@ function SobreNos(){
     const toggle = () =>{
         setIsOpen(!isOpen)
     };
+
+    const isLoggedIn = true;
+    //const isLoggedIn = false;
+    let Sidebar;
+    let Navbar;
+        
+    if (isLoggedIn){
+        Sidebar = <Sidebar2 isOpen={isOpen} toggle={toggle} />;
+        Navbar = <Navbar2 toggle={toggle}/>;
+    }else{
+        Sidebar = <Sidebar1 isOpen={isOpen} toggle={toggle} />;
+        Navbar = <Navbar1 toggle={toggle}/>;
+     }
+
     
     return(
         <>
-        <Sidebar isOpen={isOpen} toggle={toggle} />
-        <Navbar toggle={toggle} />
-        <div>
+        {Sidebar}
+        {Navbar}
+        <div> 
             <div id = "main-contentSobreNos">
                 <h1>¿Qué es Blue Desert? </h1>
                 <div class="splitSN leftSobreNos">
-                    <img class="imgSN" src={logo}/>  
+                    <a><img class="imgSN" src={logo}/></a> 
                 </div>   
                 <div class="splitSN rightSobreNos">
                     <p> A  finales de 2019 comenzó la pandemia actual de COVID-19, resultando en una cuarentena global desde marzo del 2020. Esto ha tenido repercusiones profundas en todos los ámbitos de la vida humana, incluyendo, naturalmente, el sector de salud pública, pero también el empresarial y económico. Así mismo, la pandemia ha ocasionado fuertes alteraciones a la vida cotidiana de las personas. Un tema importante es el impacto sobre el comportamiento de compra, ya que el estado de cuarentena ha presentado nuevas dificultades para muchos para llevar a cabo sus compras, tanto las relacionadas a comodidades como las de necesidades básicas. Por esto mismo, la pandemia ha resultado perjudicial para la economía de grandes y pequeñas empresas. En este contexto, es de interés económico y social analizar las nuevas tendencias (en contraste con las anteriores a la pandemia) en el comportamiento de compra del público.
@@ -34,7 +50,6 @@ function SobreNos(){
             <Footer/>
         </div>
         </>
-         
     )
 
    

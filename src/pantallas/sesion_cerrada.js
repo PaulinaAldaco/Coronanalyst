@@ -2,6 +2,7 @@ import './sesion_cerrada.css';
 import logo from '../imagenes/logo_coronanalyst.jpeg';
 import React, {useContext, useState} from 'react';
 import {MyContext} from '../contexts/MyContext';
+import {Link as LinkR} from 'react-router-dom';
 
 function SesionCerrada() {
 
@@ -29,7 +30,7 @@ function SesionCerrada() {
     });
     console.log(state);
   }
-
+ 
   // On Submit Login From
   const submitForm = async (event) => {
     event.preventDefault();
@@ -73,11 +74,10 @@ function SesionCerrada() {
         <h1>Sesión cerrada</h1>
         <p>Introduce tu correo y contraseña para acceder</p>
         <form>
-
             <input type="text" id = "email" placeholder="Correo electrónico" name="email" required />
             <input type="password" id = "contra" placeholder="Contraseña" name="contra" required />
             
-            <input type = "submit" value="Entrar"/>
+            <button type="submit" className = "submit" > Entrar </button>
         </form>
         </div>
     </div>
@@ -85,7 +85,9 @@ function SesionCerrada() {
     <div class="splitSC rightSC">
         <div class="centered">
         <img src={logo} alt="Logo coronanalyst"/>
-        <button>Regresar a inicio</button>
+        <button className="link">
+            <LinkR  to="/">Regresar a inicio</LinkR>
+          </button>
         </div>
     </div>
 

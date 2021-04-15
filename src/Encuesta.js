@@ -7,7 +7,7 @@ import Header from './components/Header/Header';
 function Encuesta(){
     return(
         <div>
-        <Header />
+        <Header/>
         <section id = "main-content">
             <form>
                 <h1>Responde las siguientes preguntas</h1>
@@ -213,7 +213,7 @@ function Encuesta(){
                 </div>
             </fieldset>
 
-            <button class="submit_button" type="submit">Enviar respuestas</button>
+            <button className="submit" type="submit">Enviar respuestas</button>
             </form>
         </section>
         <Footer/>

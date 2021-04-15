@@ -3,16 +3,14 @@ import { FaBars } from 'react-icons/fa';
 import {
   Nav,
   NavLink,
-  Bars,
   MobileIcon,
   NavMenu,
-  NavBtn,
-  NavBtnLink 
+  NavBtnLink
 } from './NavbarElements';
 import './Navbar.css'
 import logo from "../../imagenes/logo_coronanalyst.jpeg"
 
-const Navbar = ({toggle}) => {
+const Navbar2 = ({toggle}) => {
   return (
     <>
       <Nav>
@@ -22,7 +20,6 @@ const Navbar = ({toggle}) => {
         <MobileIcon onClick={toggle}>
           <FaBars />
         </MobileIcon>
-        {/* <Bars /> */}
         <NavMenu>
           <NavLink to='/'>
             Inicio
@@ -30,21 +27,17 @@ const Navbar = ({toggle}) => {
           <NavLink to='/SobreNosotros' activeStyle>
             Sobre nosotros
           </NavLink>
-          <NavLink to='/Registro' activeStyle>
-            Registrarse
+          <NavLink to='/Encuesta' activeStyle>
+            Encuesta
           </NavLink>
-          {/* <NavLink to='/Login' activeStyle>
-            Iniciar sesión
+          {/* <NavLink to='/SesionCerrada' activeStyle>
+            Sesion Cerrada
           </NavLink> */}
-          {/* Second Nav */}
-          <NavBtn>
-          <NavBtnLink to='/Login'>Iniciar Sesión</NavBtnLink>
-        </NavBtn>
+          <NavBtnLink to='/SesionCerrada'>Cerrar sesión</NavBtnLink>
         </NavMenu>
-        
-      </Nav>
+      </Nav> 
     </>
   );
 };
 
-export default Navbar;
+export default Navbar2;
