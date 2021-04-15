@@ -8,12 +8,12 @@ import Sidebar2 from './components/Sidebar/Sidebar2';
 import grafica from "./graficas.png";
 import Footer from './components/Footer/Footer';
 import {MyContext} from './contexts/MyContext';
-import { render } from '@testing-library/react';
+import {Link as LinkR} from 'react-router-dom';
 
 function Inicio(){
 
-    const {rootState,toggleNav,logoutUser} = useContext(MyContext);
-    const {isAuth,theUser,showLogin} = rootState;
+    const {rootState} = useContext(MyContext);
+    const {isAuth} = rootState;
 
 
     const [isOpen, setIsOpen] = useState(false);
@@ -21,16 +21,19 @@ function Inicio(){
     const toggle = () =>{
         setIsOpen(!isOpen);
     };
-    
+     
     let Sidebar;
     let Navbar;
+    let ContestarEncuesta;
         
     if (isAuth){
         Sidebar = <Sidebar2 isOpen={isOpen} toggle={toggle} />;
         Navbar = <Navbar2 toggle={toggle}/>;
+        ContestarEncuesta = <LinkR  to="/Encuesta">ContestarEncuesta</LinkR>
     }else{
         Sidebar = <Sidebar1 isOpen={isOpen} toggle={toggle} />;
         Navbar = <Navbar1 toggle={toggle}/>;
+        ContestarEncuesta = <LinkR  to="/Registro">ContestarEncuesta</LinkR>
      }
 
     return(
@@ -38,15 +41,15 @@ function Inicio(){
         {Sidebar}
         {Navbar} 
         <div id = "uno">
-        <main>
+            <main>
                     <div class="bloque">
                         <h1>Analizando los efectos del COVID-19 </h1>
-                        <div class="b1">
+                        <div class="b1 ">
                             <img className="imgInicio" src={grafica}/>     
                         </div>
-                        <div class="b2">
-                            <p>A inicios del año 2020 inició el confinamiento de la pandemia actual del virus COVID-19, esta pandemia llegó para cambiar la vida humana en muchos sentidos, tanto en aspectos culturales y sociales, como en ámbitos de salud pública, economía y vida cotidiana. Es por esto por lo que la mayoría de las personas han modificado su estilo de vida, adaptándose a la nueva normalidad y a las posibilidades que esta permite. Algunos de los cambios más significativos en la vida de las personas fue la fuerte tendencia a permanecer mucho mas tiempo que antes en casa, lo cual propició ciertos cambios de comportamiento en los hábitos de consumo, ya que incrementaron las ventas a través de plataformas digitales para minimizar riesgo de contagio al acudir a una tienda física. Otro cambio significativo fue el de el aumento en la demanda de servicios de streaming, como lo son Netflix, Amazon Prime, Disney +, etc. Esto por el mismo motivo del aumento del tiempo que las personas pasan en sus hogares. </p>   
-                            <button type="button" class="linkI">Contestar encuesta</button>
+                        <div class="b2 ">
+                            <p className="texto">A inicios del año 2020 inició el confinamiento de la pandemia actual del virus COVID-19, esta pandemia llegó para cambiar la vida humana en muchos sentidos, tanto en aspectos culturales y sociales, como en ámbitos de salud pública, economía y vida cotidiana. Es por esto por lo que la mayoría de las personas han modificado su estilo de vida, adaptándose a la nueva normalidad y a las posibilidades que esta permite. Algunos de los cambios más significativos en la vida de las personas fue la fuerte tendencia a permanecer mucho mas tiempo que antes en casa, lo cual propició ciertos cambios de comportamiento en los hábitos de consumo, ya que incrementaron las ventas a través de plataformas digitales para minimizar riesgo de contagio al acudir a una tienda física. Otro cambio significativo fue el de el aumento en la demanda de servicios de streaming, como lo son Netflix, Amazon Prime, Disney +, etc. Esto por el mismo motivo del aumento del tiempo que las personas pasan en sus hogares. </p>   
+                            <button type="button" class="linkI">{ContestarEncuesta}</button>
                         </div>
                     </div>
                     

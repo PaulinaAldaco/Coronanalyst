@@ -3,8 +3,17 @@ h1{
     height: fit-content;
 }
 
-label{
-  text-align: center;
+.labelR{
+ text-align: center;
+ position: relative;
+}
+
+.labelR.uno{
+  left: 42%;
+}
+
+.labelR.dos{
+  left: 44%;
 }
 
 #main-content {
@@ -58,13 +67,15 @@ button.registrarse{
 
 #imgcontainer {
   text-align: center;
-  margin: 24px 0 12px 0;
+  margin: 2em 0 1em 0;
   position: relative;
   right: inherit;
 }
 
 img.registro {
   width: 20%;
+  position: relative;
+  left: 2%;
 }
 
 .container {

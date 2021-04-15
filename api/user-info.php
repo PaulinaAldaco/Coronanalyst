@@ -12,7 +12,7 @@ $allHeaders = getallheaders();
 $db_connection = new Database();
 $conn = $db_connection->dbConnection();
 $auth = new Auth($conn,$allHeaders);
-
+ 
 $returnData = [
     "success" => 0,
     "status" => 401,

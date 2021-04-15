@@ -5,6 +5,7 @@ import {MyContext} from './contexts/MyContext';
 import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import {Link as LinkR} from 'react-router-dom';
+import styled from 'styled-components';
 
 function Login() {
 
@@ -82,13 +83,15 @@ function Login() {
       <div>
       <div className="split left">
         <div className="centered">
+          <div>
           <h1>¡Bienvenido!</h1>
           <p>Introduce tu correo y contraseña para acceder</p>
+          </div>
           <form onSubmit={submitForm} noValidate>
 
             <input type="text" id="email" name="email" required placeholder="Ingresa correo electrónico" value={state.userInfo.email} onChange={onChangeValue}/>
             <input type="password" id="password" name="password" required placeholder="Ingresa contraseña" value={state.userInfo.password} onChange={onChangeValue} />
-              
+               
             <button type="submit" className = "submit" > Iniciar sesión </button>
           </form>
           {errorMsg}

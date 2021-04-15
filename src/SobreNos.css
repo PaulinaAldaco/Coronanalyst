@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: Helvetica, Arial, sans-serif;
   background: white; 
-  font-size: 1em;
+  font-size: 1.05vw;
   line-height: 1.5em
 }
 
@@ -19,7 +19,6 @@ body {
 p {
     text-align: justify;
     padding: 20px 20px 20px 20px;
-    margin-bottom: 250px;
 }
 
 h1 {
@@ -28,17 +27,18 @@ h1 {
 
 .imgSN{ 
     width: 50%;
-    margin-left: 15%;
-    top: 0;
+    margin-left: 20%;
+    position: relative;
+    left: 5%;
 }
 
 
 /* Split the screen in half */
 .splitSN {
     height: 100%;
-    width: 50%;
     z-index: 1;
     top: 0;
+    width: 50%;
     overflow-x: hidden;
     top: 96px;
   }
@@ -55,4 +55,8 @@ h1 {
     right: 0;
     background-color: white;
     display: inline-block;
+  }
+
+  .texto2{
+    margin-right: 2em;
   }
