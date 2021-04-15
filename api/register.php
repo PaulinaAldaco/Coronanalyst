@@ -27,10 +27,8 @@ if($_SERVER["REQUEST_METHOD"] != "POST"):
     $returnData = msg(0,404,'Page Not Found!');
 
 // CHECKING EMPTY FIELDS
-elseif(!isset($data->name) 
-    || !isset($data->email) 
+elseif(!isset($data->email) 
     || !isset($data->password)
-    || empty(trim($data->name))
     || empty(trim($data->email))
     || empty(trim($data->password))
     ):
@@ -62,15 +60,15 @@ else:
                 $returnData = msg(0,422, 'This E-mail already in use!');
             
             else:
-                $tipo_usuario = "general";
-                $insert_query = "INSERT INTO usuarios (correo, contra, tipo_usuario) VALUES(:email,:password,:tipo_usuario)";
+                $user_type = "general";
+                $insert_query = "INSERT INTO usuarios (correo, contra, tipo_usuario) VALUES(:email,:password,:user_type)";
 
                 $insert_stmt = $conn->prepare($insert_query);
 
                 // DATA BINDING
                 $insert_stmt->bindValue(':email', $email,PDO::PARAM_STR);
                 $insert_stmt->bindValue(':password', password_hash($password, PASSWORD_DEFAULT),PDO::PARAM_STR);
-
+                $insert_stmt->bindValue(':user_type', $user_type,PDO::PARAM_STR);
                 $insert_stmt->execute();
 
                 $returnData = msg(1,201,'You have successfully registered.');
