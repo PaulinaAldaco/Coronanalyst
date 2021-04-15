@@ -82,8 +82,10 @@ function Login() {
       <div>
       <div className="split left">
         <div className="centered">
+          <div id="titulo">
           <h1>¡Bienvenido!</h1>
           <p>Introduce tu correo y contraseña para acceder</p>
+          </div>
           <form onSubmit={submitForm} noValidate>
 
             <input type="text" id="email" name="email" required placeholder="Ingresa correo electrónico" value={state.userInfo.email} onChange={onChangeValue}/>
