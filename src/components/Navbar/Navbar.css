@@ -1,9 +1,9 @@
-#logo-header {
-  width: 80px;
-  height: 80px;
+#logo-nav {
+  height: 85px;
+  margin: 5px 15px;
     
   }
-    #logo-header:hover {
+    #logo-nav:hover {
         color: #0040FF;
         opacity: 0.6;
     }

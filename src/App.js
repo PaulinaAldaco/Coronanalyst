@@ -1,11 +1,13 @@
 import React from 'react';
-import Navbar from './components/Navbar/Navbar';
-import Sidebar from './components/Sidebar/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Inicio from './Inicio';
 import SobreNosotros from './SobreNos';
 import Registro from './pantallas/registro';
 import Login from './Login';
+import Encuesta from './Encuesta';
+import SesionCerrada from './pantallas/sesion_cerrada';
+import DatosPersonales from './DatosPersonales'
+
 
 
 function App() {
@@ -16,6 +18,9 @@ function App() {
         <Route path='/SobreNosotros' component={SobreNosotros} exact />
         <Route path='/Registro' component={Registro} exact />
         <Route path='/Login' component={Login} exact />
+        <Route path='/Encuesta' component={Encuesta} exact />
+        <Route path='/SesionCerrada' component={SesionCerrada} exact />
+        <Route path='/DatosPersonales' component={DatosPersonales} exact />
       </Switch>
     </Router>
   );

@@ -1,6 +1,5 @@
 import logo from './imagenes/logo_coronanalyst.jpeg'
 import './Login.css';
-import Footer from './components/Footer/Footer';
 import React, {useContext, useState} from 'react'
 import {MyContext} from './contexts/MyContext';
 import Navbar from './components/Navbar/Navbar';
@@ -94,15 +93,15 @@ function Login() {
           </form>
           {errorMsg}
           {successMsg}
-          <b><p><a href="#" id="ref">¿No tienes cuenta? Registrate aquí</a></p></b>
+          <b><p><LinkR id="ref" to="/Registro">¿No tienes cuenta? Registrate aquí</LinkR></p></b>
         </div>
       </div>
 
       <div className="split right">
         <div className="centered">
           <img src={logo} alt="Logo coronanalyst" className="imgL"/>
-          <button>
-            <LinkR className="link" to="/">Regresar a inicio</LinkR>
+          <button className="link">
+            <LinkR  to="/">Regresar a inicio</LinkR>
           </button>
         </div>
       </div>

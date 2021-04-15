@@ -1,22 +1,42 @@
 import './Login.css';
-import './Inicio.css'
+import './Inicio.css';
 import React, {useState} from 'react';
-import Navbar from './components/Navbar/Navbar';
-import Sidebar from './components/Sidebar/Sidebar';
+import Navbar1 from './components/Navbar/Navbar';
+import Sidebar1 from './components/Sidebar/Sidebar';
+import Navbar2 from './components/Navbar/Navbar2';
+import Sidebar2 from './components/Sidebar/Sidebar2';
 import grafica from "./graficas.png";
 import Footer from './components/Footer/Footer';
+import {MyContext} from './contexts/MyContext';
+import { render } from '@testing-library/react';
 
-function Inicio(){ 
+function Inicio(){  
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () =>{
-        setIsOpen(!isOpen)
+        setIsOpen(!isOpen);
     };
+    
+    //const isLoggedIn = MyContext.isLoggedIn;
+    const isLoggedIn = true;
+    //const isLoggedIn = false;
+    let Sidebar;
+    let Navbar;
+        
+    if (isLoggedIn){
+        Sidebar = <Sidebar2 isOpen={isOpen} toggle={toggle} />;
+        Navbar = <Navbar2 toggle={toggle}/>;
+    }else{
+        Sidebar = <Sidebar1 isOpen={isOpen} toggle={toggle} />;
+        Navbar = <Navbar1 toggle={toggle}/>;
+     }
+
+    
 
     return(
         <>
-        <Sidebar isOpen={isOpen} toggle={toggle} />
-        <Navbar toggle={toggle} />
+        {Sidebar}
+        {Navbar} 
         <div id = "uno">
             <main>
                     <div class="bloque">
@@ -37,9 +57,8 @@ function Inicio(){
         </div>
         </>
          
-    )
-
-   
+    );
+    
 }
 
 export default Inicio;

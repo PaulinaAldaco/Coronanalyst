@@ -75,7 +75,7 @@ function Registro() {
         <form id ="main-content">
         <h1>Regístrate</h1>
         <div id="imgcontainer">
-          <img src="http://ww2.aeeh.es/wp-content/uploads/2013/08/form_icon_256031.png" alt="registro" class="registro"/>
+          <img src="http://ww2.aeeh.es/wp-content/uploads/2013/08/form_icon_256031.png" alt="registro" className="registro"/>
         </div>
         <div class="container">
           <label for="email"><b>Correo electrónico</b></label>
@@ -83,7 +83,7 @@ function Registro() {
           <label for="contra"><b>Contraseña</b></label>
           <input type="password" id = "password" placeholder="Ingresa contraseña" name="password" required />
               
-          <button class="button" type="submit" name = "button" onclick="ValidateEmail(document.loginForm.email)"> Registrarme </button> 
+          <button className="registrarse" type="submit" name = "button" onclick="ValidateEmail(document.loginForm.email)"> Registrarme </button> 
         </div>
         </form>
       
