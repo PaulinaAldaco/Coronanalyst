@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './Login.css';
-import './sobreNos.css'
+import './SobreNos.css'
 import logo from "./imagenes/logo_blue_desert2.png";
 import Navbar1 from './components/Navbar/Navbar';
 import Sidebar1 from './components/Sidebar/Sidebar';
