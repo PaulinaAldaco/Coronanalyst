@@ -1,3 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: white; 
+  font-size: 1em;
+  line-height: 1.5em
+}
 
 #main-contentSobreNos {
   background: white;
@@ -11,6 +19,7 @@
 p {
     text-align: justify;
     padding: 20px 20px 20px 20px;
+    margin-bottom: 250px;
 }
 
 h1 {
@@ -18,8 +27,8 @@ h1 {
 }
 
 .imgSN{ 
-    width: 20%;
-    margin-top: 10%;
+    width: 50%;
+    margin-left: 15%;
     top: 0;
 }
 
@@ -27,6 +36,8 @@ h1 {
 /* Split the screen in half */
 .splitSN {
     height: 100%;
+    width: 50%;
+    z-index: 1;
     top: 0;
     overflow-x: hidden;
     top: 96px;
@@ -34,7 +45,6 @@ h1 {
   
   /* Control the left side */
   .leftSobreNos {
-    width: 30%;
     background-color: rgb(255, 255, 255);
     display: inline-block;
     top: 0;
@@ -43,7 +53,6 @@ h1 {
   /* Control the right side */
   .rightSobreNos {
     right: 0;
-    width: 70%;
     background-color: white;
     display: inline-block;
   }
