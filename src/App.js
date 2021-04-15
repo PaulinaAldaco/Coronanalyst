@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Inicio from './Inicio';
 import SobreNosotros from './SobreNos';
-import Registro from './pantallas/registro';
+import Registro from './pantallas/Registro';
 import Login from './Login';
 import Encuesta from './Encuesta';
-import SesionCerrada from './pantallas/sesion_cerrada';
+import SesionCerrada from './pantallas/SesionCerrada';
 import DatosPersonales from './DatosPersonales'
 
 

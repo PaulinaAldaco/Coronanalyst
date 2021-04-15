@@ -49,7 +49,7 @@ class MyContextProvider extends Component{
             email:user.email,
             password:user.password 
         });
-
+        console.log(register.data);
         return register.data;
     }
 

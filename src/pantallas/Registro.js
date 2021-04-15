@@ -18,7 +18,6 @@ function Registro() {
     const {toggleNav,registerUser} = useContext(MyContext);
     const initialState = {
         userInfo:{
-            name:'',
             email:'',
             password:'',
         },
@@ -72,19 +71,19 @@ function Registro() {
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle} />
       <div id="container">
-        <form id ="main-content">
-        <h1>Regístrate</h1>
-        <div id="imgcontainer">
-          <img src="http://ww2.aeeh.es/wp-content/uploads/2013/08/form_icon_256031.png" alt="registro" className="registro"/>
-        </div>
-        <div class="container">
-          <label for="email"><b>Correo electrónico</b></label>
-          <input type="text" id = "email" placeholder="Ingresa correo electrónico" name="email" required />
-          <label for="contra"><b>Contraseña</b></label>
-          <input type="password" id = "password" placeholder="Ingresa contraseña" name="password" required />
-              
-          <button className="registrarse" type="submit" name = "button" onclick="ValidateEmail(document.loginForm.email)"> Registrarme </button> 
-        </div>
+        <form id ="main-content" onSubmit={submitForm} noValidate>
+            <h1>Regístrate</h1>
+            <div id="imgcontainer">
+                <img src="http://ww2.aeeh.es/wp-content/uploads/2013/08/form_icon_256031.png" alt="registro" className="registro"/>
+            </div>
+            <div class="container">
+                <label for="email"><b>Correo electrónico</b></label>
+                <input type="text" id="email" name="email" required placeholder="Ingresa correo electrónico" value={state.userInfo.email} onChange={onChangeValue}/>
+                <label for="contra"><b>Contraseña</b></label>
+                <input type="password" id="password" name="password" required placeholder="Ingresa contraseña" value={state.userInfo.password} onChange={onChangeValue}/>
+                    
+                <button type="submit" className="registrarse"> Registrarme </button> 
+            </div>
         </form>
       
       </div>

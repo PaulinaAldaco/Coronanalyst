@@ -11,14 +11,21 @@
     #main-footer p {
         margin: 0;
         text-align: center;
+        display: inline-block;
+    }
+
+    #main-footer div {
+        padding-left: auto;
+        padding-right: auto;
     }
     
     #main-footer a {
         color: rgb(255, 255, 255);
     }
 
-.logo-blue{
-    height: 100px;
-    float: right;
-}
+    .imgFt {
+        width: 100px;
+        display: inline-block;
+        vertical-align: middle;
+    }
 
