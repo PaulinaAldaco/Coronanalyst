@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MyContextProvider from './contexts/MyContext';
-import './index.css';
+import './Index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App'
 
