@@ -139,7 +139,7 @@ function Encuesta(){
         <div>
         <Header/>
         <section id = "main-content">
-        <form>
+        <form onSubmit={submitForm}>
                 <h1>Responde las siguientes preguntas</h1>
                 <div id="images2" href="#">
                     <img id="images2" src={formImage} alt="form" />
