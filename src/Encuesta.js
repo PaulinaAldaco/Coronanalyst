@@ -15,6 +15,28 @@ function Encuesta(){
     console.log(isAuth);
     var lista = [];
 
+
+    // const deRequireCb = (Name) => {
+    //     elements=document.getElementsByName(Name);
+    
+    //     var atLeastOneChecked=false;//at least one checkbox is checked
+    //     for (i=0; i<elements.length; i++) {
+    //         if (elements[i].checked === true) {
+    //             atLeastOneChecked=true;
+    //         }
+    //     }
+    
+    //     if (atLeastOneChecked === true) {
+    //         for (i=0; i<elements.length; i++) {
+    //             elements[i].required = false;
+    //         }
+    //     } else {
+    //         for (i=0; i<elements.length; i++) {
+    //             elements[i].required = true;
+    //         }
+    //     }
+    // }
+
     
     const initialState = {
         userInfo:{
@@ -141,7 +163,7 @@ function Encuesta(){
         <div>
         <Header/>
         <section id = "main-content">
-        <form>
+        <form onSubmit={submitForm}>
                 <h1>Responde las siguientes preguntas</h1>
                 <div id="images2" href="#">
                     <img id="images2" src={formImage} alt="form" />
@@ -187,49 +209,49 @@ function Encuesta(){
                 <div class="form-group">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="plataforma" value="Mercado Libre"   onChange={onChange("Mercado Libre")} onclick="deRequireCb('plataforma[]')"  oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
+                            <input type="checkbox" name="plataforma" value="Mercado Libre"   onChange={onChange("Mercado Libre")} onclick="deRequireCb('plataforma')"  oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
                             Mercado Libre
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="plataforma" onChange={onChange("Amazon")} value="Amazon" onclick="deRequireCb('plataforma[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
+                            <input type="checkbox" name="plataforma" onChange={onChange("Amazon")} value="Amazon" onclick="deRequireCb('plataforma')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
                             Amazon
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="plataforma" onChange={onChange("Facebook")} value="Facebook" onclick="deRequireCb('plataforma[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
+                            <input type="checkbox" name="plataforma" onChange={onChange("Facebook")} value="Facebook" onclick="deRequireCb('plataforma')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
                             Facebook Marketplace
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="plataforma" value="Alibaba / Aliexpress" onChange={onChange("Alibaba / Aliexpress")} onclick="deRequireCb('plataforma[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
+                            <input type="checkbox" name="plataforma" value="Alibaba / Aliexpress" onChange={onChange("Alibaba / Aliexpress")} onclick="deRequireCb('plataforma')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
                             Alibaba / Aliexpress
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="plataforma" value="Ebay" onChange={onChange("Ebay")} onclick="deRequireCb('plataforma[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
+                            <input type="checkbox" name="plataforma" value="Ebay" onChange={onChange("Ebay")} onclick="deRequireCb('plataforma')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
                             Ebay
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="plataforma" value="E-shop"  onChange={onChange("E-shop")} onclick="deRequireCb('plataforma[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
+                            <input type="checkbox" name="plataforma" value="E-shop"  onChange={onChange("E-shop")} onclick="deRequireCb('plataforma')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
                             E-shop propia de cada marca (Nike, Supreme, Walmart, Liverpool, etc)
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="plataforma" value="Otro" onChange={onChange("Otro")} onclick="deRequireCb('plataforma[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
+                            <input type="checkbox" name="plataforma" value="Otro" onChange={onChange("Otro")} onclick="deRequireCb('plataforma')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
                             Otro
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="plataforma" value="No realizaba compras en línea"  onChange={onChange("No realizaba compras en línea")} onclick="deRequireCb('plataforma[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
+                            <input type="checkbox" name="plataforma" value="No realizaba compras en línea"  onChange={onChange("No realizaba compras en línea")} onclick="deRequireCb('plataforma')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
                             No realizaba compras en línea
                         </label>
                     </div>
@@ -241,43 +263,43 @@ function Encuesta(){
                 <div class="form-group">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="pago[]" value="Tarjeta de crédito" onChange={onChange("Tarjeta de crédito")} onclick="deRequireCb('plataforma[]')" required/>
+                            <input type="checkbox" name="pago[]" value="Tarjeta de crédito" onChange={onChange("Tarjeta de crédito")} onclick="deRequireCb('plataforma')" required/>
                             Tarjeta de crédito
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="pago[]" value="Tarjeta de débito" onChange={onChange("Tarjeta de débito")} onclick="deRequireCb('plataforma[]')" required/>
+                            <input type="checkbox" name="pago[]" value="Tarjeta de débito" onChange={onChange("Tarjeta de débito")} onclick="deRequireCb('plataforma')" required/>
                             Tarjeta de débito
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="pago[]" value="Paypal" onChange={onChange("Paypal")} onclick="deRequireCb('plataforma[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
+                            <input type="checkbox" name="pago[]" value="Paypal" onChange={onChange("Paypal")} onclick="deRequireCb('plataforma')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
                             Paypal
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="pago[]" value="Mercado Pago" onChange={onChange("Mercado Pago")} onclick="deRequireCb('plataforma[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
+                            <input type="checkbox" name="pago[]" value="Mercado Pago" onChange={onChange("Mercado Pago")} onclick="deRequireCb('plataforma')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
                             Mercado Pago
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="pago[]" value="Efectivo" onChange={onChange("Efectivo")} onclick="deRequireCb('plataforma[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
+                            <input type="checkbox" name="pago[]" value="Efectivo" onChange={onChange("Efectivo")} onclick="deRequireCb('plataforma')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
                             Efectivo
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="pago[]" value="Transferencia electrónica" onChange={onChange("Transferencia electrónica")} onclick="deRequireCb('plataforma[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
+                            <input type="checkbox" name="pago[]" value="Transferencia electrónica" onChange={onChange("Transferencia electrónica")} onclick="deRequireCb('plataforma')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
                             Transferencia electrónica
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="pago[]" value="Depósito en tiendas de conveniencia" onChange={onChange("Depósito en tiendas de conveniencia")} onclick="deRequireCb('plataforma[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
+                            <input type="checkbox" name="pago[]" value="Depósito en tiendas de conveniencia" onChange={onChange("Depósito en tiendas de conveniencia")} onclick="deRequireCb('plataforma')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
                             Depósito en tiendas de conveniencia (Oxxo, 7Eleven, etc.)
                         </label>
                     </div>
@@ -289,7 +311,7 @@ function Encuesta(){
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="pago[]" value="No realizaba compras en línea" onChange={onChange("No realizaba compras en línea")} onclick="deRequireCb('plataforma[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
+                            <input type="checkbox" name="pago[]" value="No realizaba compras en línea" onChange={onChange("No realizaba compras en línea")} onclick="deRequireCb('plataforma')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
                             No realizaba compras en línea
                         </label>
                     </div>

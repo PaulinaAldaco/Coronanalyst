@@ -87,6 +87,8 @@ function DatosPersonales() {
             }
         }
         else{
+        }
+    }
             // Profile creation page
             return (
                 <div>
@@ -219,7 +221,7 @@ function DatosPersonales() {
                         </div>
                       <div class="bottom-container">
                         <div class="row">
-                             <input type="submit" value="Enviar"/>
+                             <button type="submit" className="datos">Enviar</button>
                         </div>
                     </div>
                     </form>
@@ -229,8 +231,7 @@ function DatosPersonales() {
                 </div>
             );
         }
-    }
+    
          
-
 
 export default DatosPersonales;
