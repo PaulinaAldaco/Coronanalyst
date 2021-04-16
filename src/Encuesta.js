@@ -149,31 +149,31 @@ function Encuesta(){
                 <div class="form-group">
                     <div class="radio">
                         <label>
-                            <input type="radio" name="compras" value="1 a 5" checked={state.userInfo.compras == "1 a 5"} onChange={onChangeValue} required/>
+                            <input type="radio" name="compras" value="1 a 5"  onChange={onChangeValue} required/>
                             1 a 5 veces al mes
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="compras" checked={state.userInfo.compras == "6 a 10"} onChange={onChangeValue} value="6 a 10" />
+                            <input type="radio" name="compras"  onChange={onChangeValue} value="6 a 10" />
                             6 a 10 veces al mes.
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="compras"  checked={state.userInfo.compras == "Más de 10"} onChange={onChangeValue} value="Más de 10" />
+                            <input type="radio" name="compras"   onChange={onChangeValue} value="Más de 10" />
                             Más de 10 veces por mes
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="compras" checked={state.userInfo.compras == "1 vez cada varios meses"} onChange={onChangeValue} value="1 vez cada varios meses" />
+                            <input type="radio" name="compras" onChange={onChangeValue} value="1 vez cada varios meses" />
                             1 vez cada varios meses
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="compras" checked={state.userInfo.compras == "No realizaba"} onChange={onChangeValue} value="No realizaba" />
+                            <input type="radio" name="compras"  onChange={onChangeValue} value="No realizaba" />
                             No realizaba compras en línea
                         </label>
                     </div>
@@ -401,19 +401,19 @@ function Encuesta(){
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="tiempo" value="6-2 horas al dia" checked={state.userInfo.compras === "6-2 horas al dia"} onChange={onChangeValue}/>
+                            <input type="radio" name="tiempo" value="6-2 horas al dia"  onChange={onChangeValue}/>
                             6 a 2 horas al día
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="tiempo" value="6-2 horas a la semana" checked={state.userInfo.compras === "6-2 horas a la semana"} onChange={onChangeValue}/>
+                            <input type="radio" name="tiempo" value="6-2 horas a la semana" onChange={onChangeValue}/>
                             6 a 2 horas a la semana
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="tiempo" value="Menos de 2 horas a la semana" checked={state.userInfo.compras === "Menos de 2 horas a la semana"} onChange={onChangeValue}/>
+                            <input type="radio" name="tiempo" value="Menos de 2 horas a la semana" onChange={onChangeValue}/>
                             Menos de 2 horas a la semana
                         </label>
                     </div>
@@ -425,31 +425,31 @@ function Encuesta(){
                 <div class="form-group">
                     <div class="radio">
                         <label>
-                            <input type="radio" name="seguido" value="Más de 10 veces por mes" checked={state.userInfo.compras == "Más de 10 veces por mes"} onChange={onChangeValue} required/>
+                            <input type="radio" name="seguido" value="Más de 10 veces por mes" onChange={onChangeValue} required/>
                             Más de 10 veces por mes
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="seguido" value="10 a 6 veces al mes" checked={state.userInfo.compras == "10 a 6 veces al mes"} onChange={onChangeValue}/>
+                            <input type="radio" name="seguido" value="10 a 6 veces al mes"  onChange={onChangeValue}/>
                             10 a 6 veces al mes
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="seguido" value="5 a 1 vez al mes" checked={state.userInfo.compras == "5 a 1 vez al mes"} onChange={onChangeValue}/>
+                            <input type="radio" name="seguido" value="5 a 1 vez al mes"  onChange={onChangeValue}/>
                             5 a 1 vez al mes
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="seguido" value="1 vez cada varios meses" checked={state.userInfo.compras == "1 vez cada varios meses"} onChange={onChangeValue}/>
+                            <input type="radio" name="seguido" value="1 vez cada varios meses"  onChange={onChangeValue}/>
                             Menos de 2 horas a la semana
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="seguido" value="No realizo compras en línea" checked={state.userInfo.compras == "No realizo compras en línea"} onChange={onChangeValue}/>
+                            <input type="radio" name="seguido" value="No realizo compras en línea"  onChange={onChangeValue}/>
                             No realizo compras en línea
                         </label>
                     </div>
@@ -675,25 +675,25 @@ function Encuesta(){
                 <div class="form-group">
                     <div class="radio">
                         <label>
-                            <input checked={state.userInfo.tiempoComputadora == "7 Horas"} onChange={onChangeValue} type="radio" name="tiempoComputadora[]" value="7 Horas" onclick="deRequireCb('tiempoComputadora[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
+                            <input onChange={onChangeValue} type="radio" name="tiempoComputadora[]" value="7 Horas" onclick="deRequireCb('tiempoComputadora[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
                             7 horas o más al día
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input checked={state.userInfo.tiempoComputadora == "6 a 2 dia"} onChange={onChangeValue} type="radio" name="tiempoComputadora[]" value="6 a 2 dia" onclick="deRequireCb('tiempoComputadora[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
+                            <input  onChange={onChangeValue} type="radio" name="tiempoComputadora[]" value="6 a 2 dia" onclick="deRequireCb('tiempoComputadora[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
                             6 a 2 horas al día
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input checked={state.userInfo.tiempoComputadora == "6 a 2 semana"} onChange={onChangeValue} type="radio" name="tiempoComputadora[]" value="6 a 2 semana" onclick="deRequireCb('tiempoComputadora[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
+                            <input  onChange={onChangeValue} type="radio" name="tiempoComputadora[]" value="6 a 2 semana" onclick="deRequireCb('tiempoComputadora[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
                             6 a 2 horas a la semana
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input checked={state.userInfo.tiempoComputadora == "2 horas"} onChange={onChangeValue} type="radio" name="tiempoComputadora[]" value="2 horas" onclick="deRequireCb('tiempoComputadora[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
+                            <input onChange={onChangeValue} type="radio" name="tiempoComputadora[]" value="2 horas" onclick="deRequireCb('tiempoComputadora[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
                             Menos de 2 horas a la semana
                         </label>
                     </div>
@@ -706,37 +706,37 @@ function Encuesta(){
                 <div class="form-group">
                     <div class="radio">
                         <label>
-                            <input checked={state.userInfo.dineroEnLinea == "menos 1000"} onChange={onChangeValue} type="radio" name="dineroEnLinea[]" value="menos 1000" onclick="deRequireCb('dineroEnLinea[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
+                            <input  onChange={onChangeValue} type="radio" name="dineroEnLinea[]" value="menos 1000" onclick="deRequireCb('dineroEnLinea[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
                             Menos de 1,000
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input checked={state.userInfo.dineroEnLinea == "1000 2500"} onChange={onChangeValue} type="radio" name="dineroEnLinea[]" value="1000 2500" onclick="deRequireCb('dineroEnLinea[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
+                            <input onChange={onChangeValue} type="radio" name="dineroEnLinea[]" value="1000 2500" onclick="deRequireCb('dineroEnLinea[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
                             1,000 - 2,500
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input checked={state.userInfo.dineroEnLinea == "2500 5000"} onChange={onChangeValue} type="radio" name="dineroEnLinea[]" value="2500 5000" onclick="deRequireCb('dineroEnLinea[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
+                            <input  onChange={onChangeValue} type="radio" name="dineroEnLinea[]" value="2500 5000" onclick="deRequireCb('dineroEnLinea[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
                             2,500 - 5,000
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input checked={state.userInfo.dineroEnLinea == "5000 7500"} onChange={onChangeValue} type="radio" name="dineroEnLinea[]" value="5000 7500" onclick="deRequireCb('dineroEnLinea[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
+                            <input onChange={onChangeValue} type="radio" name="dineroEnLinea[]" value="5000 7500" onclick="deRequireCb('dineroEnLinea[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
                             5,000 - 7,500
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input checked={state.userInfo.dineroEnLinea == "7500 10000"} onChange={onChangeValue} type="radio" name="dineroEnLinea[]" value="7500 10000" onclick="deRequireCb('dineroEnLinea[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
+                            <input  onChange={onChangeValue} type="radio" name="dineroEnLinea[]" value="7500 10000" onclick="deRequireCb('dineroEnLinea[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
                             7,500 - 10,000
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input checked={state.userInfo.dineroEnLinea == "10000"} onChange={onChangeValue} type="radio" name="dineroEnLinea[]" value="10000" onclick="deRequireCb('dineroEnLinea[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
+                            <input  onChange={onChangeValue} type="radio" name="dineroEnLinea[]" value="10000" onclick="deRequireCb('dineroEnLinea[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required />
                             Más de 10,000
                         </label>
                     </div>
@@ -749,13 +749,13 @@ function Encuesta(){
                 <div class="form-group">
                     <div class="radio">
                         <label>
-                            <input checked={state.userInfo.fisicoLinea == "fisico"} onChange={onChangeValue} type="radio" name="fisicoLinea[]" value="fisico" onclick="deRequireCb('fisicoLinea[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
+                            <input  onChange={onChangeValue} type="radio" name="fisicoLinea[]" value="fisico" onclick="deRequireCb('fisicoLinea[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
                             Físico
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input checked={state.userInfo.fisicoLinea == "linea"} onChange={onChangeValue} type="radio" name="fisicoLinea[]" value="linea" onclick="deRequireCb('fisicoLinea[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
+                            <input onChange={onChangeValue} type="radio" name="fisicoLinea[]" value="linea" onclick="deRequireCb('fisicoLinea[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
                             Linea
                         </label>
                     </div>
@@ -768,13 +768,13 @@ function Encuesta(){
                 <div class="form-group">
                     <div class="radio">
                         <label>
-                            <input checked={state.userInfo.fisicoLinea == "Si"} onChange={onChangeValue} type="radio" name="sintomas" value="Si" onclick="deRequireCb('sintomas')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
+                            <input  onChange={onChangeValue} type="radio" name="sintomas" value="Si" onclick="deRequireCb('sintomas')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
                             Si
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input checked={state.userInfo.fisicoLinea == "No"} onChange={onChangeValue} type="radio" name="sintomas" value="No" onclick="deRequireCb('sintomas')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
+                            <input  onChange={onChangeValue} type="radio" name="sintomas" value="No" onclick="deRequireCb('sintomas')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
                             No
                         </label>
                     </div>
@@ -902,19 +902,19 @@ function Encuesta(){
                 <div class="form-group">
                     <div class="radio">
                         <label>
-                            <input checked={state.userInfo.fisicoLInea == "Aumento"} onChange={onChangeValue} type="radio" name="actFisica[]" value="Aumento" onclick="deRequireCb('actFisica[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
+                            <input onChange={onChangeValue} type="radio" name="actFisica[]" value="Aumento" onclick="deRequireCb('actFisica[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
                             Aumentó
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input checked={state.userInfo.fisicoLInea == "Permanecio"} onChange={onChangeValue} type="radio" name="actFisica[]" value="Permanecio" onclick="deRequireCb('actFisica[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
+                            <input  onChange={onChangeValue} type="radio" name="actFisica[]" value="Permanecio" onclick="deRequireCb('actFisica[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
                             Permaneció igual que antes
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input checked={state.userInfo.fisicoLInea == "Disminuyo"} onChange={onChangeValue} type="radio" name="actFisica[]" value="Disminuyo" onclick="deRequireCb('actFisica[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
+                            <input onChange={onChangeValue} type="radio" name="actFisica[]" value="Disminuyo" onclick="deRequireCb('actFisica[]')" oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
                             Disminuyó
                         </label>
                     </div>
