@@ -94,8 +94,8 @@ function DatosPersonales() {
                           <option value="Masculino">Masculino</option>
                           <option value="Otro" >Otro</option>
                       </select>
-                      <label>Edad</label>
                       <br/>
+                      <label>Edad</label>
                       <select name="rangoedad" id="rangoedad" value={state.userInfo.edad} onChange={onChangeValue}>
                           <option value="seleccione">Seleccione una opción</option>
                           <option value="Menos de 15">1 a 10</option>
