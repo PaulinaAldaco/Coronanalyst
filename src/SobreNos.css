@@ -1,11 +1,4 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Helvetica, Arial, sans-serif;
-  background: white; 
-  font-size: 1.05vw;
-  line-height: 1.5em
-}
+
 
 #main-contentSobreNos {
   background: white;
@@ -59,4 +52,7 @@ h1 {
 
   .texto2{
     margin-right: 2em;
+    font-family: Raleway;
+    font-size: large;
+    line-height: 2em;
   }

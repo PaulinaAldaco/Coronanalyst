@@ -35,6 +35,12 @@ function SobreNos(){
         <>
         {Sidebar}
         {Navbar}
+        <head>
+            <link rel="preconnect" href="https://fonts.gstatic.com"/>
+            <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet"/> 
+            <link rel="preconnect" href="https://fonts.gstatic.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet"/> 
+        </head>
         <div> 
             <div id = "main-contentSobreNos">
                 <h1>¿Qué es Blue Desert? </h1>
@@ -42,7 +48,7 @@ function SobreNos(){
                     <img class="imgSN" src={logo}/> 
                 </div>   
                 <div class="splitSN rightSobreNos">
-                <p className="texto2"> A  finales de 2019 comenzó la pandemia actual de COVID-19, resultando en una cuarentena global desde marzo del 2020. Esto ha tenido repercusiones profundas en todos los ámbitos de la vida humana, incluyendo, naturalmente, el sector de salud pública, pero también el empresarial y económico. Así mismo, la pandemia ha ocasionado fuertes alteraciones a la vida cotidiana de las personas. Un tema importante es el impacto sobre el comportamiento de compra, ya que el estado de cuarentena ha presentado nuevas dificultades para muchos para llevar a cabo sus compras, tanto las relacionadas a comodidades como las de necesidades básicas. Por esto mismo, la pandemia ha resultado perjudicial para la economía de grandes y pequeñas empresas. En este contexto, es de interés económico y social analizar las nuevas tendencias (en contraste con las anteriores a la pandemia) en el comportamiento de compra del público.
+                <p className="texto2"> En el contexto actual, es de interés económico y social analizar las nuevas tendencias (en contraste con las anteriores a la pandemia) en el comportamiento de compra del público.
             
                             Es por esto que Blue Desert es el desarrollador de "Coronanalyst", un sistema que tiene como finalidad identificar los cambios, afectaciones y nuevas tendencias en el estilo de vida de las personas a raíz de la actual pandemia. El recabar esta información ayudará a diferentes industrias a adaptarse y poder ofrecer productos y servicios de una mayor calidad y enfocarse principalmente en las necesidades del cliente.
                         </p>
