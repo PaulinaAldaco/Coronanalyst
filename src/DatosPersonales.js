@@ -12,7 +12,7 @@ function DatosPersonales() {
         setIsOpen(!isOpen)
     };
 
-    const {rootState, createProfile} = useContext(MyContext);
+    const {rootState,createProfile,updateUserState} = useContext(MyContext);
     const {isAuth,theUser,profile,survey} = rootState;
 
     const initialState = {
@@ -35,12 +35,14 @@ function DatosPersonales() {
     // On Submit the Form
     const submitForm = async (event) => {
         event.preventDefault();
+        console.log(state.userInfo);
         const data = await createProfile(state.userInfo);
         if(data.success){
             setState({
                 ...initialState,
                 successMsg:data.message,
             });
+            await updateUserState();
         }
         else{
             setState({
@@ -60,6 +62,7 @@ function DatosPersonales() {
                 [e.target.name]:e.target.value
             }
         });
+        console.log(state);
     }
     
     // Show Message on Success or Error
@@ -103,7 +106,7 @@ function DatosPersonales() {
                                 </select>
                                 <br/>
                                 <label>Edad</label>
-                                <select name="rangoedad" id="rangoedad" value={state.userInfo.edad} onChange={onChangeValue}>
+                                <select name="edad" id="edad" value={state.userInfo.edad} onChange={onChangeValue}>
                                     <option value="seleccione">Seleccione una opción</option>
                                     <option value="Menos de 15">1 a 10</option>
                                     <option value="15 a 20">11 a 20</option>

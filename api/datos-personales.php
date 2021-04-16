@@ -28,14 +28,14 @@ if($_SERVER["REQUEST_METHOD"] != "POST"):
 
 // CHECKING EMPTY FIELDS
 elseif(!isset($data->genero) 
-    || !isset($data->rangoedad)
+    || !isset($data->edad)
     || !isset($data->estadocivil)
     || !isset($data->estudios)
     || !isset($data->ocupacion)
     || !isset($data->ingreso_economico)
     || !isset($data->estado)
     || ($data->genero == "seleccione")
-    || ($data->rangoedad == "seleccione")
+    || ($data->edad == "seleccione")
     || ($data->estadocivil == "seleccione")
     || ($data->estudios == "seleccione")
     || ($data->ocupacion == "seleccione")
@@ -43,13 +43,13 @@ elseif(!isset($data->genero)
     || ($data->estado == "seleccione")
     ):
 
-    $fields = ['fields' => ['genero','rangoedad', 'estadocivil', 'estudios', 'ocupacion', 'ingreso_economico', 'estado']];
+    $fields = ['fields' => ['genero','edad', 'estadocivil', 'estudios', 'ocupacion', 'ingreso_economico', 'estado']];
     $returnData = msg(0,422,'Please Fill in all Required Fields!',$fields);
 
 // IF THERE ARE NO EMPTY FIELDS THEN-
 else:
     $genero = trim($data->genero);
-    $edad = trim($data->rangoedad);
+    $edad = trim($data->edad);
     $estadocivil = trim($data->estadocivil);
     $estudios = trim($data->estudios);
     $ocupacion = trim($data->ocupacion);
@@ -59,24 +59,22 @@ else:
 
         try{
 
-            $insert_query = "INSERT INTO DatosPersonales (ID_usuario, edad, ingreso_economico, estudios, estado_civil, genero, estado, ocupacion) VALUES(:id_user, :edad,:ingreso_economico,:estudios, :estado_civil, :genero, :estado, :ocupacion)";
+            $insert_query = "INSERT INTO DatosPersonales (ID_usuario, edad, ingreso_economico, estudios, estado_civil, genero, estado, ocupacion) VALUES(:id_user, :edad, :ingreso_economico, :estudios, :estadocivil, :genero, :estado, :ocupacion)";
 
             $insert_stmt = $conn->prepare($insert_query);
 
             // DATA BINDING
-            $insert_stmt->bindValue(':edad', $email,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':edad', $edad,PDO::PARAM_STR);
             $insert_stmt->bindValue(':ingreso_economico', $ingreso_economico,PDO::PARAM_STR);
             $insert_stmt->bindValue(':estudios', $estudios,PDO::PARAM_STR);
             $insert_stmt->bindValue(':estadocivil', $estadocivil,PDO::PARAM_STR);
             $insert_stmt->bindValue(':genero', $genero,PDO::PARAM_STR);
             $insert_stmt->bindValue(':estado', $estado,PDO::PARAM_STR);
             $insert_stmt->bindValue(':ocupacion', $ocupacion,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':id_user', $id_user,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':id_user', $id_user,PDO::PARAM_INT);
             $insert_stmt->execute();
 
             $returnData = msg(1,201,'You have successfully registered the data.');
-
-            
 
         }
         catch(PDOException $e){
