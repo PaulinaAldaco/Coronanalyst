@@ -71,10 +71,12 @@ class MyContextProvider extends Component{
 
     // Checking user logged in or not
     isLoggedIn = async () => {
+        console.log("checking for token");
         const loginToken = localStorage.getItem('loginToken');
 
         // If inside the local-storage has the JWT token
         if(loginToken){
+            console.log("Token is present");
 
             //Adding JWT token to axios default header
             Axios.defaults.headers.common['Authorization'] = 'bearer '+loginToken;
@@ -84,11 +86,15 @@ class MyContextProvider extends Component{
 
             // If user information is successfully received
             if(data.success && data.user){
+                console.log("Data successfully retrieved");
                 this.setState({
                     ...this.state,
                     isAuth:true,
                     theUser:data.user
                 });
+            }
+            else if(data.message){
+                console.log(data.message)
             }
 
         }
