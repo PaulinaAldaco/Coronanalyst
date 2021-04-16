@@ -23,24 +23,36 @@ class Auth extends JwtHandler{
                     return $user;
 
                 else:
-                    return null;
+                    $message = [
+                        'success'=>0,
+                        'message'=>'Problems with token authorization'
+                    ];
+                    return $message;
 
                 endif; // End of isset($this->token[1]) && !empty(trim($this->token[1]))
                 
             else:
-                return null;
+                $message = [
+                    'success'=>0,
+                    'message'=>'Token is not set'
+                ];
+                return $message;
 
             endif;// End of isset($this->token[1]) && !empty(trim($this->token[1]))
 
         else:
-            return null;
+            $message = [
+                'success'=>0,
+                'message'=>'Header is not set'
+            ];
+            return $message;
 
         endif;
     }
 
     protected function fetchUser($user_id){
         try{
-            $fetch_user_by_id = "SELECT 'correo' FROM 'usuarios' WHERE 'ID_usuario'=:id";
+            $fetch_user_by_id = "SELECT correo FROM usuarios WHERE ID_usuario=:id";
             $query_stmt = $this->db->prepare($fetch_user_by_id);
             $query_stmt->bindValue(':id', $user_id,PDO::PARAM_INT);
             $query_stmt->execute();
@@ -53,7 +65,10 @@ class Auth extends JwtHandler{
                     'user' => $row
                 ];
             else:
-                return null;
+                return [
+                    'success' => 0,
+                    'message'=>'User not found'
+                ];
             endif;
         }
         catch(PDOException $e){
