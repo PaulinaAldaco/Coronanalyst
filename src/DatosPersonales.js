@@ -87,6 +87,12 @@ function DatosPersonales() {
             }
         }
         else{
+          console.log("Redirecting to login")
+          return <Redirect to="/Login" />
+        }
+    }
+          
+        
             // Profile creation page
             return (
                 <div>
@@ -219,7 +225,7 @@ function DatosPersonales() {
                         </div>
                       <div class="bottom-container">
                         <div class="row">
-                             <input type="submit" value="Enviar"/>
+                             <button type="submit" className="datos">Enviar</button>
                         </div>
                     </div>
                     </form>
@@ -229,11 +235,5 @@ function DatosPersonales() {
                 </div>
             );
         }
-    }
-    else{
-        console.log("Redirecting to login")
-        return <Redirect to="/Login" />
-    }
-}
-        
+
 export default DatosPersonales;
