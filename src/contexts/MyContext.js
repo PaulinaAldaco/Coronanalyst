@@ -19,7 +19,8 @@ class MyContextProvider extends Component{
         showLogin:true,
         isAuth:false,
         theUser:null,
-        profile:false
+        profile:false,
+        survey:false
     }
     
     // Toggle between Login & Signup page
@@ -102,9 +103,19 @@ class MyContextProvider extends Component{
             const {data} = await Axios.get('user-info.php');
 
             // If user information is successfully received
-            if(data.success){
-                if(data.user){
-                    if(data.hasProfile){
+            if(data.success && data.user){
+                if(data.hasProfile){
+                    if(data.completedSurvey){
+                        console.log("User, profile data, and survey completion successfully retrieved");
+                        this.setState({
+                            ...this.state,
+                            isAuth:true,
+                            theUser:data.user,
+                            profile:true,
+                            survey:true
+                        });
+                    }
+                    else{
                         console.log("User and profile data successfully retrieved");
                         this.setState({
                             ...this.state,
@@ -113,14 +124,14 @@ class MyContextProvider extends Component{
                             profile:true
                         });
                     }
-                    else{
-                        console.log("User data successfully retrieved");
-                        this.setState({
-                            ...this.state,
-                            isAuth:true,
-                            theUser:data.user
-                        });
-                    }
+                }
+                else{
+                    console.log("User data successfully retrieved");
+                    this.setState({
+                        ...this.state,
+                        isAuth:true,
+                        theUser:data.user
+                    });
                 }
             }
             else if(data.message){
@@ -157,7 +168,8 @@ class MyContextProvider extends Component{
             //hasProfile:this.hasProfile,
             registerUser:this.registerUser,
             loginUser:this.loginUser,
-            logoutUser:this.logoutUser
+            logoutUser:this.logoutUser,
+            createProfile:this.createProfile
         }
         return(
             <MyContext.Provider value={contextValue}>
