@@ -104,6 +104,9 @@ function Registro() {
                       <button type="submit" className="registrarse"> Registrarme </button> 
                   </div>
               </form>
+
+            {errorMsg}
+            {successMsg}
             
             </div>
             <Footer/>

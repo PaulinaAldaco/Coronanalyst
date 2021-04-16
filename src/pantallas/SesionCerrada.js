@@ -84,6 +84,9 @@ function SesionCerrada() {
             
             <button type="submit" className = "submit" > Entrar </button>
         </form>
+
+        {errorMsg}
+        {successMsg}
         </div>
     </div>
 
