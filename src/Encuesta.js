@@ -4,7 +4,7 @@ import formImage from './imagenes/form.png';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 
-function Encuesta(){
+function Encuesta(){ 
     return(
         <div>
         <Header/>
@@ -213,7 +213,7 @@ function Encuesta(){
                 </div>
             </fieldset>
 
-            <button className="submit" type="submit">Enviar respuestas</button>
+            <button className="registrarse" type="submit" >Enviar respuestas</button>
             </form>
         </section>
         <Footer/>

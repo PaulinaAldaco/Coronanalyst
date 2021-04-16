@@ -31,7 +31,7 @@ input:hover,
 
 /* style the submit button */
 input[type=submit] {
-  background-color: #0040FF;
+  background-color: #256ce1;
   color: white;
   cursor: pointer;
   width: 20%;

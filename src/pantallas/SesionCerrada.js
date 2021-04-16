@@ -6,7 +6,8 @@ import {Link as LinkR} from 'react-router-dom';
 
 function SesionCerrada() {
 
-  const {toggleNav,loginUser,isLoggedIn} = useContext(MyContext);
+  const {rootState,toggleNav,loginUser,isLoggedIn} = useContext(MyContext);
+  const {isAuth,theUser,showLogin,profile} = rootState;
 
   const initialState = {
     userInfo:{
@@ -29,8 +30,8 @@ function SesionCerrada() {
         }
     });
     console.log(state);
-  }
- 
+  } 
+
   // On Submit Login From
   const submitForm = async (event) => {
     event.preventDefault();
@@ -46,6 +47,9 @@ function SesionCerrada() {
         localStorage.setItem('loginToken', data.token);
         console.log("Token stored");
         await isLoggedIn();
+        
+        //await hasProfile();
+        
     }
     else{
         setState({
@@ -65,6 +69,7 @@ function SesionCerrada() {
   if(state.successMsg){
       successMsg = <div className="success-msg">{state.successMsg}</div>;
   }
+  
   return (
    
     <div>
@@ -73,9 +78,9 @@ function SesionCerrada() {
         <div class="centered">
         <h1>Sesión cerrada</h1>
         <p>Introduce tu correo y contraseña para acceder</p>
-        <form>
-            <input type="text" id = "email" placeholder="Correo electrónico" name="email" required />
-            <input type="password" id = "contra" placeholder="Contraseña" name="contra" required />
+        <form onSubmit={submitForm} noValidate>
+            <input type="text" id="email" name="email" required placeholder="Ingresa correo electrónico" value={state.userInfo.email} onChange={onChangeValue} />
+            <input  type="password" id="password" name="password" required placeholder="Ingresa contraseña" value={state.userInfo.password} onChange={onChangeValue}/>
             
             <button type="submit" className = "submit" > Entrar </button>
         </form>
