@@ -49,6 +49,21 @@ class MyContextProvider extends Component{
         return register.data;
     }
 
+    createProfile = async (user) =>{
+        const profile = await Axios.post('datos-personales.php',{
+            genero:user.genero,
+            edad:user.edad,
+            estadocivil:user.estadocivil,
+            estudios:user.estudios,
+            ocupacion:user.ocupacion,
+            ingreso_economico:user.ingreso_economico,
+            estado:user.estadocivil,
+            id_user:user.id_user
+        });
+        console.log(profile.data);
+        return profile.data;
+    }
+
 
     loginUser = async (user) => {
         // Sending the user Login request
