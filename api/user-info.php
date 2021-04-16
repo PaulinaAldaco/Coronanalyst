@@ -22,7 +22,7 @@ $returnData = [
 if($auth->isAuth()){
     $userIdData = $auth->isAuth();
     
-    // If user is set, check if user id is present in table datospersonales
+    // If user is set, check if user id is present in profile table
     if(isset($userIdData['user'])){
         $id = $userIdData['user'];
         try {
@@ -32,21 +32,16 @@ if($auth->isAuth()){
             $query_stmt->bindValue(':id', $id,PDO::PARAM_INT);
             $query_stmt->execute();
 
-            // If user is found
+            // If user is found in profile table
             if($query_stmt->rowCount()):
-                $returnData = [
-                    "success" => 1,
-                    "status" => 200,
-                    "user" => $id,
-                    "hasProfile" => 1,
-                    "message" => "User has a profile"
-                ];
+                $returnData = checkForSurvey($conn,$id);
             else:
                 $returnData = [
                     "success" => 1,
                     "status" => 200,
                     "user" => $id,
                     "hasProfile" => 0,
+                    "completedSurvey" => 0,
                     "message" => "User does not have a profile"
                 ];
             endif;
@@ -55,10 +50,50 @@ if($auth->isAuth()){
             $returnData = [
                 "success" => 0,
                 "status" => 500,
-                "message" => $e->getMessage()
+                "message" => "Error while checking for profile: ".$e->getMessage()
             ];
         }
     }
+}
+
+// If user is registered and has profile, check if survey has been completed
+function checkForSurvey($conn,$id){
+    try{
+        // Prepare, bind, and execute query
+        $fetch_user_by_id = "SELECT * FROM respuestas WHERE ID_usuario=:id";
+        $query_stmt = $conn->prepare($fetch_user_by_id);
+        $query_stmt->bindValue(':id', $id,PDO::PARAM_INT);
+        $query_stmt->execute();
+
+        // If user is found in survey answer table
+        if($query_stmt->rowCount()):
+            $returnData = [
+                "success" => 1,
+                "status" => 200,
+                "user" => $id,
+                "hasProfile" => 1,
+                "completedSurvey" => 1,
+                "message" => "User has a profile, has completed survey"
+            ];
+        else:
+            $returnData = [
+                "success" => 1,
+                "status" => 200,
+                "user" => $id,
+                "hasProfile" => 1,
+                "completedSurvey" => 0,
+                "message" => "User has a profile, has not completed survey"
+            ];
+        endif;
+    }
+    catch(PDOException $e){
+        $returnData = [
+            "success" => 0,
+            "status" => 500,
+            "message" => "Error while checking survey completion: ".$e->getMessage()
+        ];
+    }
+    return $returnData;
 }
 
 echo json_encode($returnData);
