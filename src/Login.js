@@ -5,7 +5,6 @@ import {MyContext} from './contexts/MyContext';
 import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import {Link as LinkR} from 'react-router-dom';
-import styled from 'styled-components';
 
 function Login() {
 
