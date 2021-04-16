@@ -110,6 +110,9 @@ function Registro() {
             
             </div>
             <Footer/>
+            
+            {errorMsg}
+            {successMsg}
             </>
       
         );

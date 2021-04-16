@@ -87,8 +87,12 @@ function DatosPersonales() {
             }
         }
         else{
+          console.log("Redirecting to login")
+          return <Redirect to="/Login" />
         }
     }
+          
+        
             // Profile creation page
             return (
                 <div>
@@ -231,7 +235,5 @@ function DatosPersonales() {
                 </div>
             );
         }
-    
-         
 
 export default DatosPersonales;
