@@ -230,7 +230,10 @@ function DatosPersonales() {
             );
         }
     }
-         
-
-
+    else{
+        console.log("Redirecting to login")
+        return <Redirect to="/Login" />
+    }
+}
+        
 export default DatosPersonales;
