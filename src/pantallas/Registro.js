@@ -15,9 +15,8 @@ function Registro() {
         setIsOpen(!isOpen)
     };
 
-    const {rootState,toggleNav,registerUser} = useContext(MyContext);
-    const {isAuth,theUser,showLogin} = rootState;
-    console.log(isAuth);
+    const {rootState,registerUser} = useContext(MyContext);
+    const {isAuth,profile,survey} = rootState;
 
     const initialState = {
         userInfo:{
@@ -70,8 +69,20 @@ function Registro() {
     }
 
     if(isAuth) {
-        console.log("Redirecting...")
-        return <Redirect to="/" />
+        if(profile){
+            if(survey){
+                console.log("Redirecting to home")
+                return <Redirect to="/" />
+            }
+            else{
+                console.log("Redirecting to survey")
+                return <Redirect to="/Encuesta" />
+            }
+        }
+        else{
+            console.log("Redirecting to profile creation page")
+            return <Redirect to="/DatosPersonales" />
+        }
     }
     else{
         return (
