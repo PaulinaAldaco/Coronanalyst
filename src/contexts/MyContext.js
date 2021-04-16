@@ -66,6 +66,32 @@ class MyContextProvider extends Component{
         return profile.data;
     }
 
+    createProfile = async (user) =>{
+        const profile = await Axios.post('datos-personales.php',{
+            compras: user.compras,
+            plataforma:user.plataforma,
+            pago:user.pago,
+            categoria:user.categoria,
+            tiempo:user.tiempo,
+            seguido:user.seguido,
+            plataformaPandemia:user.plataformaPandemia,
+            metodoPago:user.metodoPago,
+            categoriaCompra:user.categoriaCompra,
+            tiempoComputadora:user.tiempoComputadora,
+            dineroEnLinea:user.dineroEnLinea,
+            fisicoLinea:user.fisicoLinea,
+            dineroLInea:user.dineroLInea,
+            sintomas:user.sintomas,
+            condicionesMedicas:user.condicionesMedicas,
+            situacionesPandemia:user.situacionesPandemia,
+            actFisica:user.actFisica,
+            id_user: user.id_user,
+        });
+
+        console.log(profile.data);
+        return profile.data;
+    }
+
 
     loginUser = async (user) => {
         // Sending the user Login request

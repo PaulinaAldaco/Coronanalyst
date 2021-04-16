@@ -27,7 +27,7 @@ export const NavLink = styled(Link)`
   &.active {
     color: #15cdfc;
   }
-`;
+`; 
 
 export const MobileIcon = styled.div`
   display: none;
@@ -51,7 +51,6 @@ export const Bars = styled(FaBars)`
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-100%, 75%);
     font-size: 1.8rem;
     cursor: pointer;
   }

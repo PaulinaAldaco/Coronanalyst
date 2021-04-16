@@ -209,7 +209,7 @@ function DatosPersonales() {
               </div>
             <div class="bottom-container">
               <div class="row">
-                   <input type="submit" value="Enviar"/>
+                    <button className="datos" type="submit">Enviar</button> 
               </div>
           </div>
           </form>

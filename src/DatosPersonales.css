@@ -10,8 +10,8 @@
 }
 
 /* style inputs and link buttons */
-input, select,
-.btn {
+select
+ {
   width: 100%;
   padding: 12px;
   border: none;
@@ -24,6 +24,7 @@ input, select,
   text-decoration: none; /* remove underline from anchors */
 }
 
+
 input:hover,
 .btn:hover {
   opacity: 1;
@@ -35,6 +36,12 @@ input[type=submit] {
   color: white;
   cursor: pointer;
   width: 20%;
+}
+
+button.datos{
+  background-color: #256ce1;
+  width: 30%;
+  margin-top: 2%;
 }
 
 
@@ -53,6 +60,7 @@ input[type=submit] {
   display: table;
   clear: both;
 }
+
 
 /* vertical line */
 .vl {
