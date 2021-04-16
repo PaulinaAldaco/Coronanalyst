@@ -65,6 +65,8 @@ function Encuesta(){
         }
     }
 
+    
+
     const onChange = (valor) => (e) =>{
 
     
