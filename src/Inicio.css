@@ -17,7 +17,7 @@ h1 {
     width: 50%;
     position: relative;
     left: 15%;
-    top: 10%;
+    top: 15%;
 }
 
 #uno{
@@ -27,7 +27,7 @@ h1 {
 
 .bloque {
     background-color:#EAF8FA;
-    height: 28em;
+    height: 26em;
     overflow: scroll;
     position: sticky;
 }
@@ -40,7 +40,8 @@ h1 {
     width: 30%;
     position: relative;
     overflow: hidden;
-    height: 28em;
+    height: 20em;
+    
    
 }
 .b2 {
