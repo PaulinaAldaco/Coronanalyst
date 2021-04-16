@@ -55,10 +55,11 @@ else:
     $ocupacion = trim($data->ocupacion);
     $ingreso_economico = trim($data->ingreso_economico);
     $estado = trim($data->estado);
+    $id_user = trim($data->id_user);
 
         try{
 
-            $insert_query = "INSERT INTO DatosPersonales (ID_usuario, edad, ingreso_economico, estudios, estado_civil, genero, estado, ocupacion) VALUES(:edad,:ingreso_economico,:estudios, :estado_civil, :genero, :estado, :ocupacion)";
+            $insert_query = "INSERT INTO DatosPersonales (ID_usuario, edad, ingreso_economico, estudios, estado_civil, genero, estado, ocupacion) VALUES(:id_user, :edad,:ingreso_economico,:estudios, :estado_civil, :genero, :estado, :ocupacion)";
 
             $insert_stmt = $conn->prepare($insert_query);
 
@@ -69,7 +70,8 @@ else:
             $insert_stmt->bindValue(':estadocivil', $estadocivil,PDO::PARAM_STR);
             $insert_stmt->bindValue(':genero', $genero,PDO::PARAM_STR);
             $insert_stmt->bindValue(':estado', $estado,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':ocupacion', $estado,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':ocupacion', $ocupacion,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':id_user', $id_user,PDO::PARAM_STR);
             $insert_stmt->execute();
 
             $returnData = msg(1,201,'You have successfully registered the data.');
