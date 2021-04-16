@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import {Link as LinkR} from 'react-router-dom';
 import styled from 'styled-components';
+import {Redirect} from "react-router-dom";
 
 function Login() {
 
@@ -15,7 +16,8 @@ function Login() {
         setIsOpen(!isOpen)
     };
 
-  const {toggleNav,loginUser,isLoggedIn} = useContext(MyContext);
+  const {rootState,toggleNav,loginUser,isLoggedIn} = useContext(MyContext);
+  const {isAuth,theUser,showLogin} = rootState;
 
   const initialState = {
     userInfo:{
@@ -75,42 +77,49 @@ function Login() {
       successMsg = <div className="success-msg">{state.successMsg}</div>;
   }
 
-  return (
+  if(isAuth){
+    console.log("Redirecting...")
+    return <Redirect to="/" />
+  }
+  else{
+    return (
    
-    <>
-      <Sidebar isOpen={isOpen} toggle={toggle} />
-      <Navbar toggle={toggle} />
-      <div>
-      <div className="split left">
-        <div className="centered">
-          <div>
-          <h1>¡Bienvenido!</h1>
-          <p>Introduce tu correo y contraseña para acceder</p>
+      <>
+        <Sidebar isOpen={isOpen} toggle={toggle} />
+        <Navbar toggle={toggle} />
+        <div>
+        <div className="split left">
+          <div className="centered">
+            <div>
+            <h1>¡Bienvenido!</h1>
+            <p>Introduce tu correo y contraseña para acceder</p>
+            </div>
+            <form onSubmit={submitForm} noValidate>
+  
+              <input type="text" id="email" name="email" required placeholder="Ingresa correo electrónico" value={state.userInfo.email} onChange={onChangeValue}/>
+              <input type="password" id="password" name="password" required placeholder="Ingresa contraseña" value={state.userInfo.password} onChange={onChangeValue} />
+                 
+              <button type="submit" className = "submit" > Iniciar sesión </button>
+            </form>
+            {errorMsg}
+            {successMsg}
+            <b><p><LinkR id="ref" to="/Registro">¿No tienes cuenta? Registrate aquí</LinkR></p></b>
           </div>
-          <form onSubmit={submitForm} noValidate>
-
-            <input type="text" id="email" name="email" required placeholder="Ingresa correo electrónico" value={state.userInfo.email} onChange={onChangeValue}/>
-            <input type="password" id="password" name="password" required placeholder="Ingresa contraseña" value={state.userInfo.password} onChange={onChangeValue} />
-               
-            <button type="submit" className = "submit" > Iniciar sesión </button>
-          </form>
-          {errorMsg}
-          {successMsg}
-          <b><p><LinkR id="ref" to="/Registro">¿No tienes cuenta? Registrate aquí</LinkR></p></b>
         </div>
-      </div>
-
-      <div className="split right">
-        <div className="centered">
-          <img src={logo} alt="Logo coronanalyst" className="imgL"/>
-          <button className="link">
-            <LinkR  to="/">Regresar a inicio</LinkR>
-          </button>
+  
+        <div className="split right">
+          <div className="centered">
+            <img src={logo} alt="Logo coronanalyst" className="imgL"/>
+            <button className="link">
+              <LinkR  to="/">Regresar a inicio</LinkR>
+            </button>
+          </div>
         </div>
-      </div>
-      </div>
-    </>
-  );
+        </div>
+      </>
+    );
+  }
+
 }
 
 

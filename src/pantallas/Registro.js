@@ -4,6 +4,7 @@ import React, {useContext,useState} from 'react'
 import {MyContext} from '../contexts/MyContext';
 import Navbar from '../components/Navbar/Navbar';
 import Sidebar from '../components/Sidebar/Sidebar';
+import {Redirect} from "react-router-dom";
 
 
 function Registro() {
@@ -14,7 +15,10 @@ function Registro() {
         setIsOpen(!isOpen)
     };
 
-    const {toggleNav,registerUser} = useContext(MyContext);
+    const {rootState,toggleNav,registerUser} = useContext(MyContext);
+    const {isAuth,theUser,showLogin} = rootState;
+    console.log(isAuth);
+
     const initialState = {
         userInfo:{
             email:'',
@@ -64,32 +68,40 @@ function Registro() {
     if(state.successMsg){
         successMsg = <div className="success-msg">{state.successMsg}</div>;
     }
-    
-    return (
-      <>
-      <Sidebar isOpen={isOpen} toggle={toggle} />
-      <Navbar toggle={toggle} />
-      <div id="container">
-        <form id ="main-content" onSubmit={submitForm} noValidate>
-            <h1>Regístrate</h1>
-            <div id="imgcontainer">
-                <img src="http://ww2.aeeh.es/wp-content/uploads/2013/08/form_icon_256031.png" alt="registro" className="registro"/>
-            </div>
-            <div class="container">
-                <label className="labelR uno" for="email"><b>Correo electrónico</b></label>
-                <input type="text" id="email" name="email" required placeholder="Ingresa correo electrónico" value={state.userInfo.email} onChange={onChangeValue}/>
-                <label className="labelR dos" for="contra"><b>Contraseña</b></label>
-                <input type="password" id="password" name="password" required placeholder="Ingresa contraseña" value={state.userInfo.password} onChange={onChangeValue}/>
-                    
-                <button type="submit" className="registrarse"> Registrarme </button> 
-            </div>
-        </form>
-      
-      </div>
-      <Footer/>
-      </>
 
-    );
+    if(isAuth) {
+        console.log("Redirecting...")
+        return <Redirect to="/" />
+    }
+    else{
+        return (
+            <>
+            <Sidebar isOpen={isOpen} toggle={toggle} />
+            <Navbar toggle={toggle} />
+            <div id="container">
+              <form id ="main-content" onSubmit={submitForm} noValidate>
+                  <h1>Regístrate</h1>
+                  <div id="imgcontainer">
+                      <img src="http://ww2.aeeh.es/wp-content/uploads/2013/08/form_icon_256031.png" alt="registro" className="registro"/>
+                  </div>
+                  <div class="container">
+                      <label className="labelR uno" for="email"><b>Correo electrónico</b></label>
+                      <input type="text" id="email" name="email" required placeholder="Ingresa correo electrónico" value={state.userInfo.email} onChange={onChangeValue}/>
+                      <label className="labelR dos" for="contra"><b>Contraseña</b></label>
+                      <input type="password" id="password" name="password" required placeholder="Ingresa contraseña" value={state.userInfo.password} onChange={onChangeValue}/>
+                          
+                      <button type="submit" className="registrarse"> Registrarme </button> 
+                  </div>
+              </form>
+            
+            </div>
+            <Footer/>
+            </>
+      
+        );
+    }
+    
+
 }
 
 export default Registro;

@@ -58,7 +58,7 @@ else:
 
         try{
 
-            $insert_query = "INSERT INTO DatosPersonales (edad, ingreso_economico, estudios, estado_civil, genero, estado, ocupacion) VALUES(:edad,:ingreso_economico,:estudios, :estado_civil, :genero, :estado, :ocupacion)";
+            $insert_query = "INSERT INTO DatosPersonales (ID_usuario, edad, ingreso_economico, estudios, estado_civil, genero, estado, ocupacion) VALUES(:edad,:ingreso_economico,:estudios, :estado_civil, :genero, :estado, :ocupacion)";
 
             $insert_stmt = $conn->prepare($insert_query);
 
