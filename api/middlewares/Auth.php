@@ -19,8 +19,13 @@ class Auth extends JwtHandler{
                 $data = $this->_jwt_decode_data($this->token[1]);
 
                 if(isset($data['auth']) && isset($data['data']->user_id) && $data['auth']):
-                    $user = $this->fetchUser($data['data']->user_id);
-                    return $user;
+                    //$user = $this->fetchUser($data['data']->user_id);
+                    //return $user;
+                    return [
+                        'success' => 1,
+                        'status' => 200,
+                        'user' => $data['data']->user_id
+                    ];
 
                 else:
                     $message = [

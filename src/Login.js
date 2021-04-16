@@ -17,7 +17,7 @@ function Login() {
     };
 
   const {rootState,toggleNav,loginUser,isLoggedIn} = useContext(MyContext);
-  const {isAuth,theUser,showLogin} = rootState;
+  const {isAuth,theUser,showLogin,profile} = rootState;
 
   const initialState = {
     userInfo:{
@@ -57,6 +57,9 @@ function Login() {
         localStorage.setItem('loginToken', data.token);
         console.log("Token stored");
         await isLoggedIn();
+        
+        //await hasProfile();
+        
     }
     else{
         setState({
@@ -78,8 +81,14 @@ function Login() {
   }
 
   if(isAuth){
-    console.log("Redirecting...")
-    return <Redirect to="/" />
+    if(profile){
+      console.log("Redirecting to home")
+      return <Redirect to="/" />
+    }
+    else{
+      console.log("Redirecting to profile creation page")
+      return <Redirect to="/DatosPersonales" />
+    }
   }
   else{
     return (

@@ -11,6 +11,7 @@ class MyContextProvider extends Component{
     constructor(){
         super();
         this.isLoggedIn();
+        //this.hasProfile();
     }
 
     // Root State
@@ -18,6 +19,7 @@ class MyContextProvider extends Component{
         showLogin:true,
         isAuth:false,
         theUser:null,
+        profile:false
     }
     
     // Toggle between Login & Signup page
@@ -100,26 +102,59 @@ class MyContextProvider extends Component{
             const {data} = await Axios.get('user-info.php');
 
             // If user information is successfully received
-            if(data.success && data.user){
-                console.log("Data successfully retrieved");
-                this.setState({
-                    ...this.state,
-                    isAuth:true,
-                    theUser:data.user
-                });
+            if(data.success){
+                if(data.user){
+                    if(data.hasProfile){
+                        console.log("User and profile data successfully retrieved");
+                        this.setState({
+                            ...this.state,
+                            isAuth:true,
+                            theUser:data.user,
+                            profile:true
+                        });
+                    }
+                    else{
+                        console.log("User data successfully retrieved");
+                        this.setState({
+                            ...this.state,
+                            isAuth:true,
+                            theUser:data.user
+                        });
+                    }
+                }
             }
             else if(data.message){
                 console.log(data.message)
             }
-
         }
     }
+
+    // Checking if user has completed their profile
+/*     hasProfile = async () => {
+        console.log("Checking for user profile");
+        // Fetching the user information
+        const {data} = await Axios.get('user-profile.php');
+
+        // If user information is successfully received
+        if(data.success && data.hasProfile){
+            console.log("Data successfully retrieved:");
+            this.setState({
+                ...this.state,
+                profile:true
+            });
+            //console.log(this.state.profile);
+        }
+        else if(data.message){
+            console.log(data.message)
+        }
+    } */
 
     render(){
         const contextValue = {
             rootState:this.state,
             toggleNav:this.toggleNav,
             isLoggedIn:this.isLoggedIn,
+            //hasProfile:this.hasProfile,
             registerUser:this.registerUser,
             loginUser:this.loginUser,
             logoutUser:this.logoutUser
