@@ -11,7 +11,6 @@ class MyContextProvider extends Component{
     constructor(){
         super();
         this.isLoggedIn();
-        //this.hasProfile();
     }
 
     // Root State
@@ -19,7 +18,8 @@ class MyContextProvider extends Component{
         showLogin:true,
         isAuth:false,
         theUser:null,
-        profile:false
+        profile:false,
+        survey:false
     }
     
     // Toggle between Login & Signup page
@@ -59,7 +59,7 @@ class MyContextProvider extends Component{
             estudios:user.estudios,
             ocupacion:user.ocupacion,
             ingreso_economico:user.ingreso_economico,
-            estado:user.estadocivil,
+            estado:user.estado,
             id_user:user.id_user
         });
         console.log(profile.data);
@@ -128,9 +128,19 @@ class MyContextProvider extends Component{
             const {data} = await Axios.get('user-info.php');
 
             // If user information is successfully received
-            if(data.success){
-                if(data.user){
-                    if(data.hasProfile){
+            if(data.success && data.user){
+                if(data.hasProfile){
+                    if(data.completedSurvey){
+                        console.log("User, profile data, and survey completion successfully retrieved");
+                        this.setState({
+                            ...this.state,
+                            isAuth:true,
+                            theUser:data.user,
+                            profile:true,
+                            survey:true
+                        });
+                    }
+                    else{
                         console.log("User and profile data successfully retrieved");
                         this.setState({
                             ...this.state,
@@ -139,14 +149,14 @@ class MyContextProvider extends Component{
                             profile:true
                         });
                     }
-                    else{
-                        console.log("User data successfully retrieved");
-                        this.setState({
-                            ...this.state,
-                            isAuth:true,
-                            theUser:data.user
-                        });
-                    }
+                }
+                else{
+                    console.log("User data successfully retrieved");
+                    this.setState({
+                        ...this.state,
+                        isAuth:true,
+                        theUser:data.user
+                    });
                 }
             }
             else if(data.message){
@@ -155,35 +165,66 @@ class MyContextProvider extends Component{
         }
     }
 
-    // Checking if user has completed their profile
-/*     hasProfile = async () => {
-        console.log("Checking for user profile");
-        // Fetching the user information
-        const {data} = await Axios.get('user-profile.php');
+    // Checking and updating the current state of the user
+    updateUserState = async () => {
+        console.log("checking for token");
+        const loginToken = localStorage.getItem('loginToken');
 
-        // If user information is successfully received
-        if(data.success && data.hasProfile){
-            console.log("Data successfully retrieved:");
-            this.setState({
-                ...this.state,
-                profile:true
-            });
-            //console.log(this.state.profile);
+        // If inside the local-storage has the JWT token
+        if(loginToken){
+            console.log("Token is present");
+
+            // Fetching the user information
+            const {data} = await Axios.get('user-info.php');
+
+            // If user information is successfully received
+            if(data.success && data.user){
+                if(data.hasProfile){
+                    if(data.completedSurvey){
+                        console.log("User, profile data, and survey completion successfully retrieved");
+                        this.setState({
+                            ...this.state,
+                            isAuth:true,
+                            theUser:data.user,
+                            profile:true,
+                            survey:true
+                        });
+                    }
+                    else{
+                        console.log("User and profile data successfully retrieved");
+                        this.setState({
+                            ...this.state,
+                            isAuth:true,
+                            theUser:data.user,
+                            profile:true
+                        });
+                    }
+                }
+                else{
+                    console.log("User data successfully retrieved");
+                    this.setState({
+                        ...this.state,
+                        isAuth:true,
+                        theUser:data.user
+                    });
+                }
+            }
+            else if(data.message){
+                console.log(data.message)
+            }
         }
-        else if(data.message){
-            console.log(data.message)
-        }
-    } */
+    }
 
     render(){
         const contextValue = {
             rootState:this.state,
             toggleNav:this.toggleNav,
             isLoggedIn:this.isLoggedIn,
-            //hasProfile:this.hasProfile,
+            updateUserState:this.updateUserState,
             registerUser:this.registerUser,
             loginUser:this.loginUser,
-            logoutUser:this.logoutUser
+            logoutUser:this.logoutUser,
+            createProfile:this.createProfile
         }
         return(
             <MyContext.Provider value={contextValue}>
