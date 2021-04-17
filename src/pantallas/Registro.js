@@ -15,7 +15,7 @@ function Registro() {
         setIsOpen(!isOpen)
     };
 
-    const {rootState,registerUser} = useContext(MyContext);
+    const {rootState,registerUser,isLoggedIn} = useContext(MyContext);
     const {isAuth,profile,survey} = rootState;
 
     const initialState = {
@@ -37,6 +37,7 @@ function Registro() {
                 ...initialState,
                 successMsg:data.message,
             });
+            await isLoggedIn();
         }
         else{
             setState({
