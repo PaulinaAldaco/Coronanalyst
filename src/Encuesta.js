@@ -485,7 +485,7 @@ function Encuesta(){
                 <div class="form-group">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="plataformaPandemia[]" value="Mercado Libre"  onChange={() => this.onChange("Mercado Libre")} onclick="deRequireCb('plataforma[]')"  oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
+                            <input type="checkbox" name="plataformaPandemia[]" value="Mercado Libre"  onChange={onChange("Mercado Libre")} onclick="deRequireCb('plataforma[]')"  oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
                             Mercado Libre
                         </label>
                     </div>
