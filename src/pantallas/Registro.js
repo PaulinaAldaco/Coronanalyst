@@ -91,28 +91,29 @@ function Registro() {
             <Navbar toggle={toggle} />
             <div id="container">
               <form id ="main-content" onSubmit={submitForm} noValidate>
-                  <h1>Regístrate</h1>
-                  <div id="imgcontainer">
-                      <img src="http://ww2.aeeh.es/wp-content/uploads/2013/08/form_icon_256031.png" alt="registro" className="registro"/>
-                  </div>
-                  <div class="container">
-                      <label className="labelR uno" for="email"><b>Correo electrónico</b></label>
-                      <input type="text" id="email" name="email" required placeholder="Ingresa correo electrónico" value={state.userInfo.email} onChange={onChangeValue}/>
-                      <label className="labelR dos" for="contra"><b>Contraseña</b></label>
-                      <input type="password" id="password" name="password" required placeholder="Ingresa contraseña" value={state.userInfo.password} onChange={onChangeValue}/>
-                          
-                      <button type="submit" className="registrarse"> Registrarme </button> 
-                  </div>
-              </form>
+                    <h1>Regístrate</h1>
+                    <div id="imgcontainer">
+                        <img src="http://ww2.aeeh.es/wp-content/uploads/2013/08/form_icon_256031.png" alt="registro" className="registro"/>
+                    </div>
+                    <div className="container">
+                        <label className="labelR uno" for="email"><b>Correo electrónico</b></label>
+                        <input type="text" id="email" name="email" required placeholder="Ingresa correo electrónico" value={state.userInfo.email} onChange={onChangeValue}/>
+                        <label className="labelR dos" for="contra"><b>Contraseña</b></label>
+                        <input type="password" id="password" name="password" required placeholder="Ingresa contraseña" value={state.userInfo.password} onChange={onChangeValue}/>
+                        <div>
+                            {errorMsg}
+                            {successMsg}
+                        </div>
+                        <button type="submit" className="registrarse"> Registrarme </button>
+                        
+                      
+                    </div>
+                  
+                </form>
+              
 
-            {errorMsg}
-            {successMsg}
-            
             </div>
             <Footer/>
-            
-            {errorMsg}
-            {successMsg}
             </>
       
         );

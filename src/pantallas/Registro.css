@@ -95,3 +95,9 @@ span.psw {
   }
 
 }
+
+.centered {
+  position: absolute;
+  left: 50%;
+  text-align: center;
+}
