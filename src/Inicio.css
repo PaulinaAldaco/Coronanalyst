@@ -16,7 +16,7 @@ h1 {
 .bloque {
     background-color:#EAF8FA;
     height: 26em;
-    overflow: scroll;
+    overflow: hidden;
     position: sticky;
 }
 
