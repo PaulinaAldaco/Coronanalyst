@@ -15,7 +15,7 @@ function Registro() {
         setIsOpen(!isOpen)
     };
 
-    const {rootState,registerUser,isLoggedIn} = useContext(MyContext);
+    const {rootState,registerUser,loginUser,isLoggedIn} = useContext(MyContext);
     const {isAuth,profile,survey} = rootState;
 
     const initialState = {
@@ -37,7 +37,27 @@ function Registro() {
                 ...initialState,
                 successMsg:data.message,
             });
-            await isLoggedIn();
+            // Log in user
+            const loginData = await loginUser(state.userInfo);
+            if(loginData.success && loginData.token){
+                console.log("Data recieved, changing stage");
+                setState({
+                    ...initialState,
+                    successMsg:loginData.message
+                });
+                console.log("Data recieved, storing token: "+loginData.token);
+                // Store token in local storage
+                localStorage.setItem('loginToken', loginData.token);
+                console.log("Token stored");
+                await isLoggedIn();
+            }
+            else{
+                setState({
+                    ...state,
+                    successMsg:'',
+                    errorMsg:data.message
+                });
+            }
         }
         else{
             setState({

@@ -41,6 +41,13 @@ elseif(!isset($data->genero)
     || ($data->ocupacion == "seleccione")
     || ($data->ingreso_economico == "seleccione")
     || ($data->estado == "seleccione")
+    || empty(trim($data->genero))
+    || empty(trim($data->edad)) 
+    || empty(trim($data->estadocivil))
+    || empty(trim($data->estudios))
+    || empty(trim($data->ocupacion))
+    || empty(trim($data->ingreso_economico))
+    || empty(trim($data->estado))
     ):
 
     $fields = ['fields' => ['genero','edad', 'estadocivil', 'estudios', 'ocupacion', 'ingreso_economico', 'estado']];

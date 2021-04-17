@@ -37,12 +37,14 @@ function DatosPersonales() {
         event.preventDefault();
         console.log(state.userInfo);
         const data = await createProfile(state.userInfo);
+        console.log("Succes: ",data.success);
         if(data.success){
             setState({
                 ...initialState,
                 successMsg:data.message,
             });
             await updateUserState();
+            console.log("Survey: ",survey);
         }
         else{
             setState({
@@ -217,11 +219,14 @@ function DatosPersonales() {
                             </div>
                             
                         </div>
-                    <div class="bottom-container">
-                        <div class="row">
-                            <button type="submit" className="datos">Enviar</button>
+                        <div className="bottom-container">
+                            <div className="row">
+                                {errorMsg}
+                            </div>
+                            <div className="row">
+                                <button type="submit" className="datos">Enviar</button>
+                            </div>
                         </div>
-                    </div>
                     </form>
                 
                 </div>

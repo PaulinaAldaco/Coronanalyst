@@ -36,7 +36,10 @@ class MyContextProvider extends Component{
         localStorage.removeItem('loginToken');
         this.setState({
             ...this.state,
-            isAuth:false
+            isAuth:false,
+            theUser:null,
+            profile:false,
+            survey:false
         })
     }
 
@@ -200,7 +203,7 @@ class MyContextProvider extends Component{
                             isAuth:true,
                             theUser:data.user,
                             profile:true,
-                            survey:true
+                            survey:false
                         });
                     }
                 }
