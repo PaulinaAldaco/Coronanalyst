@@ -4,7 +4,10 @@ export const MyContext = createContext();
 
 // Create Axios instance and define the base URL
 const Axios = axios.create({
-    baseURL: 'http://localhost/coronanalyst/api/'
+    baseURL: 'http://localhost/coronanalyst/api/',
+    headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+      }
 });
 
 class MyContextProvider extends Component{

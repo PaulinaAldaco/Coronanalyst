@@ -34,6 +34,13 @@ elseif(!isset($data->genero)
     || !isset($data->ocupacion)
     || !isset($data->ingreso_economico)
     || !isset($data->estado)
+    || empty(trim($data->genero))
+    || empty(trim($data->edad)) 
+    || empty(trim($data->estadocivil))
+    || empty(trim($data->estudios))
+    || empty(trim($data->ocupacion))
+    || empty(trim($data->ingreso_economico))
+    || empty(trim($data->estado))
     || ($data->genero == "seleccione")
     || ($data->edad == "seleccione")
     || ($data->estadocivil == "seleccione")
@@ -49,7 +56,6 @@ elseif(!isset($data->genero)
     || empty(trim($data->ingreso_economico))
     || empty(trim($data->estado))
     ):
-
     $fields = ['fields' => ['genero','edad', 'estadocivil', 'estudios', 'ocupacion', 'ingreso_economico', 'estado']];
     $returnData = msg(0,422,'Please Fill in all Required Fields!',$fields);
 

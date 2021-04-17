@@ -61,6 +61,10 @@ button.registrarse{
   
 }
 
+p{
+  text-align: center;
+}
+
 
 .button:hover {
   opacity: 0.8;

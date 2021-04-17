@@ -3,6 +3,8 @@ import logo from '../imagenes/logo_coronanalyst.jpeg';
 import React, {useContext, useState} from 'react';
 import {MyContext} from '../contexts/MyContext';
 import {Link as LinkR} from 'react-router-dom';
+import Navbar from '../components/Navbar/Navbar';
+import Sidebar from '../components/Sidebar/Sidebar';
 
 function SesionCerrada() {
 
@@ -72,9 +74,10 @@ function SesionCerrada() {
   
   return (
    
-    <div>
-
-  <div class="splitSC leftSC">
+    <>
+    <Sidebar/>
+    <Navbar/>
+  <div class="split left">
         <div class="centered">
         <h1>Sesión cerrada</h1>
         <p>Introduce tu correo y contraseña para acceder</p>
@@ -90,7 +93,7 @@ function SesionCerrada() {
         </div>
     </div>
 
-    <div class="splitSC rightSC">
+    <div class="split right">
         <div class="centered">
         <img src={logo} alt="Logo coronanalyst"/>
         <button className="link">
@@ -99,7 +102,7 @@ function SesionCerrada() {
         </div>
     </div>
 
-    </div>
+    </>
   );
 }
 
