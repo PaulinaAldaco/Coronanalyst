@@ -100,7 +100,7 @@ function DatosPersonales() {
                             <br/>
                             <div class="col">
                                 <label>Género</label>
-                                <select name="genero" id="genero" value={state.userInfo.genero} onChange={onChangeValue}>
+                                <select name="genero" id="genero" value={state.userInfo.genero} onChange={onChangeValue} required>
                                     <option value="seleccione">Seleccione una opción</option>
                                     <option value="Femenino">Femenino</option>
                                     <option value="Masculino">Masculino</option>
@@ -108,7 +108,7 @@ function DatosPersonales() {
                                 </select>
                                 <br/>
                                 <label>Edad</label>
-                                <select name="edad" id="edad" value={state.userInfo.edad} onChange={onChangeValue}>
+                                <select name="edad" id="edad" value={state.userInfo.edad} onChange={onChangeValue} required>
                                     <option value="seleccione">Seleccione una opción</option>
                                     <option value="Menos de 15">1 a 10</option>
                                     <option value="15 a 20">11 a 20</option>
@@ -126,7 +126,7 @@ function DatosPersonales() {
                                 </select>
                                 <br/>
                                 <label>Estado civil</label>
-                                <select name="estadocivil" id="estadocivil" value={state.userInfo.estadocivil} onChange={onChangeValue}>
+                                <select name="estadocivil" id="estadocivil" value={state.userInfo.estadocivil} onChange={onChangeValue} required>
                                     <option value="seleccione">Seleccione una opción</option>
                                     <option value="Soltero">Soltero</option>
                                     <option value="Casado">Casado</option>
@@ -135,7 +135,7 @@ function DatosPersonales() {
                                     <option value="Viudo">Viudo</option>
                                 </select>
                                 <label>Nivel máximo de estudios</label>
-                                <select name="estudios" id="estudios" value={state.userInfo.estudios} onChange={onChangeValue}>
+                                <select name="estudios" id="estudios" value={state.userInfo.estudios} onChange={onChangeValue} required>
                                 <option value="seleccione">Seleccione una opción</option>
                                     <option value="No aplica">No aplica</option>
                                     <option value="Primaria">Primaria</option>
@@ -148,7 +148,7 @@ function DatosPersonales() {
                             </div>
                             <div class="col">
                                 <label>Ocupación</label>
-                                <select name="ocupacion" id="ocupacion" value={state.userInfo.ocupacion} onChange={onChangeValue}>
+                                <select name="ocupacion" id="ocupacion" value={state.userInfo.ocupacion} onChange={onChangeValue} required>
                                       <option value="seleccione">Seleccione una opción</option>
                                       <option value="Sector industrial">Sector industrial</option>"
                                       <option value="Sector educativo">Sector educativo</option>"
@@ -171,7 +171,7 @@ function DatosPersonales() {
                                 </select>
                                 <br/>
                                  <label>Ingreso económico</label>
-                                 <select name="ingreso_economico" id="ingreso_economico" value={state.userInfo.ingreso_economico} onChange={onChangeValue}>
+                                 <select name="ingreso_economico" id="ingreso_economico" value={state.userInfo.ingreso_economico} onChange={onChangeValue} required>
                                       <option value="seleccione">Seleccione una opción</option>
                                       <option value="Menos de $1,000">Menos de $1,000</option>
                                       <option value="$1,000 - $10,000">$1,000 - $10,000</option>
@@ -181,7 +181,7 @@ function DatosPersonales() {
                                 </select>
                                 <br/>
                                 <label>Estado</label>
-                                <select name="estado" id="estado" value={state.userInfo.estado} onChange={onChangeValue}>
+                                <select name="estado" id="estado" value={state.userInfo.estado} onChange={onChangeValue} required>
                                   <option value="seleccione">Seleccione una opción</option>
                                   <option value="Aguascalientes">Aguascalientes</option>
                                   <option value="Baja California">Baja California</option>
