@@ -87,8 +87,6 @@ function DatosPersonales() {
             }
         }
         else{
-        }
-    }
             // Profile creation page
             return (
                 <div>
@@ -149,89 +147,93 @@ function DatosPersonales() {
                             <div class="col">
                                 <label>Ocupación</label>
                                 <select name="ocupacion" id="ocupacion" value={state.userInfo.ocupacion} onChange={onChangeValue} required>
-                                      <option value="seleccione">Seleccione una opción</option>
-                                      <option value="Sector industrial">Sector industrial</option>"
-                                      <option value="Sector educativo">Sector educativo</option>"
-                                      <option value="Sector gubernamental">Sector gubernamental</option>"
-                                      <option value="Sector de comercio">Sector de comercio</option>"
-                                      <option value="Sector de Transporte">Sector de Transporte</option>"
-                                      <option value="Sector de Comida">Sector de Comida</option>"
-                                      <option value="Sector de Alojamiento">Sector de Alojamiento</option>"
-                                      <option value="Sector de Construcción">Sector de Construcción</option>"
-                                      <option value="Sector de suministro de energía">Sector de suministro de energía</option>"
-                                      <option value="Sector de actividades inmobiliarias">Sector de actividades inmobiliarias</option>"
-                                      <option value="Sector artístico">Sector artístico</option>"
-                                      <option value="Sector de Pesca y acuicultura">Sector de Pesca y acuicultura</option>"
-                                      <option value="Sector de informática">Sector de informática</option>"
-                                      <option value="Sector de servicios financieros">Sector de servicios financieros</option>"
-                                      <option value="Sector judicial">Sector judicial</option>"
-                                      <option value="Hogar">Hogar</option>"
-                                      <option value="Estudiante">Estudiante</option>"
-                                      <option value="Otro">Otro</option>"
+                                    <option value="seleccione">Seleccione una opción</option>
+                                    <option value="Sector industrial">Sector industrial</option>"
+                                    <option value="Sector educativo">Sector educativo</option>"
+                                    <option value="Sector gubernamental">Sector gubernamental</option>"
+                                    <option value="Sector de comercio">Sector de comercio</option>"
+                                    <option value="Sector de Transporte">Sector de Transporte</option>"
+                                    <option value="Sector de Comida">Sector de Comida</option>"
+                                    <option value="Sector de Alojamiento">Sector de Alojamiento</option>"
+                                    <option value="Sector de Construcción">Sector de Construcción</option>"
+                                    <option value="Sector de suministro de energía">Sector de suministro de energía</option>"
+                                    <option value="Sector de actividades inmobiliarias">Sector de actividades inmobiliarias</option>"
+                                    <option value="Sector artístico">Sector artístico</option>"
+                                    <option value="Sector de Pesca y acuicultura">Sector de Pesca y acuicultura</option>"
+                                    <option value="Sector de informática">Sector de informática</option>"
+                                    <option value="Sector de servicios financieros">Sector de servicios financieros</option>"
+                                    <option value="Sector judicial">Sector judicial</option>"
+                                    <option value="Hogar">Hogar</option>"
+                                    <option value="Estudiante">Estudiante</option>"
+                                    <option value="Otro">Otro</option>"
                                 </select>
                                 <br/>
-                                 <label>Ingreso económico</label>
-                                 <select name="ingreso_economico" id="ingreso_economico" value={state.userInfo.ingreso_economico} onChange={onChangeValue} required>
-                                      <option value="seleccione">Seleccione una opción</option>
-                                      <option value="Menos de $1,000">Menos de $1,000</option>
-                                      <option value="$1,000 - $10,000">$1,000 - $10,000</option>
-                                      <option value="$10,000 - $30,000">$10,000 - $30,000</option>
-                                      <option value="$30,000 - $50,000">$30,000 - $50,000</option>
-                                      <option value="$50,000+">$50,000+</option>
+                                <label>Ingreso económico</label>
+                                <select name="ingreso_economico" id="ingreso_economico" value={state.userInfo.ingreso_economico} onChange={onChangeValue} required>
+                                    <option value="seleccione">Seleccione una opción</option>
+                                    <option value="Menos de $1,000">Menos de $1,000</option>
+                                    <option value="$1,000 - $10,000">$1,000 - $10,000</option>
+                                    <option value="$10,000 - $30,000">$10,000 - $30,000</option>
+                                    <option value="$30,000 - $50,000">$30,000 - $50,000</option>
+                                    <option value="$50,000+">$50,000+</option>
                                 </select>
                                 <br/>
                                 <label>Estado</label>
                                 <select name="estado" id="estado" value={state.userInfo.estado} onChange={onChangeValue} required>
-                                  <option value="seleccione">Seleccione una opción</option>
-                                  <option value="Aguascalientes">Aguascalientes</option>
-                                  <option value="Baja California">Baja California</option>
-                                  <option value="Baja California Sur">Baja California Sur</option>
-                                  <option value="Campeche">Campeche</option>
-                                  <option value="Chiapas">Chiapas</option>
-                                  <option value="Chihuahua">Chihuahua</option>
-                                  <option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
-                                  <option value="Colima">Colima</option>
-                                  <option value="Durango">Durango</option>
-                                  <option value="Estado de México">Estado de México</option>
-                                  <option value="Guanajuato">Guanajuato</option>
-                                  <option value="Guerrero">Guerrero</option>
-                                  <option value="Hidalgo">Hidalgo</option>
-                                  <option value="Jalisco">Jalisco</option>
-                                  <option value="Michoacán de Ocampo">Michoacán de Ocampo</option>
-                                  <option value="Morelos">Morelos</option>
-                                  <option value="Nayarit">Nayarit</option>
-                                  <option value="Nuevo León">Nuevo León</option>
-                                  <option value="Oaxaca">Oaxaca</option>
-                                  <option value="Puebla">Puebla</option>
-                                  <option value="Querétaro">Querétaro</option>
-                                  <option value="Quintana Roo">Quintana Roo</option>
-                                  <option value="San Luis Potosí">San Luis Potosí</option>
-                                  <option value="Sinaloa">Sinaloa</option>
-                                  <option value="Sonora">Sonora</option>
-                                  <option value="Tabasco">Tabasco</option>
-                                  <option value="Tamaulipas">Tamaulipas</option>
-                                  <option value="Tlaxcala">Tlaxcala</option>
-                                  <option value="Veracruz">Veracruz</option>
-                                  <option value="Yucatán">Yucatán</option>
-                                  <option value="Zacatecas">Zacatecas</option>
+                                <option value="seleccione">Seleccione una opción</option>
+                                <option value="Aguascalientes">Aguascalientes</option>
+                                <option value="Baja California">Baja California</option>
+                                <option value="Baja California Sur">Baja California Sur</option>
+                                <option value="Campeche">Campeche</option>
+                                <option value="Chiapas">Chiapas</option>
+                                <option value="Chihuahua">Chihuahua</option>
+                                <option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
+                                <option value="Colima">Colima</option>
+                                <option value="Durango">Durango</option>
+                                <option value="Estado de México">Estado de México</option>
+                                <option value="Guanajuato">Guanajuato</option>
+                                <option value="Guerrero">Guerrero</option>
+                                <option value="Hidalgo">Hidalgo</option>
+                                <option value="Jalisco">Jalisco</option>
+                                <option value="Michoacán de Ocampo">Michoacán de Ocampo</option>
+                                <option value="Morelos">Morelos</option>
+                                <option value="Nayarit">Nayarit</option>
+                                <option value="Nuevo León">Nuevo León</option>
+                                <option value="Oaxaca">Oaxaca</option>
+                                <option value="Puebla">Puebla</option>
+                                <option value="Querétaro">Querétaro</option>
+                                <option value="Quintana Roo">Quintana Roo</option>
+                                <option value="San Luis Potosí">San Luis Potosí</option>
+                                <option value="Sinaloa">Sinaloa</option>
+                                <option value="Sonora">Sonora</option>
+                                <option value="Tabasco">Tabasco</option>
+                                <option value="Tamaulipas">Tamaulipas</option>
+                                <option value="Tlaxcala">Tlaxcala</option>
+                                <option value="Veracruz">Veracruz</option>
+                                <option value="Yucatán">Yucatán</option>
+                                <option value="Zacatecas">Zacatecas</option>
                                 </select>
-                               
+                            
                             </div>
                             
                         </div>
-                      <div class="bottom-container">
+                    <div class="bottom-container">
                         <div class="row">
-                             <button type="submit" className="datos">Enviar</button>
+                            <button type="submit" className="datos">Enviar</button>
                         </div>
                     </div>
                     </form>
-                   
+                
                 </div>
                 <Footer />
                 </div>
             );
         }
-    
-         
-
+          
+    }
+    else{
+        console.log("Redirecting to login")
+        return <Redirect to="/Login" />
+    }
+}
 export default DatosPersonales;

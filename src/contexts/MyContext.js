@@ -146,7 +146,8 @@ class MyContextProvider extends Component{
                             ...this.state,
                             isAuth:true,
                             theUser:data.user,
-                            profile:true
+                            profile:true,
+                            survey:false
                         });
                     }
                 }
@@ -155,7 +156,9 @@ class MyContextProvider extends Component{
                     this.setState({
                         ...this.state,
                         isAuth:true,
-                        theUser:data.user
+                        theUser:data.user,
+                        profile:false,
+                        survey:false
                     });
                 }
             }
@@ -196,7 +199,8 @@ class MyContextProvider extends Component{
                             ...this.state,
                             isAuth:true,
                             theUser:data.user,
-                            profile:true
+                            profile:true,
+                            survey:true
                         });
                     }
                 }
@@ -205,7 +209,9 @@ class MyContextProvider extends Component{
                     this.setState({
                         ...this.state,
                         isAuth:true,
-                        theUser:data.user
+                        theUser:data.user,
+                        profile:false,
+                        survey:false
                     });
                 }
             }
