@@ -224,7 +224,8 @@ class MyContextProvider extends Component{
             registerUser:this.registerUser,
             loginUser:this.loginUser,
             logoutUser:this.logoutUser,
-            createProfile:this.createProfile
+            createProfile:this.createProfile,
+            createEncuesta:this.createEncuesta
         }
         return(
             <MyContext.Provider value={contextValue}>
