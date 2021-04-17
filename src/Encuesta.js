@@ -17,22 +17,28 @@ function Encuesta(){
 
 
     // const deRequireCb = (Name) => {
-    //     elements=document.getElementsByName(Name);
+    //    var elements=document.getElementsByClassName(Name);
     
     //     var atLeastOneChecked=false;//at least one checkbox is checked
-    //     for (i=0; i<elements.length; i++) {
-    //         if (elements[i].checked === true) {
+    //     // for (i=0; i<elements.length; i++) {
+    //     //     if (elements[i].checked === true) {
+    //     //         atLeastOneChecked=true;
+    //     //     }
+    //     // }
+
+    //     for(const element of elements.entries()){
+    //         if (element.checked === true){
     //             atLeastOneChecked=true;
     //         }
     //     }
     
     //     if (atLeastOneChecked === true) {
-    //         for (i=0; i<elements.length; i++) {
-    //             elements[i].required = false;
+    //         for (const element of elements.entries()) {
+    //             element.required = false;
     //         }
     //     } else {
-    //         for (i=0; i<elements.length; i++) {
-    //             elements[i].required = true;
+    //         for (const element of elements.entries()) {
+    //             elements.required = true;
     //         }
     //     }
     // }
@@ -485,7 +491,7 @@ function Encuesta(){
                 <div class="form-group">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="plataformaPandemia[]" value="Mercado Libre"  onChange={() => this.onChange("Mercado Libre")} onclick="deRequireCb('plataforma[]')"  oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
+                            <input type="checkbox" name="plataformaPandemia[]" value="Mercado Libre"  onChange={onChange("Mercado Libre")} onclick="deRequireCb('plataforma[]')"  oninvalid="this.setCustomValidity('Por favor, selecciona al menos una opción')" oninput="this.setCustomValidity('')" required/>
                             Mercado Libre
                         </label>
                     </div>

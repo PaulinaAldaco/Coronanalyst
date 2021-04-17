@@ -66,8 +66,8 @@ class MyContextProvider extends Component{
         return profile.data;
     }
 
-    createProfile = async (user) =>{
-        const profile = await Axios.post('datos-personales.php',{
+    createEncuesta = async (user) =>{
+        const profile = await Axios.post('encuesta.php',{
             compras: user.compras,
             plataforma:user.plataforma,
             pago:user.pago,
