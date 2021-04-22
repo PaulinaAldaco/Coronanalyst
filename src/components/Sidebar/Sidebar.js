@@ -1,6 +1,6 @@
-import React from 'react';
-import {SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu, SidebarLink, SideBtnWrap, SidebarRoute} 
-    from './SidebarElements';
+import React,{useContext, useState} from 'react';
+import {SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu, SidebarLink, SideBtnWrap, SidebarRoute} from './SidebarElements';
+import {MyContext} from '../../contexts/MyContext'
 
 const Sidebar = ({isOpen, toggle}) =>{
     const {rootState} = useContext(MyContext);
