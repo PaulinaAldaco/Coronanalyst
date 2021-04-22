@@ -2,10 +2,8 @@ import React, {useState, useContext} from 'react';
 import './Login.css';
 import './SobreNos.css'
 import logo from "./imagenes/logo_blue_desert2.png";
-import Navbar1 from './components/Navbar/Navbar';
-import Sidebar1 from './components/Sidebar/Sidebar';
-import Navbar2 from './components/Navbar/Navbar2';
-import Sidebar2 from './components/Sidebar/Sidebar2';
+import Navbar from './components/Navbar/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
 import {MyContext} from './contexts/MyContext';
 
@@ -20,26 +18,15 @@ function SobreNos(){
         setIsOpen(!isOpen);
     };
     
-    let Sidebar;
-    let Navbar;
-        
-    if (isAuth){
-        Sidebar = <Sidebar2 isOpen={isOpen} toggle={toggle} />;
-        Navbar = <Navbar2 toggle={toggle}/>;
-    }else{
-        Sidebar = <Sidebar1 isOpen={isOpen} toggle={toggle} />;
-        Navbar = <Navbar1 toggle={toggle}/>;
-     }
-    
     return(
         <>
-        {Sidebar}
-        {Navbar}
+        <Navbar toggle={toggle}/>;
+        <Sidebar isOpen={isOpen} toggle={toggle} />;
         <head>
             <link rel="preconnect" href="https://fonts.gstatic.com"/>
             <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet"/> 
             <link rel="preconnect" href="https://fonts.gstatic.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet"/> 
+            <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet"/> 
         </head>
         <div> 
             <div id = "main-contentSobreNos">

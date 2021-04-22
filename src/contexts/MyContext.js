@@ -83,7 +83,6 @@ class MyContextProvider extends Component{
             tiempoComputadora:user.tiempoComputadora,
             dineroEnLinea:user.dineroEnLinea,
             fisicoLinea:user.fisicoLinea,
-            dineroLInea:user.dineroLInea,
             sintomas:user.sintomas,
             condicionesMedicas:user.condicionesMedicas,
             situacionesPandemia:user.situacionesPandemia,
