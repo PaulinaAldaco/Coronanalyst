@@ -7,7 +7,6 @@ import Login from './Login';
 import Encuesta from './Encuesta';
 import SesionCerrada from './pantallas/SesionCerrada';
 import DatosPersonales from './DatosPersonales'
-import EncuestaMan from './EncuestaMantenimiento'
 
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
         <Route path='/Encuesta' component={Encuesta} exact />
         <Route path='/SesionCerrada' component={SesionCerrada} exact />
         <Route path='/DatosPersonales' component={DatosPersonales} exact />
-        <Route path='/EncuestaMan' component={EncuestaMan} exact />
       </Switch>
     </Router>
   );
