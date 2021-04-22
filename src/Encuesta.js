@@ -58,7 +58,6 @@ function Encuesta(){
             tiempoComputadora:'',
             dineroEnLinea:'',
             fisicoLinea:'',
-            dineroLInea:'',
             sintomas:'',
             condicionesMedicas:[],
             situacionesPandemia:[],
