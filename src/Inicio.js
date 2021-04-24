@@ -60,9 +60,9 @@ function Inicio(){
                             <p className="texto">A inicios del año 2020 inició el confinamiento de la pandemia actual del virus COVID-19, 
                             esta pandemia llegó para cambiar la vida humana en muchos sentidos, tanto en aspectos culturales y sociales, 
                             como en ámbitos de salud pública, economía y vida cotidiana. Es por esto por lo que la mayoría de las personas
-                             han modificado su estilo de vida, adaptándose a la nueva normalidad y a las posibilidades que esta permite. 
-                            . </p>   
-                            <button type="button" class="linkI">{ContestarEncuesta}</button>
+                             han modificado su estilo de vida, adaptándose a la nueva normalidad y a las posibilidades que esta permite. </p>  
+
+                            {/* <button type="button" class="linkI">{ContestarEncuesta}</button> */}
                         </div>
                     </div>
                     

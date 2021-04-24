@@ -7,6 +7,7 @@ import Login from './Login';
 import Encuesta from './Encuesta';
 import SesionCerrada from './pantallas/SesionCerrada';
 import DatosPersonales from './DatosPersonales'
+import EliminarEditor from './eliminarEditor'
 
 
 
