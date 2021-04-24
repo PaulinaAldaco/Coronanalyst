@@ -2,6 +2,11 @@ import React, {useState, useContext} from 'react';
 import './Login.css';
 import './SobreNos.css'
 import logo from "./imagenes/logo_blue_desert2.png";
+import Arali from "./imagenes/Arali.jpeg";
+import Isaac from "./imagenes/Isaac.jpeg";
+import Paulina from "./imagenes/Paulina.jpeg";
+import Eduardo from "./imagenes/Eduardo.jpeg";
+import Logo_itesm from "./imagenes/logo_itesm.png"
 import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
@@ -41,23 +46,24 @@ function SobreNos(){
                         </p>
                 </div> 
 
-                <h2>Equipo</h2>
+                <h1>Equipo</h1>
+                <img class="imgIntegrante" src={Logo_itesm}/> 
                 <p>Blue desert está conformado por estudiantes de Ingeniería en Tecnologías Computacionales del Tecnológico de Monterrey campus Chihuahua y campus Sonora.</p>
                 <div class="splitSN leftSobreNos">
-                    <img class="imgSN" src={logo}/> 
-                    <p>Paulina Aldaco</p>
+                    <img class="imgIntegrante" src={Paulina}/> 
+                    <h2>Paulina Aldaco</h2>
                 </div>
                 <div class="splitSN rightSobreNos">
-                    <img class="imgSN" src={logo}/> 
-                    <p>Isaac Garcia</p>
+                    <img class="imgIntegrante" src={Isaac}/> 
+                    <h2>Isaac Garcia</h2>
                 </div> 
                 <div class="splitSN rightSobreNos">
-                    <img class="imgSN" src={logo}/> 
-                    <p>Aralí Mata</p>
+                    <img class="imgIntegrante" src={Arali}/> 
+                    <h2>Aralí Mata</h2>
                 </div>
                 <div class="splitSN rightSobreNos">
-                    <img class="imgSN" src={logo}/> 
-                    <p>Eduardo Maldonado</p>
+                    <img class="imgIntegrante" src={Eduardo}/> 
+                    <h2>Eduardo Maldonado</h2>
                 </div>
 
             </div>
