@@ -333,16 +333,16 @@ function Encuesta() {
         successMsg = <div className="success-msg">{state.successMsg}</div>;
     }
 
-    // if (isAuth) {
-    //     if (survey) {
-    //         console.log("Redirecting to home")
-    //         return <Redirect to="/" />
+    if (isAuth) {
+        if (survey) {
+            console.log("Redirecting to home")
+            return <Redirect to="/" />
             
-    //     } else if (!profile){
-    //         console.log("Redirecting to personal data")
-    //         return <Redirect to="/DatosPersonales" />
+        } else if (!profile){
+            console.log("Redirecting to personal data")
+            return <Redirect to="/DatosPersonales" />
 
-    //     } else {
+        } else {
 
             return (
                 <div>
@@ -644,12 +644,12 @@ function Encuesta() {
                     <Footer />
                 </div>
             )
-        //}
-    // }
-    // else {
-    //     console.log("Redirecting to login")
-    //     return <Redirect to="/Login" />
-    // }
+        }
+    }
+    else {
+        console.log("Redirecting to login")
+        return <Redirect to="/Login" />
+    }
 
 }
 
