@@ -27,8 +27,7 @@ function Inicio(){
         ContestarEncuesta = <LinkR  to="/Encuesta">ContestarEncuesta</LinkR>
     else
         ContestarEncuesta = <LinkR  to="/Registro">ContestarEncuesta</LinkR>
-    
-
+        
     return(
         <>
         <Navbar toggle={toggle}/>;
