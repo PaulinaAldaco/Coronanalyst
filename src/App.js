@@ -10,7 +10,6 @@ import DatosPersonales from './DatosPersonales'
 import EliminarEditor from './eliminarEditor'
 
 
-
 function App() {
   return (
     <Router>

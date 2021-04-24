@@ -39,7 +39,6 @@ else:
     $diez = trim($data->tiempoComputadora);
     $once = trim($data->dineroEnLinea);
     $doce = trim($data->fisicoLinea);
-    $trece = trim($data->dineroLInea);
     $catorce = trim($data->sintomas);
     $quince = trim($data->condicionesMedicas);
     $diezseis = trim($data->situacionesPandemia);
@@ -60,7 +59,6 @@ else:
             $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 10, :diez)";
             $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 11, :once)";
             $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 12, :doce)";
-            $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 13, :trece)";
             $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 14, :catorce)";
             $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 15, :quince)";
             $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 16, :diezseis)";
@@ -81,7 +79,6 @@ else:
             $insert_stmt->bindValue(':tiempoComputadora', $diez,PDO::PARAM_STR);
             $insert_stmt->bindValue(':dineroEnLinea', $once,PDO::PARAM_STR);
             $insert_stmt->bindValue(':fisicoLinea', $doce,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':dineroLInea', $trece,PDO::PARAM_STR);
             $insert_stmt->bindValue(':sintomas', $catorce,PDO::PARAM_STR);
             $insert_stmt->bindValue(':condicionesMedicas', $quince,PDO::PARAM_STR);
             $insert_stmt->bindValue(':situacionesPandemia', $diezseis,PDO::PARAM_STR);

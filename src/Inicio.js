@@ -1,15 +1,12 @@
 import './Login.css';
 import './Inicio.css';
 import React, {useContext, useState} from 'react';
-import Navbar1 from './components/Navbar/Navbar';
-import Sidebar1 from './components/Sidebar/Sidebar';
-import Navbar2 from './components/Navbar/Navbar2';
-import Sidebar2 from './components/Sidebar/Sidebar2';
+import Navbar from './components/Navbar/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
 import grafica from "./graficas.png";
 import Footer from './components/Footer/Footer';
 import {MyContext} from './contexts/MyContext';
 import {Link as LinkR} from 'react-router-dom';
-
 
 
 function Inicio(){
@@ -24,29 +21,23 @@ function Inicio(){
         setIsOpen(!isOpen);
     };
      
-    let Sidebar;
-    let Navbar;
     let ContestarEncuesta;
         
-    if (isAuth){
-        Sidebar = <Sidebar2 isOpen={isOpen} toggle={toggle} />;
-        Navbar = <Navbar2 toggle={toggle}/>;
+    if (isAuth)
         ContestarEncuesta = <LinkR  to="/Encuesta">ContestarEncuesta</LinkR>
-    }else{
-        Sidebar = <Sidebar1 isOpen={isOpen} toggle={toggle} />;
-        Navbar = <Navbar1 toggle={toggle}/>;
+    else
         ContestarEncuesta = <LinkR  to="/Registro">ContestarEncuesta</LinkR>
-     }
+    
 
     return(
         <>
-        {Sidebar}
-        {Navbar} 
+        <Navbar toggle={toggle}/>;
+        <Sidebar isOpen={isOpen} toggle={toggle} />;
         <head>
             <link rel="preconnect" href="https://fonts.gstatic.com"/>
             <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet"/> 
             <link rel="preconnect" href="https://fonts.gstatic.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet"/> 
+            <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet"/> 
         </head>
         <div id = "uno">
             
