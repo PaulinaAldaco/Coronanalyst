@@ -254,7 +254,6 @@ function Encuesta() {
     const onChange = (item) => (e) => {
         var lista = [];
         var pregunta = [];
-        var respuestas = "";
 
         lista = state.userInfo[e.target.name]
         pregunta = state[e.target.name]
@@ -272,22 +271,13 @@ function Encuesta() {
             lista.push(item.value);
         }
 
-        console.log(lista);
-
-        // for(var i = 0; i < lista.length; i++){
-        //     respuestas += lista[i] + ",";
-        // }
-
-        console.log(respuestas);
-
         setState({
             ...state,
             userInfo: {
                 ...state.userInfo,
-                [e.target.name]: respuestas
+                [e.target.name]: lista
             }
         })
-        
     }
 
     // On change the Input Value (name, email, password)
