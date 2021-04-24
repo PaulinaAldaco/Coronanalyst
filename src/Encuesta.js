@@ -194,10 +194,46 @@ function Encuesta() {
 
     const [state, setState] = useState(initialState);
 
+    const convertToString = () => {
+        const nombresPreguntas = [ "plataforma", "pago", "categoria", "plataformaPandemia", "metodoPago", "categoriaCompra", "condicionesMedicas", "situacionesPandemia"]
+
+        
+        var userInfo = {
+                compras: state.userInfo.compras,
+                plataforma: '',
+                pago: '',
+                categoria: '',
+                tiempo: state.userInfo.tiempo,
+                seguido: state.userInfo.seguido,
+                plataformaPandemia: '',
+                metodoPago: '',
+                categoriaCompra: '',
+                tiempoComputadora: state.userInfo.tiempoComputadora,
+                dineroEnLinea: state.userInfo.dineroEnLinea,
+                fisicoLinea: state.userInfo.fisicoLinea,
+                sintomas: state.userInfo.sintomas,
+                condicionesMedicas: '',
+                situacionesPandemia: '',
+                actFisica: state.userInfo.actFisica,
+    
+                id_user: state.userInfo.id_user
+        }
+
+        for (var nombre in nombresPreguntas){
+            var pregunta = state.userInfo[nombre]
+            for(var valor in pregunta){
+                userInfo[nombre] += valor + ","
+            }
+        }
+        
+
+    }
+
     // On Submit the Form
     const submitForm = async (event) => {
         event.preventDefault();
-        const data = await createEncuesta(state.userInfo);
+        const userInfo = convertToString(); 
+        const data = await createEncuesta(userInfo);
         if (data.success) {
             setState({
                 ...initialState,
@@ -221,11 +257,11 @@ function Encuesta() {
 
         lista = state.userInfo[e.target.name]
         pregunta = state[e.target.name]
-
+    
         let id = item.id;
         pregunta[id - 1].isChecked = e.target.checked
         setState({ [e.target.name]: pregunta })
-        console.log(state.plataforma)
+        
 
         var idx = lista.indexOf(item.value);
 
@@ -266,8 +302,6 @@ function Encuesta() {
 
     const isRequired = (e) => {
         var elements = document.getElementsByName(e.target.name);
-        const nombresPreguntas = ["compras", "plataforma", "pago", "categoria", "tiempo", "seguido", "plataformaPandemia", "metodoPago", "categoriaCompra",
-            "tiempoComputadora", "dineroEnLinea", "fisicoLinea", "sintomas", "condicionesMedicas", "situacionesPandemia", "actFisica"]
 
         var atLeastOneChecked = false;//at least one checkbox is checked
         for (var i = 0; i < elements.length; i++) {
@@ -299,12 +333,16 @@ function Encuesta() {
         successMsg = <div className="success-msg">{state.successMsg}</div>;
     }
 
-    if (isAuth) {
-        if (survey) {
-            console.log("Redirecting to home")
-            return <Redirect to="/" />
+    // if (isAuth) {
+    //     if (survey) {
+    //         console.log("Redirecting to home")
+    //         return <Redirect to="/" />
             
-        } else {
+    //     } else if (!profile){
+    //         console.log("Redirecting to personal data")
+    //         return <Redirect to="/DatosPersonales" />
+
+    //     } else {
 
             return (
                 <div>
@@ -606,12 +644,12 @@ function Encuesta() {
                     <Footer />
                 </div>
             )
-        }
-    }
-    else {
-        console.log("Redirecting to login")
-        return <Redirect to="/Login" />
-    }
+        //}
+    // }
+    // else {
+    //     console.log("Redirecting to login")
+    //     return <Redirect to="/Login" />
+    // }
 
 }
 

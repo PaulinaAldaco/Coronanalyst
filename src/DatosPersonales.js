@@ -6,12 +6,6 @@ import {MyContext} from './contexts/MyContext';
 import {Redirect} from "react-router-dom";
 
 function DatosPersonales() {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggle = () =>{
-        setIsOpen(!isOpen)
-    };
-
     const {rootState,createProfile,updateUserState} = useContext(MyContext);
     const {isAuth,theUser,profile,survey} = rootState;
 
