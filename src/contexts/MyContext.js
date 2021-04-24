@@ -21,6 +21,7 @@ class MyContextProvider extends Component{
         showLogin:true,
         isAuth:false,
         theUser:null,
+        type:null,
         profile:false,
         survey:false
     }
@@ -134,34 +135,50 @@ class MyContextProvider extends Component{
 
             // If user information is successfully received
             if(data.success && data.user){
-                if(data.hasProfile){
-                    if(data.completedSurvey){
-                        console.log("User, profile data, and survey completion successfully retrieved");
-                        this.setState({
-                            ...this.state,
-                            isAuth:true,
-                            theUser:data.user,
-                            profile:true,
-                            survey:true
-                        });
+                if(data.type=="general"){
+                    if(data.hasProfile){
+                        if(data.completedSurvey){
+                            console.log("User, profile data, and survey completion successfully retrieved");
+                            this.setState({
+                                ...this.state,
+                                isAuth:true,
+                                type:"general",
+                                theUser:data.user,
+                                profile:true,
+                                survey:true
+                            });
+                        }
+                        else{
+                            console.log("User and profile data successfully retrieved");
+                            this.setState({
+                                ...this.state,
+                                isAuth:true,
+                                theUser:data.user,
+                                type:"general",
+                                profile:true,
+                                survey:false
+                            });
+                        }
                     }
                     else{
-                        console.log("User and profile data successfully retrieved");
+                        console.log("User data successfully retrieved");
                         this.setState({
                             ...this.state,
                             isAuth:true,
                             theUser:data.user,
-                            profile:true,
+                            type:"general",
+                            profile:false,
                             survey:false
                         });
                     }
                 }
                 else{
-                    console.log("User data successfully retrieved");
+                    console.log("User is an ", data.type);
                     this.setState({
                         ...this.state,
                         isAuth:true,
                         theUser:data.user,
+                        type:data.type,
                         profile:false,
                         survey:false
                     });
