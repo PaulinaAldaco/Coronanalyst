@@ -226,6 +226,7 @@ function Encuesta() {
             }
         }
         
+        return userInfo
 
     }
 
