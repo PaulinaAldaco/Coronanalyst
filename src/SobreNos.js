@@ -7,7 +7,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
 import {MyContext} from './contexts/MyContext';
 
-function SobreNos(){ 
+function SobreNos(){  
     const {rootState} = useContext(MyContext);
     const {isAuth} = rootState;
 
@@ -40,7 +40,29 @@ function SobreNos(){
                             Es por esto que Blue Desert es el desarrollador de "Coronanalyst", un sistema que tiene como finalidad identificar los cambios, afectaciones y nuevas tendencias en el estilo de vida de las personas a raíz de la actual pandemia. El recabar esta información ayudará a diferentes industrias a adaptarse y poder ofrecer productos y servicios de una mayor calidad y enfocarse principalmente en las necesidades del cliente.
                         </p>
                 </div> 
+
+                <h2>Equipo</h2>
+                <p>Blue desert está conformado por estudiantes de Ingeniería en Tecnologías Computacionales del Tecnológico de Monterrey campus Chihuahua y campus Sonora.</p>
+                <div class="splitSN leftSobreNos">
+                    <img class="imgSN" src={logo}/> 
+                    <p>Paulina Aldaco</p>
+                </div>
+                <div class="splitSN rightSobreNos">
+                    <img class="imgSN" src={logo}/> 
+                    <p>Isaac Garcia</p>
+                </div> 
+                <div class="splitSN rightSobreNos">
+                    <img class="imgSN" src={logo}/> 
+                    <p>Aralí Mata</p>
+                </div>
+                <div class="splitSN rightSobreNos">
+                    <img class="imgSN" src={logo}/> 
+                    <p>Eduardo Maldonado</p>
+                </div>
+
             </div>
+
+            
             <Footer/>
         </div>
         </>

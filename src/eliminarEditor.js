@@ -3,8 +3,6 @@ import './EliminarEditor.css';
 import React, {useContext, useState} from 'react';
 import Navbar1 from './components/Navbar/Navbar';
 import Sidebar1 from './components/Sidebar/Sidebar';
-import Navbar2 from './components/Navbar/Navbar2';
-import Sidebar2 from './components/Sidebar/Sidebar2';
 import añadir from "./imagenes/editor.png";
 import basura from "./imagenes/basura.png";
 import Footer from './components/Footer/Footer';
@@ -29,20 +27,11 @@ function EliminarEditor(){
     let Navbar;
     let ContestarEncuesta;
         
-    if (isAuth){
-        Sidebar = <Sidebar2 isOpen={isOpen} toggle={toggle} />;
-        Navbar = <Navbar2 toggle={toggle}/>;
-        ContestarEncuesta = <LinkR  to="/Encuesta">ContestarEncuesta</LinkR>
-    }else{
-        Sidebar = <Sidebar1 isOpen={isOpen} toggle={toggle} />;
-        Navbar = <Navbar1 toggle={toggle}/>;
-        ContestarEncuesta = <LinkR  to="/Registro">ContestarEncuesta</LinkR>
-     }
 
     return(
         <>
-        {Sidebar}
-        {Navbar} 
+        <Sidebar1 isOpen={isOpen} toggle={toggle} />;
+        <Navbar1 toggle={toggle}/>;
         <head>
             <link rel="preconnect" href="https://fonts.gstatic.com"/>
             <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet"/> 
