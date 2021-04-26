@@ -11,7 +11,7 @@ import { Redirect } from "react-router-dom";
 function Encuesta() {
 
     const { rootState, createEncuesta } = useContext(MyContext);
-    const { isAuth, theUser, profile, survey } = rootState;
+    const { isAuth, theUser, type, profile, survey } = rootState;
     console.log(isAuth);
 
     const initialState = {
@@ -325,316 +325,322 @@ function Encuesta() {
     }
 
     if (isAuth) {
-        if (survey) {
-            console.log("Redirecting to home")
+        if(type=="general"){
+            if (survey) {
+                console.log("Redirecting to home (profile and survey completed)")
+                return <Redirect to="/" />
+                
+            } else if (!profile){
+                console.log("Redirecting to personal data")
+                return <Redirect to="/DatosPersonales" />
+    
+            } else {
+    
+                return (
+                    <div>
+                        <Header />
+                        <section id="main-content">
+                            <form onSubmit={submitForm}>
+                                <h1>Responde las siguientes preguntas</h1>
+                                <div id="images2" href="#">
+                                    <img id="images2" src={formImage} alt="form" />
+                                </div>
+                                <fieldset>
+                                    <legend>¿Qué tan seguido compraba en línea?</legend>
+                                    <div class="form-group">
+                                        <div class="radio">
+                                            <React.Fragment>{
+                                                initialState.compras.map(item => (
+                                                    <label>
+                                                        <input type="radio" name="compras" value={item.value} onChange={onChangeValue} required={!item.isChecked} onClick={isRequired} required />
+                                                        {item.value}
+                                                        <br />
+                                                    </label>
+                                                ))
+                                            }</React.Fragment>
+                                        </div>
+    
+                                    </div>
+                                </fieldset>
+    
+                                <fieldset>
+                                    <legend>¿Qué plataformas utilizaba para realizar compras en línea?</legend>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <React.Fragment>{
+                                                initialState.plataforma.map(item => (
+                                                    <label>
+                                                        <input type="checkbox" onClick={isRequired} name="plataforma" value={item.value} onChange={onChange(item)} required />
+                                                        {item.value}
+                                                        <br />
+                                                    </label>
+                                                ))
+                                            }</React.Fragment>
+                                        </div>
+    
+                                    </div>
+                                </fieldset>
+    
+                                <fieldset>
+                                    <legend>¿Qué métodos de pago utilizaba más para realizar sus compras en línea?</legend>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <React.Fragment>{
+                                                initialState.pago.map(item => (
+                                                    <label>
+                                                        <input type="checkbox" onClick={isRequired} name="pago" value={item.value} onChange={onChange(item)} required />
+                                                        {item.value}
+                                                        <br />
+                                                    </label>
+                                                ))
+                                            }</React.Fragment>
+                                        </div>
+    
+                                    </div>
+    
+                                </fieldset>
+    
+                                <fieldset>
+                                    <legend>¿De cuáles de las siguientes categorías realizaba compras?</legend>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <React.Fragment>{
+                                                initialState.categoria.map(item => (
+                                                    <label>
+                                                        <input type="checkbox" onClick={isRequired} required name="categoria" value={item.value} onChange={onChange(item)} />
+                                                        {item.value}
+                                                        <br />
+                                                    </label>
+                                                ))
+                                            }</React.Fragment>
+                                        </div>
+                                    </div>
+                                </fieldset>
+    
+                                <fieldset>
+                                    <legend>¿Cuánto tiempo estima que se encontraba usando la computadora para actividades diarias?</legend>
+                                    <div class="form-group">
+                                        <div class="radio">
+                                            <React.Fragment>{
+                                                initialState.tiempo.map(item => (
+                                                    <label>
+                                                        <input type="radio" name="tiempo" value={item.value} onChange={onChangeValue} onClick={isRequired} required />
+                                                        {item.value}
+                                                        <br />
+                                                    </label>
+                                                ))
+                                            }</React.Fragment>
+                                        </div>
+    
+                                    </div>
+                                </fieldset>
+    
+                                <fieldset>
+                                    <legend>¿Qué tan seguido compra en línea ahora?</legend>
+                                    <div class="form-group">
+                                        <div class="radio">
+                                            <React.Fragment>{
+                                                initialState.seguido.map(item => (
+                                                    <label>
+                                                        <input type="radio" name="seguido" value={item.value} onChange={onChangeValue} onClick={isRequired} required />
+                                                        {item.value}
+                                                        <br />
+                                                    </label>
+                                                ))
+                                            }</React.Fragment>
+                                        </div>
+                                    </div>
+                                </fieldset>
+    
+                                <fieldset>
+                                    <legend>¿Qué plataformas utiliza para realizar compras en línea?</legend>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <React.Fragment>{
+                                                initialState.plataformaPandemia.map(item => (
+                                                    <label>
+                                                        <input type="checkbox" name="plataformaPandemia" value={item.value} onChange={onChange(item)} onClick={isRequired} required />
+                                                        {item.value}
+                                                        <br />
+                                                    </label>
+                                                ))
+                                            }</React.Fragment>
+                                        </div>
+                                    </div>
+                                </fieldset>
+    
+    
+                                <fieldset>
+                                    <legend>¿Qué método de pago utiliza usted para sus compras en internet?</legend>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <React.Fragment>{
+                                                initialState.metodoPago.map(item => (
+                                                    <label>
+                                                        <input type="checkbox" name="metodoPago" value={item.value} onChange={onChange(item)} onClick={isRequired} required />
+                                                        {item.value}
+                                                        <br />
+                                                    </label>
+                                                ))
+                                            }</React.Fragment>
+                                        </div>
+                                    </div>
+                                </fieldset>
+    
+    
+                                <fieldset>
+                                    <legend>¿De cuáles de las siguientes categorías ha realizado compras?</legend>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <React.Fragment>{
+                                                initialState.categoriaCompra.map(item => (
+                                                    <label>
+                                                        <input type="checkbox" name="categoriaCompra" value={item.value} onChange={onChange(item)} onClick={isRequired} required />
+                                                        {item.value}
+                                                        <br />
+                                                    </label>
+                                                ))
+                                            }</React.Fragment>
+                                        </div>
+                                    </div>
+                                </fieldset>
+    
+    
+                                <fieldset>
+                                    <legend>¿Cuánto tiempo estima que usa la computadora para actividades diarias? </legend>
+                                    <div class="form-group">
+                                        <div class="radio">
+                                            <React.Fragment>{
+                                                initialState.tiempoComputadora.map(item => (
+                                                    <label>
+                                                        <input type="radio" name="tiempoComputadora" value={item.value} onChange={onChangeValue} onClick={isRequired} required />
+                                                        {item.value}
+                                                        <br />
+                                                    </label>
+                                                ))
+                                            }</React.Fragment>
+                                        </div>
+                                    </div>
+                                </fieldset>
+    
+    
+                                <fieldset>
+                                    <legend>¿En promedio cuánto dinero estima que gasta en compras en línea al mes? </legend>
+                                    <div class="form-group">
+                                        <div class="radio">
+                                            <React.Fragment>{
+                                                initialState.dineroEnLinea.map(item => (
+                                                    <label>
+                                                        <input type="radio" name="dineroEnLinea" value={item.value} onChange={onChangeValue} onClick={isRequired} required />
+                                                        {item.value}
+                                                        <br />
+                                                    </label>
+                                                ))
+                                            }</React.Fragment>
+                                        </div>
+                                    </div>
+                                </fieldset>
+    
+    
+                                <fieldset>
+                                    <legend>¿Actualmente compras más seguido en físico o en línea? </legend>
+                                    <div class="form-group">
+                                        <div class="radio">
+                                            <React.Fragment>{
+                                                initialState.fisicoLinea.map(item => (
+                                                    <label>
+                                                        <input type="radio" name="fisicoLinea" value={item.value} onChange={onChangeValue} onClick={isRequired} required />
+                                                        {item.value}
+                                                        <br />
+                                                    </label>
+                                                ))
+                                            }</React.Fragment>
+                                        </div>
+                                    </div>
+                                </fieldset>
+    
+    
+                                <fieldset>
+                                    <legend>¿Desde que empezó la pandemia, ha presentado síntomas relacionados al COVID-19? </legend>
+                                    <div class="form-group">
+                                        <div class="radio">
+                                            <React.Fragment>{
+                                                initialState.sintomas.map(item => (
+                                                    <label>
+                                                        <input type="radio" name="sintomas" value={item.value} onChange={onChangeValue} onClick={isRequired} required />
+                                                        {item.value}
+                                                        <br />
+                                                    </label>
+                                                ))
+                                            }</React.Fragment>
+                                        </div>
+                                    </div>
+                                </fieldset>
+    
+    
+                                <fieldset>
+                                    <legend>¿Usted sufre de alguna de las siguientes condiciones médicas? </legend>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <React.Fragment>{
+                                                initialState.condicionesMedicas.map(item => (
+                                                    <label>
+                                                        <input type="checkbox" name="condicionesMedicas" value={item.value} onChange={onChange(item)} onClick={isRequired} required />
+                                                        {item.value}
+                                                        <br />
+                                                    </label>
+                                                ))
+                                            }</React.Fragment>
+                                        </div>
+                                    </div>
+                                </fieldset>
+    
+    
+                                <fieldset>
+                                    <legend>¿A causa de la pandemia usted se ha sentido relacionado con algunas de las siguientes situaciones? </legend>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <React.Fragment>{
+                                                initialState.situacionesPandemia.map(item => (
+                                                    <label>
+                                                        <input type="checkbox" name="situacionesPandemia" value={item.value} onChange={onChange(item)} onClick={isRequired} required />
+                                                        {item.value}
+                                                        <br />
+                                                    </label>
+                                                ))
+                                            }</React.Fragment>
+                                        </div>
+                                    </div>
+                                </fieldset>
+    
+                                <fieldset>
+                                    <legend>Durante la pandemia ¿Cómo ha cambiado su actividad física? </legend>
+                                    <div class="form-group">
+                                        <div class="radio">
+                                            <React.Fragment>{
+                                                initialState.actFisica.map(item => (
+                                                    <label>
+                                                        <input type="radio" name="actFisica" value={item.value} onChange={onChangeValue} onClick={isRequired} required />
+                                                        {item.value}
+                                                        <br />
+                                                    </label>
+                                                ))
+                                            }</React.Fragment>
+                                        </div>
+                                    </div>
+                                </fieldset>
+    
+                                <button class="registrarse" type="submit">Enviar respuestas</button>
+                            </form>
+                        </section>
+                        <Footer />
+                    </div>
+                )
+            }
+        }
+        else{
+            console.log("Redirecting to home (user is adnmin/editor)")
             return <Redirect to="/" />
-            
-        } else if (!profile){
-            console.log("Redirecting to personal data")
-            return <Redirect to="/DatosPersonales" />
-
-        } else {
-
-            return (
-                <div>
-                    <Header />
-                    <section id="main-content">
-                        <form onSubmit={submitForm}>
-                            <h1>Responde las siguientes preguntas</h1>
-                            <div id="images2" href="#">
-                                <img id="images2" src={formImage} alt="form" />
-                            </div>
-                            <fieldset>
-                                <legend>¿Qué tan seguido compraba en línea?</legend>
-                                <div class="form-group">
-                                    <div class="radio">
-                                        <React.Fragment>{
-                                            initialState.compras.map(item => (
-                                                <label>
-                                                    <input type="radio" name="compras" value={item.value} onChange={onChangeValue} required={!item.isChecked} onClick={isRequired} required />
-                                                    {item.value}
-                                                    <br />
-                                                </label>
-                                            ))
-                                        }</React.Fragment>
-                                    </div>
-
-                                </div>
-                            </fieldset>
-
-                            <fieldset>
-                                <legend>¿Qué plataformas utilizaba para realizar compras en línea?</legend>
-                                <div class="form-group">
-                                    <div class="checkbox">
-                                        <React.Fragment>{
-                                            initialState.plataforma.map(item => (
-                                                <label>
-                                                    <input type="checkbox" onClick={isRequired} name="plataforma" value={item.value} onChange={onChange(item)} required />
-                                                    {item.value}
-                                                    <br />
-                                                </label>
-                                            ))
-                                        }</React.Fragment>
-                                    </div>
-
-                                </div>
-                            </fieldset>
-
-                            <fieldset>
-                                <legend>¿Qué métodos de pago utilizaba más para realizar sus compras en línea?</legend>
-                                <div class="form-group">
-                                    <div class="checkbox">
-                                        <React.Fragment>{
-                                            initialState.pago.map(item => (
-                                                <label>
-                                                    <input type="checkbox" onClick={isRequired} name="pago" value={item.value} onChange={onChange(item)} required />
-                                                    {item.value}
-                                                    <br />
-                                                </label>
-                                            ))
-                                        }</React.Fragment>
-                                    </div>
-
-                                </div>
-
-                            </fieldset>
-
-                            <fieldset>
-                                <legend>¿De cuáles de las siguientes categorías realizaba compras?</legend>
-                                <div class="form-group">
-                                    <div class="checkbox">
-                                        <React.Fragment>{
-                                            initialState.categoria.map(item => (
-                                                <label>
-                                                    <input type="checkbox" onClick={isRequired} required name="categoria" value={item.value} onChange={onChange(item)} />
-                                                    {item.value}
-                                                    <br />
-                                                </label>
-                                            ))
-                                        }</React.Fragment>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <fieldset>
-                                <legend>¿Cuánto tiempo estima que se encontraba usando la computadora para actividades diarias?</legend>
-                                <div class="form-group">
-                                    <div class="radio">
-                                        <React.Fragment>{
-                                            initialState.tiempo.map(item => (
-                                                <label>
-                                                    <input type="radio" name="tiempo" value={item.value} onChange={onChangeValue} onClick={isRequired} required />
-                                                    {item.value}
-                                                    <br />
-                                                </label>
-                                            ))
-                                        }</React.Fragment>
-                                    </div>
-
-                                </div>
-                            </fieldset>
-
-                            <fieldset>
-                                <legend>¿Qué tan seguido compra en línea ahora?</legend>
-                                <div class="form-group">
-                                    <div class="radio">
-                                        <React.Fragment>{
-                                            initialState.seguido.map(item => (
-                                                <label>
-                                                    <input type="radio" name="seguido" value={item.value} onChange={onChangeValue} onClick={isRequired} required />
-                                                    {item.value}
-                                                    <br />
-                                                </label>
-                                            ))
-                                        }</React.Fragment>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <fieldset>
-                                <legend>¿Qué plataformas utiliza para realizar compras en línea?</legend>
-                                <div class="form-group">
-                                    <div class="checkbox">
-                                        <React.Fragment>{
-                                            initialState.plataformaPandemia.map(item => (
-                                                <label>
-                                                    <input type="checkbox" name="plataformaPandemia" value={item.value} onChange={onChange(item)} onClick={isRequired} required />
-                                                    {item.value}
-                                                    <br />
-                                                </label>
-                                            ))
-                                        }</React.Fragment>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-
-                            <fieldset>
-                                <legend>¿Qué método de pago utiliza usted para sus compras en internet?</legend>
-                                <div class="form-group">
-                                    <div class="checkbox">
-                                        <React.Fragment>{
-                                            initialState.metodoPago.map(item => (
-                                                <label>
-                                                    <input type="checkbox" name="metodoPago" value={item.value} onChange={onChange(item)} onClick={isRequired} required />
-                                                    {item.value}
-                                                    <br />
-                                                </label>
-                                            ))
-                                        }</React.Fragment>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-
-                            <fieldset>
-                                <legend>¿De cuáles de las siguientes categorías ha realizado compras?</legend>
-                                <div class="form-group">
-                                    <div class="checkbox">
-                                        <React.Fragment>{
-                                            initialState.categoriaCompra.map(item => (
-                                                <label>
-                                                    <input type="checkbox" name="categoriaCompra" value={item.value} onChange={onChange(item)} onClick={isRequired} required />
-                                                    {item.value}
-                                                    <br />
-                                                </label>
-                                            ))
-                                        }</React.Fragment>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-
-                            <fieldset>
-                                <legend>¿Cuánto tiempo estima que usa la computadora para actividades diarias? </legend>
-                                <div class="form-group">
-                                    <div class="radio">
-                                        <React.Fragment>{
-                                            initialState.tiempoComputadora.map(item => (
-                                                <label>
-                                                    <input type="radio" name="tiempoComputadora" value={item.value} onChange={onChangeValue} onClick={isRequired} required />
-                                                    {item.value}
-                                                    <br />
-                                                </label>
-                                            ))
-                                        }</React.Fragment>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-
-                            <fieldset>
-                                <legend>¿En promedio cuánto dinero estima que gasta en compras en línea al mes? </legend>
-                                <div class="form-group">
-                                    <div class="radio">
-                                        <React.Fragment>{
-                                            initialState.dineroEnLinea.map(item => (
-                                                <label>
-                                                    <input type="radio" name="dineroEnLinea" value={item.value} onChange={onChangeValue} onClick={isRequired} required />
-                                                    {item.value}
-                                                    <br />
-                                                </label>
-                                            ))
-                                        }</React.Fragment>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-
-                            <fieldset>
-                                <legend>¿Actualmente compras más seguido en físico o en línea? </legend>
-                                <div class="form-group">
-                                    <div class="radio">
-                                        <React.Fragment>{
-                                            initialState.fisicoLinea.map(item => (
-                                                <label>
-                                                    <input type="radio" name="fisicoLinea" value={item.value} onChange={onChangeValue} onClick={isRequired} required />
-                                                    {item.value}
-                                                    <br />
-                                                </label>
-                                            ))
-                                        }</React.Fragment>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-
-                            <fieldset>
-                                <legend>¿Desde que empezó la pandemia, ha presentado síntomas relacionados al COVID-19? </legend>
-                                <div class="form-group">
-                                    <div class="radio">
-                                        <React.Fragment>{
-                                            initialState.sintomas.map(item => (
-                                                <label>
-                                                    <input type="radio" name="sintomas" value={item.value} onChange={onChangeValue} onClick={isRequired} required />
-                                                    {item.value}
-                                                    <br />
-                                                </label>
-                                            ))
-                                        }</React.Fragment>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-
-                            <fieldset>
-                                <legend>¿Usted sufre de alguna de las siguientes condiciones médicas? </legend>
-                                <div class="form-group">
-                                    <div class="checkbox">
-                                        <React.Fragment>{
-                                            initialState.condicionesMedicas.map(item => (
-                                                <label>
-                                                    <input type="checkbox" name="condicionesMedicas" value={item.value} onChange={onChange(item)} onClick={isRequired} required />
-                                                    {item.value}
-                                                    <br />
-                                                </label>
-                                            ))
-                                        }</React.Fragment>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-
-                            <fieldset>
-                                <legend>¿A causa de la pandemia usted se ha sentido relacionado con algunas de las siguientes situaciones? </legend>
-                                <div class="form-group">
-                                    <div class="checkbox">
-                                        <React.Fragment>{
-                                            initialState.situacionesPandemia.map(item => (
-                                                <label>
-                                                    <input type="checkbox" name="situacionesPandemia" value={item.value} onChange={onChange(item)} onClick={isRequired} required />
-                                                    {item.value}
-                                                    <br />
-                                                </label>
-                                            ))
-                                        }</React.Fragment>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <fieldset>
-                                <legend>Durante la pandemia ¿Cómo ha cambiado su actividad física? </legend>
-                                <div class="form-group">
-                                    <div class="radio">
-                                        <React.Fragment>{
-                                            initialState.actFisica.map(item => (
-                                                <label>
-                                                    <input type="radio" name="actFisica" value={item.value} onChange={onChangeValue} onClick={isRequired} required />
-                                                    {item.value}
-                                                    <br />
-                                                </label>
-                                            ))
-                                        }</React.Fragment>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <button class="registrarse" type="submit">Enviar respuestas</button>
-                        </form>
-                    </section>
-                    <Footer />
-                </div>
-            )
         }
     }
     else {

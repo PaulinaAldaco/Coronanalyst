@@ -72,10 +72,10 @@ function DatosPersonales() {
     }
 
     if(isAuth) {
-        if(type="general"){
+        if(type=="general"){
             if(profile){
                 if(survey){
-                    console.log("Redirecting to home")
+                    console.log("Redirecting to home (profile and survey completed)")
                     return <Redirect to="/" />
                 }
                 else{
@@ -231,7 +231,7 @@ function DatosPersonales() {
             }
         }
         else{
-            console.log("Redirecting to home")
+            console.log("Redirecting to home (user is adnmin/editor)")
             return <Redirect to="/" />
         }
     }
