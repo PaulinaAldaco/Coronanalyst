@@ -40,10 +40,14 @@ function SobreNos(){
                     <img class="imgSN" src={logo}/> 
                 </div>   
                 <div class="splitSN rightSobreNos">
-                <p className="texto2"> En el contexto actual, es de interés económico y social analizar las nuevas tendencias (en contraste con las anteriores a la pandemia) en el comportamiento de compra del público.
-            
-                            Es por esto que Blue Desert es el desarrollador de "Coronanalyst", un sistema que tiene como finalidad identificar los cambios, afectaciones y nuevas tendencias en el estilo de vida de las personas a raíz de la actual pandemia. El recabar esta información ayudará a diferentes industrias a adaptarse y poder ofrecer productos y servicios de una mayor calidad y enfocarse principalmente en las necesidades del cliente.
-                        </p>
+                <p className="texto2"> 
+                    Blue Desert es un grupo de estudiantes de 4to semestre del Tecnológico de Monterrey campus Chihuahua y campus Sonora, quienes a petición de la empresa PK Global 
+                    desarrollaron el sitio Coronanalyst, un sistema que tiene como finalidad identificar los cambios, afectaciones y nuevas tendencias 
+                    en el estilo de vida de las personas a raíz de la actual pandemia.
+                    <br/>
+                    <br/>
+                    <br/>
+                </p>
                 </div> 
 
                 <h1>Equipo</h1>
