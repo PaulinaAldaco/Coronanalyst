@@ -95,7 +95,7 @@ function Registro() {
         if(type=="general"){
             if(profile){
                 if(survey){
-                    console.log("Redirecting to home")
+                    console.log("Redirecting to home (profile and survey completed)")
                     return <Redirect to="/" />
                 }
                 else{
@@ -109,7 +109,7 @@ function Registro() {
             }
         }
         else{
-            console.log("Redirecting to home")
+            console.log("Redirecting to home (user is an admin/editor)")
             return <Redirect to="/" />
         }
     }
