@@ -1,5 +1,5 @@
 import './Login.css';
-import './EliminarEditor.css';
+import './AdministrarEditores.css';
 import React, {useContext, useState} from 'react';
 import Navbar1 from './components/Navbar/Navbar';
 import Sidebar1 from './components/Sidebar/Sidebar';
