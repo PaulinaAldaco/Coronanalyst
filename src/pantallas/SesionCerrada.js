@@ -52,6 +52,7 @@ function SesionCerrada() {
       await isLoggedIn();
 
       //await hasProfile();
+      <Redirect to="/" />
 
     }
     else {

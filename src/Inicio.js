@@ -47,17 +47,25 @@ function Inicio(){
                             <img className="imgInicio" src={grafica}/>     
                         </div>
                         <div class="b2 ">
-                            <p className="texto">A inicios del año 2020 inició el confinamiento de la pandemia actual del virus COVID-19, 
-                            esta pandemia llegó para cambiar la vida humana en muchos sentidos, tanto en aspectos culturales y sociales, 
-                            como en ámbitos de salud pública, economía y vida cotidiana. Es por esto por lo que la mayoría de las personas
-                             han modificado su estilo de vida, adaptándose a la nueva normalidad y a las posibilidades que esta permite. 
-                            . </p>   
+                            <p className="texto">A inicios del año 2020 inició la pandemia de COVID-19 la cual llegó para cambiar la vida de las personas 
+                            en varios aspectos como culturales, sociales, de salud pública, económicos y cotidianos. Por esta razón la mayoría de la gente ha 
+                            modificado su estilo de vida, adaptándose a la nueva normalidad y a las posibilidades que esta permite.
+
+                            
+                            </p>   
                             <button type="button" class="linkI">{ContestarEncuesta}</button>
                         </div>
                     </div>
                     
-                    <p class="texto">Es por este motivo que el equipo de Blue Desert se dio a la tarea de crear este sitio con la finalidad de recabar información del publico en general para analizar como ha afectado la pandemia en la vida de las personas en diversos aspectos y detectar las nuevas tendencias que se han generado por esta situación. El sitio consiste en una serie de preguntas relacionadas con tu estilo de vida y como se ha visto afectado o modificado a raíz de la pandemia.
-                    Lo unico que tienes que hacer es registrarte y contestar las preguntas, luego de eso podrás ver los resultados de todas las personas que la han contestado. </p>   
+                    <p class="texto">
+                    Es por ello que el equipo de Blue Desert se dio a la tarea de crear este sitio con la finalidad de recabar información
+                             del público en México para analizar cómo ha afectado la pandemia en la vida de las personas y detectar las nuevas tendencias de
+                              consumo que se han generado por esta situación. 
+
+                    El sitio consiste en una serie de preguntas relacionadas con tu estilo de vida y como se ha visto afectado o modificado
+                     a raíz de la pandemia. Lo único que tienes que hacer es registrarte y contestar las preguntas, 
+                     luego de eso podrás ver la información obtenidad de los datos recabados de quienes la han contestado y darte una idea de que 
+                     es lo que ha cambiado en la vida de las personas. </p>   
                     
             </main>
             <Footer/>

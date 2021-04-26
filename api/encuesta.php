@@ -47,42 +47,42 @@ else:
 
         try{
 
-            $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 1, :uno)";
-            $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 2, :dos)";
-            $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 3, :tres)";
-            $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 4, :cuatro)";
-            $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 5, :cinco)";
-            $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 6, :seis)";
-            $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 7, :siete)";
-            $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 8, :ocho)";
-            $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 9, :nueve)";
-            $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 10, :diez)";
-            $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 11, :once)";
-            $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 12, :doce)";
-            $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 14, :catorce)";
-            $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 15, :quince)";
-            $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 16, :diezseis)";
-            $insert_query = "INSERT INTO Respuesta (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 17, :udiezsiete)";
+            $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 1, :uno)";
+            $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 2, :dos)";
+            $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 3, :tres)";
+            $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 4, :cuatro)";
+            $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 5, :cinco)";
+            $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 6, :seis)";
+            $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 7, :siete)";
+            $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 8, :ocho)";
+            $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 9, :nueve)";
+            $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 10, :diez)";
+            $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 11, :once)";
+            $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 12, :doce)";
+            $insert_query = "INSERT INTO respuestas(ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 13, :catorce)";
+            $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 14, :quince)";
+            $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 15, :diezseis)";
+            $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES(id_user, 16, :udiezsiete)";
 
             $insert_stmt = $conn->prepare($insert_query);
 
             // DATA BINDING
-            $insert_stmt->bindValue(':compras', $uno,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':plataforma', $dos,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':pago', $tres,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':categoria', $cuatro,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':tiempo', $cinco,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':seguido', $seis,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':plataformaPandemia', $siete,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':metodoPago', $ocho,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':categoriaCompra', $nueve,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':tiempoComputadora', $diez,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':dineroEnLinea', $once,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':fisicoLinea', $doce,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':sintomas', $catorce,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':condicionesMedicas', $quince,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':situacionesPandemia', $diezseis,PDO::PARAM_STR);
-            $insert_stmt->bindValue(':actFisica', $diezsiete,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':uno', $uno,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':dos', $dos,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':tres', $tres,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':cuatro', $cuatro,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':cinco', $cinco,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':seis', $seis,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':siete', $siete,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':ocho', $ocho,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':nueve', $nueve,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':diez', $diez,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':once', $once,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':doce', $doce,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':catorce', $catorce,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':quince', $quince,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':diezseis', $diezseis,PDO::PARAM_STR);
+            $insert_stmt->bindValue(':diezsiete', $diezsiete,PDO::PARAM_STR);
             $insert_stmt->bindValue(':id_user', $id_user,PDO::PARAM_INT);
             $insert_stmt->execute();
 
