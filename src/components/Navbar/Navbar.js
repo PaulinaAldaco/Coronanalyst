@@ -7,17 +7,24 @@ import {MyContext} from '../../contexts/MyContext'
 
 const Navbar = ({toggle}) => {
   const {rootState,logoutUser} = useContext(MyContext);
-  const {isAuth, survey} = rootState;
+  const {isAuth, type, profile, survey} = rootState;
 
   let NavButton;
   let NavLink2;
 
   if (isAuth){
-    if(survey)
-      NavLink2 =  <NavLink to='/Encuesta' activeStyle> Resultados </NavLink>;
-    else
-      NavLink2 =  <NavLink to='/Encuesta' activeStyle> Encuesta </NavLink>;
-    
+    if(type==="admin"){
+      NavLink2 =  <NavLink to='/AdministrarEditores' activeStyle> Administrar Editores </NavLink>;
+    }
+    else if(type==="general"){
+      if(profile)
+        if(survey)
+          NavLink2 =  <NavLink to='/Encuesta' activeStyle> Resultados </NavLink>;
+        else
+          NavLink2 =  <NavLink to='/Encuesta' activeStyle> Encuesta </NavLink>;
+      else
+        NavLink2 =  <NavLink to='/DatosPersonales' activeStyle> Datos Personales </NavLink>;
+    }
     NavButton = <NavBtn><NavBtnLink onClick={logoutUser} to='/SesionCerrada'>Cerrar sesión</NavBtnLink></NavBtn>;
   }else{
     NavLink2 =  <NavLink to='/Registro' activeStyle> Registrarse </NavLink>;
