@@ -41,7 +41,13 @@ function SobreNos(){
                 </div>   
                 <div class="splitSN rightSobreNos">
                 <p className="texto2"> 
-                        </p>
+                    Blue Desert es un grupo de estudiantes de 4to semestre del Tecnológico de Monterrey campus Chihuahua y campus Sonora, quienes a petición de la empresa PK Global 
+                    desarrollaron el sitio Coronanalyst, un sistema que tiene como finalidad identificar los cambios, afectaciones y nuevas tendencias 
+                    en el estilo de vida de las personas a raíz de la actual pandemia.
+                    <br/>
+                    <br/>
+                    <br/>
+                </p>
                 </div> 
 
                 <h1>Equipo</h1>
