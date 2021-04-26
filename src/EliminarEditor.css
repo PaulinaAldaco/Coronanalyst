@@ -1,0 +1,20 @@
+
+/* div {
+    width: 100%;
+} */
+
+.a1 {
+    display: inline-block;
+    width: 30%;
+    position: relative;
+    overflow: hidden;
+    height: 20em;
+}
+
+.a2 {
+    display: inline-block;
+    width: 60%;
+    position: relative;
+    overflow: hidden;
+    height: 20em;
+}
