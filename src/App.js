@@ -21,6 +21,7 @@ function App() {
         <Route path='/Encuesta' component={Encuesta} exact />
         <Route path='/SesionCerrada' component={SesionCerrada} exact />
         <Route path='/DatosPersonales' component={DatosPersonales} exact />
+        
       </Switch>
     </Router>
   );
