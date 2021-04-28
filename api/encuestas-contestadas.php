@@ -27,8 +27,8 @@ else:
    
         try{
 
-            $select_usuarios = "SELECT count(*) FROM Usuarios WHERE tipo_usuario='general'";
-            $select_encuesta = "SELECT count(*) FROM Usuarios WHERE tipo_usuario='general' AND encuesta=1";
+            $select_usuarios = "SELECT count(*) FROM usuarios WHERE tipo_usuario='general'";
+            $select_encuesta = "SELECT count(*) FROM usuarios WHERE tipo_usuario='general' AND encuesta=1";
 
             $numero_usuarios = $conn->query($select_usuarios);
             $numero_encuesta = $conn->query($select_encuesta);
@@ -40,7 +40,8 @@ else:
             $returnData =
             [
                 "no_usuarios" => $no_usuarios,
-                "no_encuesta" => $no_encuesta,
+                "answered" => $no_encuesta,
+                "notAnswered" => $no_usuarios - $no_encuesta
             ]; 
                 
 
