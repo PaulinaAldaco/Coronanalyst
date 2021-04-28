@@ -53,7 +53,8 @@ class MyContextProvider extends Component{
         // Sending the user registration request
         const register = await Axios.post('register.php',{
             email:user.email,
-            password:user.password 
+            password:user.password, 
+            user_type: user.user_type
         });
         console.log(register.data);
         return register.data;
@@ -76,23 +77,23 @@ class MyContextProvider extends Component{
 
     createEncuesta = async (user) =>{
         const profile = await Axios.post('encuesta.php',{
-            compras: user.compras,
-            plataforma:user.plataforma,
-            pago:user.pago,
-            categoria:user.categoria,
-            tiempo:user.tiempo,
-            seguido:user.seguido,
-            plataformaPandemia:user.plataformaPandemia,
-            metodoPago:user.metodoPago,
-            categoriaCompra:user.categoriaCompra,
-            tiempoComputadora:user.tiempoComputadora,
-            dineroEnLinea:user.dineroEnLinea,
-            fisicoLinea:user.fisicoLinea,
-            sintomas:user.sintomas,
-            condicionesMedicas:user.condicionesMedicas,
-            situacionesPandemia:user.situacionesPandemia,
-            actFisica:user.actFisica,
-            id_user: user.id_user,
+            'compras': user.compras,
+            'plataforma[]':user.plataforma,
+            'pago[]':user.pago,
+            'categoria[]':user.categoria,
+            'tiempo':user.tiempo,
+            'seguido':user.seguido,
+            'plataformaPandemia[]':user.plataformaPandemia,
+            'metodoPago[]':user.metodoPago,
+            'categoriaCompra[]':user.categoriaCompra,
+            'tiempoComputadora':user.tiempoComputadora,
+            'dineroEnLinea':user.dineroEnLinea,
+            'fisicoLinea':user.fisicoLinea,
+            'sintomas':user.sintomas,
+            'condicionesMedicas[]':user.condicionesMedicas,
+            'situacionesPandemia[]':user.situacionesPandemia,
+            'actFisica':user.actFisica,
+            'id_user': user.id_user,
         });
 
         console.log(profile.data);
@@ -148,7 +149,7 @@ class MyContextProvider extends Component{
                                 profile:true,
                                 survey:true
                             });
-                        }
+                        } 
                         else{
                             console.log("User and profile data successfully retrieved");
                             this.setState({
@@ -189,6 +190,28 @@ class MyContextProvider extends Component{
                 console.log(data.message)
             }
         }
+    }
+
+    searchEditors = async () => {
+
+        const {data} = await Axios.get('buscar-editores.php');
+
+        if(data.success){
+            return data.editors;
+        }else{
+            console.log(data.message);
+            return "Editores no encontrados";
+        }
+
+        
+    }
+
+    deleteEditor = async (editor) => {
+        const deleteEditor = await Axios.delete('eliminar-editor.php',{
+            email:editor,
+        });
+
+        return deleteEditor.data;
     }
 
     // Checking and updating the current state of the user
@@ -254,7 +277,9 @@ class MyContextProvider extends Component{
             loginUser:this.loginUser,
             logoutUser:this.logoutUser,
             createProfile:this.createProfile,
-            createEncuesta:this.createEncuesta
+            createEncuesta:this.createEncuesta,
+            searchEditors:this.searchEditors,
+            deleteEditor: this.deleteEditor
         }
         return(
             <MyContext.Provider value={contextValue}>
