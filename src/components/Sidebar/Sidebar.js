@@ -11,7 +11,7 @@ const Sidebar = ({isOpen, toggle}) =>{
 
     if (isAuth){
         if(survey)
-        SidebarLink1 = <SidebarLink onClick={toggle} to="/Encuesta"> Resultados </SidebarLink>;
+        SidebarLink1 = <SidebarLink onClick={toggle} to="/Resultados"> Resultados </SidebarLink>;
         else
         SidebarLink1 = <SidebarLink onClick={toggle} to="/Encuesta"> Encuesta </SidebarLink>;
         

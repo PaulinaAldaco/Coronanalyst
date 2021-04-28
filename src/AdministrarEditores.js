@@ -83,7 +83,7 @@ function AdministrarEditores() {
             userInfo: {
                 ...state.userInfo,
                 [e.target.name]: e.target.value
-            }
+            } 
         });
     }
 
@@ -119,6 +119,8 @@ function AdministrarEditores() {
 
                                     <button type="submit" className="submit" > Añadir </button>
                                 </form>
+                                {errorMsg}
+                                {successMsg}
                             </div>
 
 
@@ -140,6 +142,8 @@ function AdministrarEditores() {
 
                                     <button type="submit" className="submit" > Eliminar </button>
                                 </form>
+                                {errorMsgDelete}
+                                {successMsgDelete}
                             </div>
 
 

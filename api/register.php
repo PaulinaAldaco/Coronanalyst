@@ -34,7 +34,7 @@ elseif(!isset($data->email)
     ):
 
     $fields = ['fields' => ['email','password']];
-    $returnData = msg(0,422,'Please Fill in all Required Fields!',$fields);
+    $returnData = msg(0,422,'¡Por favor llena todos los campos requeridos!',$fields);
 
 // IF THERE ARE NO EMPTY FIELDS THEN-
 else:
@@ -44,10 +44,10 @@ else:
     $user_type = trim($data->user_type);
 
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)):
-        $returnData = msg(0,422,'Invalid Email Address!');
+        $returnData = msg(0,422,'¡Correo electrónico invalido!');
     
     elseif(strlen($password) < 8):
-        $returnData = msg(0,422,'Your password must be at least 8 characters long!');
+        $returnData = msg(0,422,'¡Tu contraseña debe de ser de al menos 8 caracteres de largo!');
 
     else:
         try{
@@ -58,7 +58,7 @@ else:
             $check_email_stmt->execute();
 
             if($check_email_stmt->rowCount()):
-                $returnData = msg(0,422, 'This E-mail already in use!');
+                $returnData = msg(0,422, '¡Este correo electrónico ya se encuentra en uso!');
             
             else:
                 $insert_query = "INSERT INTO usuarios (correo, contra, tipo_usuario) VALUES(:email,:password,:user_type)";
@@ -71,7 +71,7 @@ else:
                 $insert_stmt->bindValue(':user_type', $user_type,PDO::PARAM_STR);
                 $insert_stmt->execute();
 
-                $returnData = msg(1,201,'You have successfully registered.');
+                $returnData = msg(1,201,'Te has registrado exitosamente.');
 
             endif;
 

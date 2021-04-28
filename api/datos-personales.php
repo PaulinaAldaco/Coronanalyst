@@ -50,7 +50,7 @@ elseif(!isset($data->genero)
     || empty(trim($data->estado))
     ):
     $fields = ['fields' => ['genero','edad', 'estadocivil', 'estudios', 'ocupacion', 'ingreso_economico', 'estado']];
-    $returnData = msg(0,422,'Please Fill in all Required Fields!',$fields);
+    $returnData = msg(0,422,'¡Por favor llena todos los campos requeridos!',$fields);
 
 // IF THERE ARE NO EMPTY FIELDS THEN-
 else:
@@ -80,7 +80,7 @@ else:
             $insert_stmt->bindValue(':id_user', $id_user,PDO::PARAM_INT);
             $insert_stmt->execute();
 
-            $returnData = msg(1,201,'You have successfully registered the data.');
+            $returnData = msg(1,201,'Tus datos se han registrado correctamente.');
 
         }
         catch(PDOException $e){

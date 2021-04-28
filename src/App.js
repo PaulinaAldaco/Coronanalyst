@@ -8,6 +8,7 @@ import Encuesta from './Encuesta';
 import SesionCerrada from './pantallas/SesionCerrada';
 import DatosPersonales from './DatosPersonales';
 import AdministrarEditores from './AdministrarEditores';
+import Resultados from './Resultados';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path='/SesionCerrada' component={SesionCerrada} exact />
         <Route path='/DatosPersonales' component={DatosPersonales} exact />
         <Route path='/AdministrarEditores' component={AdministrarEditores} exact />
+        <Route path='/Resultados' component={Resultados} exact />
       </Switch>
     </Router>
   );
