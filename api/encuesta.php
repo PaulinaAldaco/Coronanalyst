@@ -48,14 +48,14 @@ else:
         'situacionesPandemia' => [trim($data->situacionesPandemia), 15]
     ];
 
-    $plataformas = trim($data->plataforma);
-    $pago = trim($data->pago);
-    $categoria = trim($data->categoria);
-    $plataformaPandemia = trim($data->plataformaPandemia);
-    $metodoPago= trim($data->metodoPago);
-    $categoriaCompra = trim($data->categoriaCompra);
-    $condicionesMedicas = trim($data->condicionesMedicas);
-    $situacionesPandemia = trim($data->situacionesPandemia);
+    // $plataformas = trim($data->plataforma);
+    // $pago = trim($data->pago);
+    // $categoria = trim($data->categoria);
+    // $plataformaPandemia = trim($data->plataformaPandemia);
+    // $metodoPago= trim($data->metodoPago);
+    // $categoriaCompra = trim($data->categoriaCompra);
+    // $condicionesMedicas = trim($data->condicionesMedicas);
+    // $situacionesPandemia = trim($data->situacionesPandemia);
 
 
         try{

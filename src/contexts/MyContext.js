@@ -214,6 +214,17 @@ class MyContextProvider extends Component{
         return deleteEditor.data;
     }
 
+    verResultados = async () => {
+        const {data} = await Axios.get('resultados.php');
+
+        if(data.success){
+            return data.respuestas;
+        }else{
+            console.log(data.message);
+            return "Error en encontrar respuestas";
+        }
+    }
+
     // Checking and updating the current state of the user
     updateUserState = async () => {
         console.log("checking for token");
@@ -279,7 +290,8 @@ class MyContextProvider extends Component{
             createProfile:this.createProfile,
             createEncuesta:this.createEncuesta,
             searchEditors:this.searchEditors,
-            deleteEditor: this.deleteEditor
+            deleteEditor: this.deleteEditor,
+            verResultados: this.verResultados
         }
         return(
             <MyContext.Provider value={contextValue}>
