@@ -41,6 +41,7 @@ else:
     
     $email = trim($data->email);
     $password = trim($data->password);
+    $user_type = trim($data->user_type);
 
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)):
         $returnData = msg(0,422,'Invalid Email Address!');
@@ -60,7 +61,6 @@ else:
                 $returnData = msg(0,422, 'This E-mail already in use!');
             
             else:
-                $user_type = "general";
                 $insert_query = "INSERT INTO usuarios (correo, contra, tipo_usuario) VALUES(:email,:password,:user_type)";
 
                 $insert_stmt = $conn->prepare($insert_query);
