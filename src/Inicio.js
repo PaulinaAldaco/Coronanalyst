@@ -53,7 +53,6 @@ function Inicio(){
 
                             
                             </p>   
-                            <button type="button" class="linkI">{ContestarEncuesta}</button>
                         </div>
                     </div>
                     
