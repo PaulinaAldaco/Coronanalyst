@@ -6,7 +6,7 @@ import logo from "../../imagenes/logo_coronanalyst.jpeg"
 import {MyContext} from '../../contexts/MyContext'
 
 const Navbar = ({toggle}) => {
-  const {rootState} = useContext(MyContext);
+  const {rootState,logoutUser} = useContext(MyContext);
   const {isAuth, survey} = rootState;
 
   let NavButton;
@@ -18,7 +18,7 @@ const Navbar = ({toggle}) => {
     else
       NavLink2 =  <NavLink to='/Encuesta' activeStyle> Encuesta </NavLink>;
     
-    NavButton = <NavBtn><NavBtnLink to='/SesionCerrada'>Cerrar sesión</NavBtnLink></NavBtn>;
+    NavButton = <NavBtn><NavBtnLink onClick={logoutUser} to='/SesionCerrada'>Cerrar sesión</NavBtnLink></NavBtn>;
   }else{
     NavLink2 =  <NavLink to='/Registro' activeStyle> Registrarse </NavLink>;
     NavButton = <NavBtn><NavBtnLink to='/Login'>Iniciar Sesión</NavBtnLink></NavBtn>;

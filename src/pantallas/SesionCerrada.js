@@ -9,8 +9,8 @@ import {Redirect} from "react-router-dom";
 
 function SesionCerrada() {
 
-  const { rootState, toggleNav, loginUser, isLoggedIn } = useContext(MyContext);
-  const { isAuth, theUser, showLogin, profile, survey } = rootState;
+  const { rootState, loginUser, isLoggedIn } = useContext(MyContext);
+  const { isAuth, type, profile, survey } = rootState;
 
   const initialState = {
     userInfo: {
@@ -75,9 +75,27 @@ function SesionCerrada() {
   }
 
 
-  if (!isAuth) {
-    console.log("Redirecting to home")
-    return <Redirect to="/" />
+  if (isAuth) {
+    if(type=="general"){
+      if(profile){
+        if(survey){
+          console.log("Redirecting to home (profile and survey completed)")
+          return <Redirect to="/" />
+        }
+        else{
+          console.log("Redirecting to survey")
+          return <Redirect to="/Encuesta"/>
+        }
+      }
+      else{
+        console.log("Redirecting to profile creation page")
+        return <Redirect to="/DatosPersonales"/>
+      }
+    }
+    else{
+      console.log("Redirecting to home (user is an admin/editor)")
+      return <Redirect to="/" />
+    }
   } else {
     return (
       <>

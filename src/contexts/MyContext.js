@@ -42,6 +42,7 @@ class MyContextProvider extends Component{
             ...this.state,
             isAuth:false,
             theUser:null,
+            type:null,
             profile:false,
             survey:false
         })
