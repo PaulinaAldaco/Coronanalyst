@@ -137,7 +137,7 @@ class MyContextProvider extends Component{
 
             // If user information is successfully received
             if(data.success && data.user){
-                if(data.type=="general"){
+                if(data.type==="general"){
                     if(data.hasProfile){
                         if(data.completedSurvey){
                             console.log("User, profile data, and survey completion successfully retrieved");

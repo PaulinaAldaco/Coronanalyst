@@ -76,7 +76,7 @@ function SesionCerrada() {
 
 
   if (isAuth) {
-    if(type=="general"){
+    if(type==="general"){
       if(profile){
         if(survey){
           console.log("Redirecting to home (profile and survey completed)")

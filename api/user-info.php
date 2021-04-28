@@ -45,7 +45,7 @@ if($auth->isAuth()){
                         "success" => 1,
                         "status" => 200,
                         "user" => $id,
-                        "type" => "genral",
+                        "type" => "general",
                         "hasProfile" => 0,
                         "completedSurvey" => 0,
                         "message" => "User does not have a profile"
