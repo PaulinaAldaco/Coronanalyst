@@ -225,7 +225,7 @@ function Encuesta() {
                 userInfo[nombre] += valor + ","
             }
         }
-        
+        console.log(userInfo);
         return userInfo
 
     }
