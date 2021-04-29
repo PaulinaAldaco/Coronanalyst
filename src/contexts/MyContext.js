@@ -193,21 +193,20 @@ class MyContextProvider extends Component{
     }
 
     searchEditors = async () => {
-
+        console.log("Searching for editors");
+        var editors = [];
         const {data} = await Axios.get('buscar-editores.php');
-
         if(data.success){
-            return data.editors;
-        }else{
-            console.log(data.message);
-            return "Editores no encontrados";
+            editors = data.editors;
+            console.log("Response:", data.editors);
         }
-
-        
+        console.log("Returning editors:",editors);
+        return editors;
     }
 
     deleteEditor = async (editor) => {
-        const deleteEditor = await Axios.delete('eliminar-editor.php',{
+        console.log("in deleteEditor, editor:",editor);
+        const deleteEditor = await Axios.post('eliminar-editor.php',{
             email:editor,
         });
 
