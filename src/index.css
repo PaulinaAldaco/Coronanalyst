@@ -16,3 +16,7 @@ code {
   color: rgb(228, 37, 37);
   text-align: center;
 }
+
+.success-msg {
+  text-align: center;
+}
