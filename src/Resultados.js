@@ -169,6 +169,11 @@ function Resultados(){
                 title: 'Frecuencia de compras en línea',
                 subtitle: 'Esta gráfica muestra la frecuencia de compra de los usarios antes de la pandemia en contraste con la frecuencia actual',
             },
+            axes: {
+                y: {
+                  0: { side: 'left', label: 'Numero de personas que lo eligieron'} // Top x-axis.
+                }
+            },
             colors: ['#02044b', '#256ce1'],
             vAxis: { title: 'Numero de personas' },
             hAxis: { title: 'Frecuencia' },
@@ -194,6 +199,11 @@ function Resultados(){
             chart: {
                 title: 'Categorias de compras en linea',
                 subtitle: 'Esta gráfica muestra las categorias que los usuarios compraban antes de la pandemia en contraste con las que compran actualmente',
+            },
+            axes: {
+                x: {
+                  0: { side: 'top', label: 'Numero de personas que lo eligieron'} // Top x-axis.
+                }
             },
             colors: ['#02044b', '#256ce1'],
             vAxis: { title: 'Frecuencia' },
@@ -226,6 +236,13 @@ function Resultados(){
                 5: { color: '#51607A' },
                 6: { color: '#2C75F5' },
               },
+            titleTextStyle: { 
+                color: 666666,
+                fontName: "Roboto",
+                bold: false,
+                fontSize: 20
+            },
+            legend: {position: 'top', textStyle: {color: 666666, fontSize: 16, fontName: "Roboto", bold: false}},
             // Material design options
             title: 'Dinero gastado en compras en linea al mes (expresado en MXN)',
             is3D: true
@@ -252,6 +269,13 @@ function Resultados(){
                 0: { color: '#256ce1' },
                 1: { color: '#87EEFF' }
               },
+            titleTextStyle: { 
+                color: 666666,
+                fontName: "Roboto",
+                bold: false,
+                fontSize: 20
+            },
+            legend: {position: 'top', textStyle: {color: 666666, fontSize: 16, fontName: "Roboto", bold: false}},
             title: 'Cantidad de compras',
             is3D: true
         }}
@@ -275,6 +299,12 @@ function Resultados(){
                 title: 'Plataformas utilizadas para compras en linea',
                 subtitle: 'Esta gráfica muestra las plataformas mas utilizadas antes de la pandemia en contraste con las mas utilizadas actualmente',
             },
+            axes: {
+                x: {
+                  0: { side: 'top', label: 'Numero de personas que lo eligieron'} // Top x-axis.
+                }
+            },
+            
             colors: ['#02044b', '#256ce1'],
             vAxis: { title: 'Frecuencia' },
             hAxis: { title: 'Opciones' },
