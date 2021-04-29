@@ -77,23 +77,23 @@ class MyContextProvider extends Component{
 
     createEncuesta = async (user) =>{
         const profile = await Axios.post('encuesta.php',{
-            'compras': user.compras,
-            'plataforma[]':user.plataforma,
-            'pago[]':user.pago,
-            'categoria[]':user.categoria,
-            'tiempo':user.tiempo,
-            'seguido':user.seguido,
-            'plataformaPandemia[]':user.plataformaPandemia,
-            'metodoPago[]':user.metodoPago,
-            'categoriaCompra[]':user.categoriaCompra,
-            'tiempoComputadora':user.tiempoComputadora,
-            'dineroEnLinea':user.dineroEnLinea,
-            'fisicoLinea':user.fisicoLinea,
-            'sintomas':user.sintomas,
-            'condicionesMedicas[]':user.condicionesMedicas,
-            'situacionesPandemia[]':user.situacionesPandemia,
-            'actFisica':user.actFisica,
-            'id_user': user.id_user,
+            compras: user.compras,
+            plataforma:JSON.parse(user.plataforma),
+            pago:JSON.parse(user.pago),
+            categoria:JSON.parse(user.categoria),
+            tiempo:user.tiempo,
+            seguido:user.seguido,
+            plataformaPandemia:JSON.parse(user.plataformaPandemia),
+            metodoPago:JSON.parse(user.metodoPago),
+            categoriaCompra:JSON.parse(user.categoriaCompra),
+            tiempoComputadora:user.tiempoComputadora,
+            dineroEnLinea:user.dineroEnLinea,
+            fisicoLinea:user.fisicoLinea,
+            sintomas:user.sintomas,
+            condicionesMedicas:JSON.parse(user.condicionesMedicas),
+            situacionesPandemia:JSON.parse(user.situacionesPandemia),
+            actFisica:user.actFisica,
+            id_user: user.id_user,
         });
 
         console.log(profile.data);
@@ -218,7 +218,7 @@ class MyContextProvider extends Component{
         const {data} = await Axios.get('resultados.php');
 
         if(data.success){
-            return data.respuestas;
+            return data;
         }else{
             console.log(data.message);
             return "Error en encontrar respuestas";

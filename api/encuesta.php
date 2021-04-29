@@ -35,17 +35,17 @@ else:
     $fisicoLinea = trim($data->fisicoLinea);
     $sintomas = trim($data->sintomas);
     $actFisica = trim($data->actFisica);
-    $id_user = (int)trim($data->id_user);
+    $id_user = (int) trim($data->id_user);
 
     $checkboxes = [
-        'plataformas' => [trim($data->plataforma), 2],
-        'pago' => [trim($data->pago), 3],
-        'categoria' => [trim($data->categoria), 4],
-        'plataformaPandemia' => [trim($data->plataformaPandemia), 7],
+        'plataformas' => [json_decode($data->plataforma)],
+        'pago' => [json_decode($data->pago), 3],
+        'categoria' => [json_decode($data->categoria), 4],
+        'plataformaPandemia' => [json_decode($data->plataformaPandemia), 7],
         'metodoPago' => [trim($data->metodoPago), 8],
-        'categoriaCompra' => [trim($data->categoriaCompra), 9],
-        'condicionesMedicas' => [trim($data->condicionesMedicas), 14],
-        'situacionesPandemia' => [trim($data->situacionesPandemia), 15]
+        'categoriaCompra' => [json_decode($data->categoriaCompra), 9],
+        'condicionesMedicas' => [json_decode($data->condicionesMedicas), 14],
+        'situacionesPandemia' => [json_decode($data->situacionesPandemia), 15]
     ];
 
     // $plataformas = trim($data->plataforma);
@@ -59,6 +59,15 @@ else:
 
 
         try{
+
+            foreach($checkboxes['plataformas'] as $value){
+                foreach($value as $valor){
+                    $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES ($id_user, id, :respuesta)";
+                        $insert_stmt = $conn->prepare($insert_query);
+                        $insert_stmt->bindValue(':respuesta', $valor,PDO::PARAM_STR);
+                        $insert_stmt->execute();
+                }
+            }
 
             foreach ($checkboxes as $checkbox) {
                 foreach($checkbox as $value){
@@ -87,7 +96,7 @@ else:
             // $insert_query14 = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES($id_user, 14, :condicionesMedicas)";
             // $insert_query15 = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES($id_user, 15, :situacionesPandemia)";
 
-            $insert_stmt1 = $conn->prepare($insert_query);
+            $insert_stmt1 = $conn->prepare($insert_query1);
             $insert_stmt5 = $conn->prepare($insert_query5);
             $insert_stmt6 = $conn->prepare($insert_query6);
             $insert_stmt10 = $conn->prepare($insert_query10);
@@ -134,7 +143,7 @@ else:
             // $insert_stmt14->execute();
             // $insert_stmt15->execute();
 
-            $insert_stmt->execute();
+            $insert_stmt1->execute();
             $insert_stmt5->execute();
             $insert_stmt6->execute();
             $insert_stmt10->execute();

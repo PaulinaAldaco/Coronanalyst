@@ -19,7 +19,7 @@ const Navbar = ({toggle}) => {
     else if(type==="general"){
       if(profile)
         if(survey)
-          NavLink2 =  <NavLink to='/Encuesta' activeStyle> Resultados </NavLink>;
+          NavLink2 =  <NavLink to='/Resultados' activeStyle> Resultados </NavLink>;
         else
           NavLink2 =  <NavLink to='/Encuesta' activeStyle> Encuesta </NavLink>;
       else
