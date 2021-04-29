@@ -45,8 +45,8 @@ else :
     ];
 
     $arrayRespuestas = [
-        'plataformas' => [],
-        'seguido' => [] 
+        'plataformas' => [['Hola','uno']],
+        'seguido' => [['Hola','uno']] 
     ];
 
     try {

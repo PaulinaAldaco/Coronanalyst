@@ -215,12 +215,12 @@ class MyContextProvider extends Component{
     }
 
     verResultados = async () => {
-        const {data} = await Axios.get('resultados.php');
+        const resultado = await Axios.get('resultados.php');
 
-        if(data.success){
-            return data;
+        if(resultado.data.success){
+            return resultado.data;
         }else{
-            console.log(data.message);
+            console.log(resultado.data.message);
             return "Error en encontrar respuestas";
         }
     }
