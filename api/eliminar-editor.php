@@ -1,7 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: access");
-header("Access-Control-Allow-Methods: DELETE");
+header("Access-Control-Allow-Methods: POST");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
@@ -23,7 +23,7 @@ $data = json_decode(file_get_contents("php://input"));
 $returnData = [];
 
 
-if($_SERVER["REQUEST_METHOD"] != "DELETE"):
+if($_SERVER["REQUEST_METHOD"] != "POST"):
      $returnData = msg(0,404,'Pagina no encontrada!');
 
 elseif((!isset($data->email) || ($data->email == "seleccione"))|| empty(trim($data->email))):
