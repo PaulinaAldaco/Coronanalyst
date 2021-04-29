@@ -11,21 +11,72 @@ import { Chart } from "react-google-charts";
 function Resultados(){  
     const {rootState, verResultados} = useContext(MyContext);
     const {isAuth} = rootState;
+    var plataforma;
 
-    const data = await verResultados();
+    // const resultados = {
+    //     seguido: data.seguido,
+    //     plataformas: data.plataformas
+    // }
 
-    const resultados = {
-        seguido: data.seguido,
-        plataformas: data.plataformas
+    // const initialState = {
+    //     errorMsg: '',
+    //     successMsg: '',
+    //     plataforma: [
+    //         ["Mercado Libre", 0],
+    //         ["Amazon", 0],
+    //         ["Facebook Marketplace", 0],
+    //         ["Alibaba / Aliexpress", 0],
+    //         ["eBay", 0],
+    //         ["E-shop propia de cada marca (Nike, Supreme, Walmart, Liverpool, etc)", 0]
+    //     ],
+    //     seguido: [
+    //         ["Más de 10 veces por mes", 0],
+    //         ["10 a 6 veces al mes", 0],
+    //         ["5 a 1 vez al mes", 0],
+    //         ["1 vez cada varios meses", 0],
+    //         ["No realizo compras en línea", 0]
+    //     ],
+    // }
+
+    const data = verResultados();
+
+    const initialState = {
+        errorMsg: '',
+        successMsg: data.message,
+        plataforma: data.respuestas.plataformas,
+        seguido: data.respuestas.seguido
     }
 
-    const [isOpen, setIsOpen] = useState(false);
+    // const recieveData = (event) =>{
+    //     event.preventDefault(); 
+    //     const data = await verResultados();
 
+    //     if (data.success) {
+    //         setState({
+    //             ...initialState,
+    //             successMsg: data.message,
+    //             plataforma: data.respuestas.plataformas,
+    //             seguido: data.respuestas.seguido
+    //         });
+    //     }
+    //     else {
+    //         setState({
+    //             ...state,
+    //             successMsg: '',
+    //             errorMsg: data.message
+    //         });
+    //     }
+    // }
+
+    const [state, setState] = useState(initialState);
+
+    const [isOpen, setIsOpen] = useState(false);
+    console.log(data);
     const toggle = () =>{
         setIsOpen(!isOpen);
     };
     
-    return(
+    return( 
         <>
         <Navbar toggle={toggle}/>;
         <Sidebar isOpen={isOpen} toggle={toggle} />;
@@ -51,7 +102,7 @@ function Resultados(){
             //     ['Sleep', 7],
             // ]}
             data = {
-                resultados.seguido
+                state.respuestas.seguido
             }
             options={{
                 title: 'Frecuencia de compras en línea antes de la pandemia',

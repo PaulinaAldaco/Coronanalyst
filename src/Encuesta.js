@@ -235,6 +235,8 @@ function Encuesta() {
     // On Submit the Form
     const submitForm = async (event) => {
         event.preventDefault(); 
+        console.log(state.userInfo);
+        console.log(JSON.stringify(state.userInfo.plataforma));
         const data = await createEncuesta(state.userInfo);
         if (data.success) {
             setState({
