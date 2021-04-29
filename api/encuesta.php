@@ -48,14 +48,14 @@ else:
     //     'situacionesPandemia' => [trim($data->situacionesPandemia), 15]
     // ];
     $checkboxes = [
-        'plataformas' => [json_decode($data->plataforma), 2],
-        'pago' => [json_decode($data->pago), 3],
-        'categoria' => [json_decode($data->categoria), 4],
-        'plataformaPandemia' => [json_decode($data->plataformaPandemia), 7],
-        'metodoPago' => [json_decode($data->metodoPago), 8],
-        'categoriaCompra' => [json_decode($data->categoriaCompra), 9],
-        'condicionesMedicas' => [json_decode($data->condicionesMedicas), 14],
-        'situacionesPandemia' => [json_decode($data->situacionesPandemia), 15]
+        'plataformas' => [json_decode($data->plataforma)],
+        'pago' => [json_decode($data->pago)],
+        'categoria' => [json_decode($data->categoria)],
+        'plataformaPandemia' => [json_decode($data->plataformaPandemia)],
+        'metodoPago' => [json_decode($data->metodoPago)],
+        'categoriaCompra' => [json_decode($data->categoriaCompra)],
+        'condicionesMedicas' => [json_decode($data->condicionesMedicas)],
+        'situacionesPandemia' => [json_decode($data->situacionesPandemia)]
     ];
 
     $plataformas = trim($data->plataforma);
@@ -70,15 +70,88 @@ else:
 
         try{
 
-            foreach ($checkboxes as $checkbox) {
-                foreach($checkbox as $value){
-                    $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES ($id_user, :id_pregunta, :respuesta)";
-                    $insert_stmt = $conn->prepare($insert_query);
-                    $insert_stmt->bindValue(':respuesta', $value[0],PDO::PARAM_STR);
-                    $insert_stmt->bindValue(':id_pregunta', $value[1],PDO::PARAM_INT);
-                    $insert_stmt->execute();
+            // foreach ($checkboxes as $checkbox) {
+            //     foreach($checkbox as $value){
+            //         $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES ($id_user, $value[1], :respuesta)";
+            //         $insert_stmt = $conn->prepare($insert_query);
+            //         $insert_stmt->bindValue(':respuesta', $value[0],PDO::PARAM_STR);
+            //         //$insert_stmt->bindValue(':id_pregunta', $value[1],PDO::PARAM_INT);
+            //         $insert_stmt->execute();
+            //     }
+            // }
+    
+            foreach($checkboxes['plataformas'] as $value){
+                foreach($value as $valor){
+                    $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES ($id_user, 2, :respuesta)";
+                        $insert_stmt = $conn->prepare($insert_query);
+                        $insert_stmt->bindValue(':respuesta', $valor,PDO::PARAM_STR);
+                        $insert_stmt->execute();
                 }
             }
+
+            foreach($checkboxes['pago'] as $value){
+                foreach($value as $valor){
+                    $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES ($id_user, 3, :respuesta)";
+                        $insert_stmt = $conn->prepare($insert_query);
+                        $insert_stmt->bindValue(':respuesta', $valor,PDO::PARAM_STR);
+                        $insert_stmt->execute();
+                }
+            }
+
+            foreach($checkboxes['categoria'] as $value){
+                foreach($value as $valor){
+                    $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES ($id_user, 4, :respuesta)";
+                        $insert_stmt = $conn->prepare($insert_query);
+                        $insert_stmt->bindValue(':respuesta', $valor,PDO::PARAM_STR);
+                        $insert_stmt->execute();
+                }
+            }
+
+            foreach($checkboxes['plataformaPandemia'] as $value){
+                foreach($value as $valor){
+                    $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES ($id_user, 7, :respuesta)";
+                        $insert_stmt = $conn->prepare($insert_query);
+                        $insert_stmt->bindValue(':respuesta', $valor,PDO::PARAM_STR);
+                        $insert_stmt->execute();
+                }
+            }
+
+            foreach($checkboxes['metodoPago'] as $value){
+                foreach($value as $valor){
+                    $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES ($id_user, 8, :respuesta)";
+                        $insert_stmt = $conn->prepare($insert_query);
+                        $insert_stmt->bindValue(':respuesta', $valor,PDO::PARAM_STR);
+                        $insert_stmt->execute();
+                }
+            }
+
+            foreach($checkboxes['categoriaCompra'] as $value){
+                foreach($value as $valor){
+                    $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES ($id_user, 9, :respuesta)";
+                        $insert_stmt = $conn->prepare($insert_query);
+                        $insert_stmt->bindValue(':respuesta', $valor,PDO::PARAM_STR);
+                        $insert_stmt->execute();
+                }
+            }
+
+            foreach($checkboxes['condicionesMedicas'] as $value){
+                foreach($value as $valor){
+                    $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES ($id_user, 14, :respuesta)";
+                        $insert_stmt = $conn->prepare($insert_query);
+                        $insert_stmt->bindValue(':respuesta', $valor,PDO::PARAM_STR);
+                        $insert_stmt->execute();
+                }
+            }
+
+            foreach($checkboxes['situacionesPandemia'] as $value){
+                foreach($value as $valor){
+                    $insert_query = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES ($id_user, 15, :respuesta)";
+                        $insert_stmt = $conn->prepare($insert_query);
+                        $insert_stmt->bindValue(':respuesta', $valor,PDO::PARAM_STR);
+                        $insert_stmt->execute();
+                }
+            }
+
             $insert_query1 = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES($id_user, 1, :compras)";
             $insert_query5 = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES($id_user, 5, :tiempo)";
             $insert_query6 = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES($id_user, 6, :seguido)";
@@ -97,7 +170,7 @@ else:
             // $insert_query14 = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES($id_user, 14, :condicionesMedicas)";
             // $insert_query15 = "INSERT INTO respuestas (ID_usuario, ID_pregunta, respuesta) VALUES($id_user, 15, :situacionesPandemia)";
 
-            $insert_stmt1 = $conn->prepare($insert_query);
+            $insert_stmt1 = $conn->prepare($insert_query1);
             $insert_stmt5 = $conn->prepare($insert_query5);
             $insert_stmt6 = $conn->prepare($insert_query6);
             $insert_stmt10 = $conn->prepare($insert_query10);
