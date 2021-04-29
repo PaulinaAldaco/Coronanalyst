@@ -2,7 +2,7 @@ import React, {useContext, useState} from 'react';
 import { FaBars } from 'react-icons/fa';
 import { Nav,NavLink, MobileIcon, NavMenu, NavBtn, NavBtnLink } from './NavbarElements';
 import './Navbar.css'
-import logo from "../../imagenes/logo_coronanalyst.jpeg"
+import logo from "../../imagenes/logo_coronanalyst_horizontal.png"
 import {MyContext} from '../../contexts/MyContext'
 
 const Navbar = ({toggle}) => {
