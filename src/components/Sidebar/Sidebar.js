@@ -4,23 +4,30 @@ import {MyContext} from '../../contexts/MyContext'
 
 const Sidebar = ({isOpen, toggle}) =>{
     const {rootState} = useContext(MyContext);
-    const {isAuth, survey} = rootState;
+    const {isAuth, survey, type, profile} = rootState;
 
     let SidebarButton;
     let SidebarLink1;
 
     if (isAuth){
-        if(survey)
-        SidebarLink1 = <SidebarLink onClick={toggle} to="/Encuesta"> Resultados </SidebarLink>;
-        else
-        SidebarLink1 = <SidebarLink onClick={toggle} to="/Encuesta"> Encuesta </SidebarLink>;
-        
+        if(type==="admin"){
+          SidebarLink1 = <SidebarLink onClick={toggle} to="/Resultados"> AdministrarEditores </SidebarLink>;
+        }
+        else if(type==="general"){
+          if(profile)
+            if(survey)
+            SidebarLink1 = <SidebarLink onClick={toggle} to="/Resultados"> Resultados </SidebarLink>;
+            else
+            SidebarLink1 = <SidebarLink onClick={toggle} to="/Encuesta"> Encuesta </SidebarLink>;
+          else
+            SidebarLink1 = <SidebarLink onClick={toggle} to="/DatosPersonales"> Datos Personales </SidebarLink>;
+           
+        }
         SidebarButton = <SideBtnWrap><SidebarRoute onClick={toggle} to="/SesionCerrada">Cerrar sesión</SidebarRoute></SideBtnWrap>
-    }else{
+      }else{
         SidebarLink1 = <SidebarLink onClick={toggle} to="/Registro"> Registrarse </SidebarLink>
         SidebarButton = <SideBtnWrap><SidebarRoute onClick={toggle} to="/Login">Iniciar sesión</SidebarRoute></SideBtnWrap>
-    }
-
+      }
 
     return(
         <SidebarContainer isOpen={isOpen} onClick={toggle}>

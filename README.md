@@ -1,6 +1,6 @@
 # Coronanalyst
 
-Coronanalyst web page, made with the purpose of collecting information on changes in consumers' shopping habits due to the COVID-19 pandemic.
+Coronanalyst web page, made with the purpose of collecting information on changes in consumers' shopping habits due to the COVID-19 pandemic, and graphing the results.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

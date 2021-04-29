@@ -8,7 +8,7 @@ import Header from './components/Header/Header';
 import { MyContext } from './contexts/MyContext';
 import { Redirect } from "react-router-dom";
 
-function Encuesta() {
+function Encuesta() { 
 
     const { rootState, createEncuesta } = useContext(MyContext);
     const { isAuth, theUser, type, profile, survey } = rootState;
@@ -194,47 +194,50 @@ function Encuesta() {
 
     const [state, setState] = useState(initialState);
 
-    const convertToString = () => {
-        const nombresPreguntas = [ "plataforma", "pago", "categoria", "plataformaPandemia", "metodoPago", "categoriaCompra", "condicionesMedicas", "situacionesPandemia"]
+    // const convertToString = () => {
+    //     const nombresPreguntas = [ "plataforma", "pago", "categoria", "plataformaPandemia", "metodoPago", "categoriaCompra", "condicionesMedicas", "situacionesPandemia"]
 
         
-        var userInfo = {
-                compras: state.userInfo.compras,
-                plataforma: '',
-                pago: '',
-                categoria: '',
-                tiempo: state.userInfo.tiempo,
-                seguido: state.userInfo.seguido,
-                plataformaPandemia: '',
-                metodoPago: '',
-                categoriaCompra: '',
-                tiempoComputadora: state.userInfo.tiempoComputadora,
-                dineroEnLinea: state.userInfo.dineroEnLinea,
-                fisicoLinea: state.userInfo.fisicoLinea,
-                sintomas: state.userInfo.sintomas,
-                condicionesMedicas: '',
-                situacionesPandemia: '',
-                actFisica: state.userInfo.actFisica,
+    //     var userInfo = {
+    //             compras: state.userInfo.compras,
+    //             plataforma: '',
+    //             pago: '',
+    //             categoria: '',
+    //             tiempo: state.userInfo.tiempo,
+    //             seguido: state.userInfo.seguido,
+    //             plataformaPandemia: '',
+    //             metodoPago: '',
+    //             categoriaCompra: '',
+    //             tiempoComputadora: state.userInfo.tiempoComputadora,
+    //             dineroEnLinea: state.userInfo.dineroEnLinea,
+    //             fisicoLinea: state.userInfo.fisicoLinea,
+    //             sintomas: state.userInfo.sintomas,
+    //             condicionesMedicas: '',
+    //             situacionesPandemia: '',
+    //             actFisica: state.userInfo.actFisica,
     
-                id_user: state.userInfo.id_user
-        }
+    //             id_user: state.userInfo.id_user
+    //     }
 
-        for (var nombre in nombresPreguntas){
-            var pregunta = state.userInfo[nombre]
-            for(var valor in pregunta){
-                userInfo[nombre] += valor + ","
-            }
-        }
-        console.log(userInfo);
-        return userInfo
+    //     for (var nombre in nombresPreguntas){
+    //         var pregunta = state.userInfo[nombre]
+    //         for(var valor in pregunta){
+    //             userInfo[nombre] += valor + ","
+    //         }
+    //     }
 
-    }
+        
+        
+    //     return userInfo
+
+    // }
 
     // On Submit the Form
     const submitForm = async (event) => {
-        event.preventDefault();
-        const userInfo = convertToString(); 
-        const data = await createEncuesta(userInfo);
+        event.preventDefault(); 
+        console.log(state.userInfo);
+        console.log(JSON.stringify(state.userInfo.plataforma));
+        const data = await createEncuesta(state.userInfo);
         if (data.success) {
             setState({
                 ...initialState,

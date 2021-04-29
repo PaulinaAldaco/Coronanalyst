@@ -37,7 +37,7 @@ elseif(!isset($data->email)
     ):
 
     $fields = ['fields' => ['email','password']];
-    $returnData = msg(0,422,'Please Fill in all Required Fields!',$fields);
+    $returnData = msg(0,422,'¡Por favor llena todos los campos requeridos!',$fields);
 
 // IF THERE ARE NO EMPTY FIELDS THEN-
 else:
@@ -48,11 +48,11 @@ else:
 
     // CHECKING THE EMAIL FORMAT (IF INVALID FORMAT)
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)):
-        $returnData = msg(0,422,'Invalid Email Address!');
+        $returnData = msg(0,422,'¡Correo electrónico invalido!');
     
     // IF PASSWORD IS LESS THAN 8 THE SHOW THE ERROR
     elseif(strlen($password) < 8):
-        $returnData = msg(0,422,'Your password must be at least 8 characters long!');
+        $returnData = msg(0,422,'¡Tu contraseña debe de ser de al menos 8 caracteres de largo!');
 
     // THE USER IS ABLE TO PERFORM THE LOGIN ACTION
     else:
@@ -80,18 +80,18 @@ else:
                     
                     $returnData = [
                         'success' => 1,
-                        'message' => 'You have successfully logged in.',
+                        'message' => 'Has iniciado sesión exitosamente.',
                         'token' => $token
                     ];
 
                 // IF INVALID PASSWORD
                 else:
-                    $returnData = msg(0,422,'Invalid Password!');
+                    $returnData = msg(0,422,'Contraseña incorrecta');
                 endif;
 
             // IF THE USER IS NOT FOUNDED BY EMAIL THEN SHOW THE FOLLOWING ERROR
             else:
-                $returnData = msg(0,422,'Email Address Does Not Exist!');
+                $returnData = msg(0,422,'¡Esta dirección de correo electrónico no existe!');
             endif;
         }
         catch(PDOException $e){
