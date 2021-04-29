@@ -171,8 +171,13 @@ else:
             $insert_stmt13->execute();
             $insert_stmt16->execute();
 
-
-            $returnData = msg(1,201,'You have successfully answered the survey.');
+            $surveyData = setSurvey($id_user,$conn);
+            if($surveyData['success']){
+                $returnData = msg(1,201,'You have successfully answered the survey.');
+            }
+            else{
+                $returnData = msg(1,201,$surveyData['message']);
+            }
         }
         catch(PDOException $e){
             $returnData = msg(0,500,$e->getMessage());
@@ -180,5 +185,25 @@ else:
 
     
 endif;
+
+function setSurvey($id,$conn){
+    try{
+
+        $update_query = "UPDATE usuarios SET encuesta=1 WHERE ID_usuario=:id";
+
+        $update_stmt = $conn->prepare($update_query);
+
+        // DATA BINDING
+        $update_stmt->bindValue(':id', $id,PDO::PARAM_INT);
+        $update_stmt->execute();
+
+        $returnData = msg(1,201,'Usuario actualizado');
+
+    }
+    catch(PDOException $e){
+        $returnData = msg(0,500,$e->getMessage());
+    }
+    return $returnData;
+}
 
 echo json_encode($returnData);
