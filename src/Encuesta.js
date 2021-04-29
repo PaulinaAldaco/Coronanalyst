@@ -10,7 +10,7 @@ import { Redirect } from "react-router-dom";
 
 function Encuesta() { 
 
-    const { rootState, createEncuesta } = useContext(MyContext);
+    const { rootState, createEncuesta, updateUserState } = useContext(MyContext);
     const { isAuth, theUser, type, profile, survey } = rootState;
     console.log(isAuth);
 
@@ -243,6 +243,7 @@ function Encuesta() {
                 ...initialState,
                 successMsg: data.message,
             });
+            await updateUserState();
         }
         else {
             setState({

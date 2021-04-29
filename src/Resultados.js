@@ -1,12 +1,14 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import './Login.css';
 import './SobreNos.css'
+import './Resultados.css'
 import logo from "./imagenes/logo_blue_desert2.png";
 import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
 import {MyContext} from './contexts/MyContext';
 import { Chart } from "react-google-charts";
+import { green } from '@material-ui/core/colors';
 
 function Resultados(){  
     const {rootState, verResultados} = useContext(MyContext);
@@ -21,22 +23,16 @@ function Resultados(){
     const initialState = {
         errorMsg: '',
         successMsg: '',
-        plataforma: [
-            ["Mercado Libre", 0],
-            ["Amazon", 0],
-            ["Facebook Marketplace", 0],
-            ["Alibaba / Aliexpress", 0],
-            ["eBay", 0],
-            ["E-shop propia de cada marca (Nike, Supreme, Walmart, Liverpool, etc)", 0]
-        ],
-        seguido: [
-            ["Hola" , "uno"],
-            ["Más de 10 veces por mes", 1],
-            ["10 a 6 veces al mes", 2],
-            ["5 a 1 vez al mes", 3],
-            ["1 vez cada varios meses", 4],
-            ["No realizo compras en línea", 5]
-        ],
+
+        seguido: [],
+
+        categoria: [],
+
+        dineroEnLinea: [],
+
+        fisicoLinea: [],
+
+        plataforma: []
     }
 
     //const data = verResultados();
@@ -78,33 +74,64 @@ function Resultados(){
         setIsOpen(!isOpen);
     };
 
-    const submitForm = async (event) => {
-        event.preventDefault();
-        const data = await verResultados();
+    useEffect(() => {
+        console.log("Use effect");
+        const getResultados = async () => {
+            const {data} = await verResultados();
+            console.log(data);
+            console.log(data.respuestas.dineroEnLinea);
+            data.respuestas.plataforma[6][0] = "E-Shop";
+            data.respuestas.categoria[2][0] = "Comida a domicilio";
+            data.respuestas.categoria[9][0] = "Entretenimiento";
 
-        if (data.success) {
             setState({
                 ...initialState,
-                successMsg: data.message,
-                plataforma: data.respuestas.plataformas,
-                seguido: data.respuestas.seguido
+                seguido: data.respuestas.seguido,
+                categoria: data.respuestas.categoria,
+                dineroEnLinea: data.respuestas.dineroEnLinea,
+                fisicoLinea: data.respuestas.fisicoLinea,
+                plataforma: data.respuestas.plataforma
             });
+            
+            
+            console.log("Plataformas:", state.plataforma);
+            console.log("Seguido:", state.seguido);
+            console.log("categoria", state.categoria);
+            console.log("dineroEnLinea", state.dineroEnLinea);
+
         }
-        else {
-            setState({
-                ...state,
-                successMsgDelete: '',
-                errorMsg: data.message
-            });
-        }
-        console.log(state.seguido);
-        var output = [];
-        var types = state.seguido;
-        for(let key in types){
-            output.push([types[key]]);
-        }
-        console.log(output);
-    }
+        getResultados();
+    }, []);
+
+
+
+    // const submitForm = async (event) => {
+    //     event.preventDefault();
+    //     const data = await verResultados();
+
+    //     if (data.success) {
+    //         setState({
+    //             ...initialState,
+    //             successMsg: data.message,
+    //             plataforma: data.respuestas.plataformas,
+    //             seguido: data.respuestas.seguido
+    //         });
+    //     }
+    //     else {
+    //         setState({
+    //             ...state,
+    //             successMsgDelete: '',
+    //             errorMsg: data.message
+    //         });
+    //     }
+    //     console.log(state.seguido);
+    //     var output = [];
+    //     var types = state.seguido;
+    //     for(let key in types){
+    //         output.push([types[key]]);
+    //     }
+    //     console.log(output);
+    // }
 
     //console.log(state.seguido);
     
@@ -120,31 +147,145 @@ function Resultados(){
         </head>
         <div> 
 
-        <form onSubmit={submitForm}>
+        {/* <form onSubmit={submitForm}>
             <button type="submit">Hola</button>
-        </form>
+        </form> */}
+
+        <h1>Resultados</h1>
+        <div id = "main-contentSobreNos"> 
 
         <Chart
-            width={'500px'}
-            height={'300px'}
-            chartType="PieChart"
-            loader={<div>Cargando gráfica de frecuencia de compra</div>}
-            // data={[
-            //     ['Task', 'Hours per Day'],
-            //     ['Work', 11],
-            //     ['Eat', 2],
-            //     ['Commute', 2],
-            //     ['Watch TV', 2],
-            //     ['Sleep', 7],
-            // ]}
-            data = {
-                state.seguido
-            }
-            options={{
-                title: 'Frecuencia de compras en línea antes de la pandemia',
-            }}
-            rootProps={{ 'data-testid': '1' }}
+        width={'90%'}
+        height={'500px'}
+        
+        chartType="Bar"
+        loader={<div>Loading Chart</div>}
+        className="graficas"
+        data={
+            state.seguido
+        }
+        options={{
+            chart: {
+                title: 'Frecuencia de compras en línea',
+                subtitle: 'Esta gráfica muestra la frecuencia de compra de los usarios antes de la pandemia en contraste con la frecuencia actual',
+            },
+            colors: ['#02044b', '#256ce1'],
+            vAxis: { title: 'Numero de personas' },
+            hAxis: { title: 'Frecuencia' },
+            seriesType: 'bars',
+            series: { 5: { type: 'line' } },
+            
+        }}
+        rootProps={{ 'data-testid': '1' }}
         />
+        </div>
+
+        <div id = "main-contentSobreNos"> 
+        <Chart
+        width={'90%'}
+        height={'750px'}
+        chartType="Bar"
+        loader={<div>Loading Chart</div>}
+        className="graficas"
+        data={
+            state.categoria
+        }
+        options={{
+            chart: {
+                title: 'Categorias de compras en linea',
+                subtitle: 'Esta gráfica muestra las categorias que los usuarios compraban antes de la pandemia en contraste con las que compran actualmente',
+            },
+            colors: ['#02044b', '#256ce1'],
+            vAxis: { title: 'Frecuencia' },
+            hAxis: { title: 'Opciones' },
+            seriesType: 'bars',
+            series: { 5: { type: 'line' } },
+            bars: "horizontal"
+        }}
+        rootProps={{ 'data-testid': '1' }}
+        />
+        </div>
+
+        <div id = "main-contentSobreNos"> 
+        <Chart
+        width={'90%'}
+        height={'500px'}
+        chartType="PieChart"
+        loader={<div>Loading Chart</div>}
+        className="graficas"
+        data={
+            state.dineroEnLinea
+        }
+        options={{
+            slices: {
+                0: { color: '#02044b' },
+                1: { color: '#256ce1' },
+                2: { color: '#87EEFF' },
+                3: { color: '#92B2ED' },
+                4: { color: '#314A79' },
+                5: { color: '#51607A' },
+                6: { color: '#2C75F5' },
+              },
+            // Material design options
+            title: 'Dinero gastado en compras en linea al mes (expresado en MXN)',
+            is3D: true
+        }}
+        // For tests
+        rootProps={{ 'data-testid': '1' }}
+        />
+        </div>
+
+        <div id = "main-contentSobreNos"> 
+        <Chart
+        width={'90%'}
+        height={'500px'}
+        chartType="PieChart"
+        loader={<div>Loading Chart</div>}
+        className="graficas"
+        data={
+            state.fisicoLinea
+        }
+        
+        options={{
+            // Material design options
+            slices: {
+                0: { color: '#256ce1' },
+                1: { color: '#87EEFF' }
+              },
+            title: 'Cantidad de compras',
+            is3D: true
+        }}
+        // For tests
+        rootProps={{ 'data-testid': '2' }}
+        />
+        </div>
+
+        <div id = "main-contentSobreNos"> 
+        <Chart
+        width={'90%'}
+        height={'500px'}
+        chartType="Bar"
+        loader={<div>Loading Chart</div>}
+        className="graficas"
+        data={
+            state.plataforma
+        }
+        options={{
+            chart: {
+                title: 'Plataformas utilizadas para compras en linea',
+                subtitle: 'Esta gráfica muestra las plataformas mas utilizadas antes de la pandemia en contraste con las mas utilizadas actualmente',
+            },
+            colors: ['#02044b', '#256ce1'],
+            vAxis: { title: 'Frecuencia' },
+            hAxis: { title: 'Opciones' },
+            seriesType: 'bars',
+            series: { 5: { type: 'line' } },
+            bars: "horizontal"
+        }}
+        rootProps={{ 'data-testid': '1' }}
+        />
+        </div>
+
         
             
             <Footer/>
