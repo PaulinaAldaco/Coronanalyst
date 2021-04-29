@@ -190,47 +190,7 @@ function Encuesta() {
 
     }
 
-
-
     const [state, setState] = useState(initialState);
-
-    // const convertToString = () => {
-    //     const nombresPreguntas = [ "plataforma", "pago", "categoria", "plataformaPandemia", "metodoPago", "categoriaCompra", "condicionesMedicas", "situacionesPandemia"]
-
-        
-    //     var userInfo = {
-    //             compras: state.userInfo.compras,
-    //             plataforma: '',
-    //             pago: '',
-    //             categoria: '',
-    //             tiempo: state.userInfo.tiempo,
-    //             seguido: state.userInfo.seguido,
-    //             plataformaPandemia: '',
-    //             metodoPago: '',
-    //             categoriaCompra: '',
-    //             tiempoComputadora: state.userInfo.tiempoComputadora,
-    //             dineroEnLinea: state.userInfo.dineroEnLinea,
-    //             fisicoLinea: state.userInfo.fisicoLinea,
-    //             sintomas: state.userInfo.sintomas,
-    //             condicionesMedicas: '',
-    //             situacionesPandemia: '',
-    //             actFisica: state.userInfo.actFisica,
-    
-    //             id_user: state.userInfo.id_user
-    //     }
-
-    //     for (var nombre in nombresPreguntas){
-    //         var pregunta = state.userInfo[nombre]
-    //         for(var valor in pregunta){
-    //             userInfo[nombre] += valor + ","
-    //         }
-    //     }
-
-        
-        
-    //     return userInfo
-
-    // }
 
     // On Submit the Form
     const submitForm = async (event) => {
