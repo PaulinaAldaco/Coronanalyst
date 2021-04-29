@@ -29,10 +29,10 @@ function AdministrarEditores() {
             user_type: "editor"
         },
         deleteEditor: '',
-        errorMsg: '',
-        successMsg: '',
-        errorMsgDelete:'',
-        successMsgDelete:'',
+        errorMsgAdd: '',
+        successMsgAdd: '',
+        errorMsgDelete: '',
+        successMsgDelete: '',
         editors: []
     }
     const [state, setState] = useState(initialState);
@@ -60,16 +60,22 @@ function AdministrarEditores() {
         const data = await registerUser(state.userInfo);
 
         if (data.success) {
+            const allEditors = await searchEditors();
             setState({
-                ...initialState,
-                successMsg: data.message,
+                ...state,
+                userInfo:{
+                    ...initialState.userInfo,
+                },
+                successMsgAdd: data.message,
+                errorMsgAdd: '',
+                editors: allEditors
             });
         }
         else {
             setState({
                 ...state,
-                successMsg: '',
-                errorMsg: data.message
+                successMsgAdd: '',
+                errorMsgAdd: data.message
             });
         }
     }
@@ -82,8 +88,10 @@ function AdministrarEditores() {
         if (data.success) {
             const allEditors = await searchEditors();
             setState({
-                ...initialState,
+                ...state,
                 successMsgDelete: data.message,
+                errorMsgDelete: '',
+                deleteEditor: '',
                 editors: allEditors
             });
         }
@@ -97,19 +105,44 @@ function AdministrarEditores() {
 
     }
 
-    // On change the Input Value (name, email, password)
-    const onChangeValue = (e) => {
+    // On change the Input Value (email, password, type)
+    const onChangeValueAdd = (e) => {
+        setState({
+            ...state,
+            userInfo:{
+                ...state.userInfo,
+                [e.target.name]:e.target.value
+            }
+        });
+        console.log(e.target.value);
+    }
+
+    // On change the Input Value (email)
+    const onChangeValueDelete = (e) => {
         setState({
             ...state,
             [e.target.name]: e.target.value
         });
         console.log(e.target.value);
-        console.log(state.deleteEditor);
     }
 
-    /* const onDeleteEditor = () => {
-        setState(state.editors = searchEditors());
-    } */
+    // Show Message on Success or Error
+    let successMsgAdd = '';
+    let errorMsgAdd = '';
+    let successMsgDelete = '';
+    let errorMsgDelete = '';
+    if(state.errorMsgAdd){
+        errorMsgAdd = <div className="error-msg">{state.errorMsgAdd}</div>;
+    }
+    if(state.successMsgAdd){
+        successMsgAdd = <div className="success-msg">{state.successMsgAdd}</div>;
+    }
+    if(state.errorMsgDelete){
+        errorMsgDelete = <div className="error-msg">{state.errorMsgDelete}</div>;
+    }
+    if(state.successMsgDelete){
+        successMsgDelete = <div className="success-msg">{state.successMsgDelete}</div>;
+    }
 
     if (isAuth) {
         if (type == "admin") {
@@ -134,13 +167,14 @@ function AdministrarEditores() {
                                 <form class="a2" onSubmit={submitAddForm}>
                                     <p className="texto"> Ingrese los datos del nuevo editor</p>
 
-                                    <input type="text" id="email" name="email" required placeholder="Correo electrónico" value={state.userInfo.email} onChange={onChangeValue} />
-                                    <input type="password" id="password" name="password" required placeholder="Contraseña" value={state.userInfo.password} onChange={onChangeValue} />
+                                    <input type="text" id="email" name="email" required placeholder="Correo electrónico" value={state.userInfo.email} onChange={onChangeValueAdd} />
+                                    <input type="password" id="password" name="password" required placeholder="Contraseña" value={state.userInfo.password} onChange={onChangeValueAdd} />
 
                                     <button type="submit" className="submit" > Añadir </button>
+                                    {errorMsgAdd}
+                                    {successMsgAdd}
                                 </form>
-                                {/* {errorMsg}
-                                {successMsg} */}
+                                
                             </div>
 
 
@@ -151,7 +185,7 @@ function AdministrarEditores() {
                                 </div>
                                 <form class="a2" onSubmit={submitDeleteForm}>
                                     <p className="texto"> Seleccione el editor que desea eliminar</p>
-                                    <select name="deleteEditor" value={state.deleteEditor} onChange={onChangeValue} required>
+                                    <select name="deleteEditor" value={state.deleteEditor} onChange={onChangeValueDelete} required>
                                         <option value="seleccione">Seleccione una opción</option>
                                         <React.Fragment>{
                                             state.editors.map(item => (
@@ -161,6 +195,8 @@ function AdministrarEditores() {
                                     </select>
 
                                     <button type="submit" className="submit" > Eliminar </button>
+                                    {errorMsgDelete}
+                                    {successMsgDelete}
                                 </form>
                                 {/* {errorMsgDelete}
                                 {successMsgDelete} */}
