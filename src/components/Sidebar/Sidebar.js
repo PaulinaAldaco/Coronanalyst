@@ -11,7 +11,7 @@ const Sidebar = ({isOpen, toggle}) =>{
 
     if (isAuth){
         if(type==="admin"){
-          SidebarLink1 = <SidebarLink onClick={toggle} to="/Resultados"> AdministrarEditores </SidebarLink>;
+          SidebarLink1 = <SidebarLink onClick={toggle} to="/AdministrarEditores"> AdministrarEditores </SidebarLink>;
         }
         else if(type==="general"){
           if(profile)
