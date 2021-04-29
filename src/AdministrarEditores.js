@@ -1,6 +1,6 @@
 import './Login.css';
 import './AdministrarEditores.css';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect} from 'react';
 import Navbar1 from './components/Navbar/Navbar';
 import Sidebar1 from './components/Sidebar/Sidebar';
 import añadir from "./imagenes/editor.png";
@@ -33,9 +33,26 @@ function AdministrarEditores() {
         successMsg: '',
         errorMsgDelete:'',
         successMsgDelete:'',
-        editors: searchEditors()
+        editors: []
     }
     const [state, setState] = useState(initialState);
+    
+
+    useEffect( () => {
+        console.log("Use effect");
+        const getEditors = async () => {
+            const allEditors = await searchEditors();
+            setState({
+                ...initialState,
+                editors: allEditors
+            });
+            console.log("All editors:",state.editors);
+            console.log("New state:",state.editors);
+        }
+        getEditors();
+        
+    }, []);
+   
 
     //On submit form
     const submitAddForm = async (event) => {
@@ -59,12 +76,15 @@ function AdministrarEditores() {
 
     const submitDeleteForm = async (event) => {
         event.preventDefault();
+        console.log("Sending editor to delete:",state.deleteEditor);
         const data = await deleteEditor(state.deleteEditor);
         
         if (data.success) {
+            const allEditors = await searchEditors();
             setState({
                 ...initialState,
                 successMsgDelete: data.message,
+                editors: allEditors
             });
         }
         else {
@@ -74,22 +94,22 @@ function AdministrarEditores() {
                 errorMsgDelete: data.message
             });
         }
+
     }
 
     // On change the Input Value (name, email, password)
     const onChangeValue = (e) => {
         setState({
             ...state,
-            userInfo: {
-                ...state.userInfo,
-                [e.target.name]: e.target.value
-            } 
+            [e.target.name]: e.target.value
         });
+        console.log(e.target.value);
+        console.log(state.deleteEditor);
     }
 
-    const onDeleteEditor = () => {
+    /* const onDeleteEditor = () => {
         setState(state.editors = searchEditors());
-    }
+    } */
 
     if (isAuth) {
         if (type == "admin") {
@@ -131,7 +151,7 @@ function AdministrarEditores() {
                                 </div>
                                 <form class="a2" onSubmit={submitDeleteForm}>
                                     <p className="texto"> Seleccione el editor que desea eliminar</p>
-                                    <select name="deleteEditor" value={state.userInfo.deleteEditor} onChange={onChangeValue} required>
+                                    <select name="deleteEditor" value={state.deleteEditor} onChange={onChangeValue} required>
                                         <option value="seleccione">Seleccione una opción</option>
                                         <React.Fragment>{
                                             state.editors.map(item => (
