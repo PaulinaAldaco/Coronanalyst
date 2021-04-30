@@ -47,7 +47,7 @@ else:
         $returnData = msg(0,422,'¡Correo electrónico invalido!');
     
     elseif(strlen($password) < 8):
-        $returnData = msg(0,422,'¡Tu contraseña debe de ser de al menos 8 caracteres de largo!');
+        $returnData = msg(0,422,'¡La contraseña debe de ser de al menos 8 caracteres de largo!');
 
     else:
         try{
@@ -71,7 +71,7 @@ else:
                 $insert_stmt->bindValue(':user_type', $user_type,PDO::PARAM_STR);
                 $insert_stmt->execute();
 
-                $returnData = msg(1,201,'Te has registrado exitosamente.');
+                $returnData = msg(1,201,'Registro realizado exitosamente.');
 
             endif;
 

@@ -65,7 +65,7 @@ else:
 
         try{
 
-            $insert_query = "INSERT INTO DatosPersonales (ID_usuario, edad, ingreso_economico, estudios, estado_civil, genero, estado, ocupacion) VALUES(:id_user, :edad, :ingreso_economico, :estudios, :estadocivil, :genero, :estado, :ocupacion)";
+            $insert_query = "INSERT INTO datospersonales (ID_usuario, edad, ingreso_economico, estudios, estado_civil, genero, estado, ocupacion) VALUES(:id_user, :edad, :ingreso_economico, :estudios, :estadocivil, :genero, :estado, :ocupacion)";
 
             $insert_stmt = $conn->prepare($insert_query);
 
@@ -80,8 +80,14 @@ else:
             $insert_stmt->bindValue(':id_user', $id_user,PDO::PARAM_INT);
             $insert_stmt->execute();
 
-            $returnData = msg(1,201,'Tus datos se han registrado correctamente.');
-
+            $profileData = setProfile($id_user,$conn);
+            if($profileData['success']){
+                $returnData = msg(1,201,'Todos los datos han sido actualizados');
+            }
+            else{
+                $returnData = msg(1,201,$profileData['message']);
+            }
+            
         }
         catch(PDOException $e){
             $returnData = msg(0,500,$e->getMessage());
@@ -89,5 +95,25 @@ else:
 
     
 endif;
+
+function setProfile($id,$conn){
+    try{
+
+        $update_query = "UPDATE usuarios SET datos_personales=1 WHERE ID_usuario=:id";
+
+        $update_stmt = $conn->prepare($update_query);
+
+        // DATA BINDING
+        $update_stmt->bindValue(':id', $id,PDO::PARAM_INT);
+        $update_stmt->execute();
+
+        $returnData = msg(1,201,'Usuario actualizado');
+
+    }
+    catch(PDOException $e){
+        $returnData = msg(0,500,$e->getMessage());
+    }
+    return $returnData;
+}
 
 echo json_encode($returnData);
