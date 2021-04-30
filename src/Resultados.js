@@ -40,9 +40,9 @@ function Resultados() {
             const { data } = await verResultados();
             console.log(data);
             console.log(data.respuestas.dineroEnLinea);
-            data.respuestas.plataforma[6][0] = "E-Shop";
-            data.respuestas.categoria[2][0] = "Comida a domicilio";
-            data.respuestas.categoria[9][0] = "Entretenimiento";
+            // data.respuestas.plataforma[6][0] = "E-Shop";
+            // data.respuestas.categoria[2][0] = "Comida a domicilio";
+            // data.respuestas.categoria[9][0] = "Entretenimiento";
 
             setState({
                 ...initialState,
