@@ -74,7 +74,7 @@ else :
             "Artículos de higiene" => 0,
             "Artículos deportivos" => 0,
             "Otros" => 0,
-            "Sigo sin realizar compras en línea" => 0
+            "No realizaba compras en línea" => 0
         ],
 
         'categoriaCompra' => [
@@ -186,7 +186,12 @@ else :
         }
 
         foreach (array_keys($respuestas['categoria']) as $key){
-            array_push($arrayRespuestas['categoria'], [$key, $respuestas['categoria'][$key], $respuestas['categoriaCompra'][$key] ]);
+            if($key == "No realizaba compras en línea"){
+                $key2 = "Sigo sin realizar compras en línea";
+            }else{
+                $key2 = $key;
+            }
+            array_push($arrayRespuestas['categoria'], [$key, $respuestas['categoria'][$key], $respuestas['categoriaCompra'][$key2] ]);
         }
 
         $query_palaforma = "SELECT respuesta, count(*) as number FROM respuestas WHERE ID_pregunta=2 GROUP BY respuesta ";
@@ -228,7 +233,6 @@ else :
         foreach (array_keys($respuestas['fisicoLinea']) as $key){
             array_push($arrayRespuestas['fisicoLinea'], [$key, $respuestas['fisicoLinea'][$key]]);
         }
-
 
 
         $returnData =
