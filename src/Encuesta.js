@@ -153,7 +153,7 @@ function Encuesta() {
             { id: 6, value: "Más de 10,000", isChecked: false }
         ],
         fisicoLinea: [
-            { id: 1, value: "Fisico", isChecked: false },
+            { id: 1, value: "Físico", isChecked: false },
             { id: 2, value: "Línea", isChecked: false }
         ],
 
@@ -246,6 +246,9 @@ function Encuesta() {
 
     // On change the Input Value (name, email, password)
     const onChangeValue = (e) => {
+        if(e.target.value === "Físico"){
+            e.target.value = "Fisico";
+        }
         setState({
             ...state,
             userInfo: {
@@ -508,7 +511,7 @@ function Encuesta() {
     
     
                                 <fieldset>
-                                    <legend>¿Actualmente compras más seguido en físico o en línea? </legend>
+                                    <legend>¿Actualmente compra más seguido en físico o en línea? </legend>
                                     <div className="form-group">
                                         <div className="radio">
                                             <React.Fragment>{

@@ -11,10 +11,12 @@ const Navbar = ({toggle}) => {
 
   let NavButton;
   let NavLink2;
+  let NavLink1;
 
   if (isAuth){
     if(type==="admin"){
       NavLink2 =  <NavLink to='/AdministrarEditores' activeStyle> Administrar Editores </NavLink>;
+      NavLink1 =  <NavLink to='/Resultados' activeStyle> Resultados </NavLink>;
     }
     else if(type==="general"){
       if(profile)
@@ -45,6 +47,7 @@ const Navbar = ({toggle}) => {
         <NavMenu>
           <NavLink to='/'>Inicio</NavLink>
           <NavLink to='/SobreNosotros' activeStyle> Sobre nosotros </NavLink>
+          {NavLink1}
           {NavLink2}
           {NavButton}
         </NavMenu>

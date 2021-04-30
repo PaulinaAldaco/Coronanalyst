@@ -61,10 +61,9 @@ function Inicio(){
                              del público en México para analizar cómo ha afectado la pandemia en la vida de las personas y detectar las nuevas tendencias de
                               consumo que se han generado por esta situación. 
 
-                    El sitio consiste en una serie de preguntas relacionadas con tu estilo de vida y como se ha visto afectado o modificado
-                     a raíz de la pandemia. Lo único que tienes que hacer es registrarte y contestar las preguntas, 
-                     luego de eso podrás ver la información obtenidad de los datos recabados de quienes la han contestado y darte una idea de que 
-                     es lo que ha cambiado en la vida de las personas. </p>   
+                    El sitio consiste en una serie de preguntas relacionadas con tu estilo de vida y como se ha visto afectado. Lo único que tienes que hacer es registrarte y contestar las preguntas, 
+                     luego de eso podrás ver la información obtenida de los datos recabados de quienes la han contestado y darte una idea de que 
+                     es lo que ha cambiado en la vida de las personas de México. </p>   
                     
             </main>
             <Footer/>

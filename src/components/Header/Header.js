@@ -1,7 +1,6 @@
 import React from'react';
 import './Header.css';
-import { AppBar} from "@material-ui/core";
-import logo from '../../imagenes/logo_coronanalyst.jpeg'
+import logo from "../../imagenes/logo_coronanalyst_horizontal.png"
 
 
 

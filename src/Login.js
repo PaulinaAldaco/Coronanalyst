@@ -120,7 +120,7 @@ function Login() {
             </form>
             {errorMsg}
             {successMsg}
-            <b><p><LinkR id="ref" to="/Registro">¿No tienes cuenta? Registrate aquí</LinkR></p></b>
+            <b><p><LinkR id="ref" to="/Registro">¿No tienes cuenta? Regístrate aquí</LinkR></p></b>
           </div>
         </div>
   
