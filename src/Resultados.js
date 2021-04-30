@@ -214,7 +214,7 @@ function Resultados() {
                             },
 
                             legend: { position: 'top', textStyle: { color: 666666, fontSize: 16, fontName: "Roboto", bold: false } },
-                            title: 'Cantidad de compras',
+                            title: 'Preferencia de compras',
                             is3D: true
                         }}
 

@@ -82,38 +82,38 @@ function ResultadosEditor() {
 
                         <h1>Resultados</h1>
                         <div id="main-contentSobreNos">
-                        <Chart
-                        width={'90%'}
-                        height={'500px'}
-                        chartType="PieChart"
-                        loader={<div>Loading Chart</div>}
-                        className="graficas"
-                        data={
-                            state.resultados
-                        }
+                            <Chart
+                                width={'90%'}
+                                height={'500px'}
+                                chartType="PieChart"
+                                loader={<div>Loading Chart</div>}
+                                className="graficas"
+                                data={
+                                    state.resultados
+                                }
 
-                        options={{
+                                options={{
 
-                            slices: {
-                                0: { color: '#02044b' },
-                                1: { color: '#256ce1' }
-                            },
+                                    slices: {
+                                        0: { color: '#02044b' },
+                                        1: { color: '#256ce1' }
+                                    },
 
-                            titleTextStyle: {
-                                color: 666666,
-                                fontName: "Roboto",
-                                bold: false,
-                                fontSize: 20
-                            },
+                                    titleTextStyle: {
+                                        color: 666666,
+                                        fontName: "Roboto",
+                                        bold: false,
+                                        fontSize: 20
+                                    },
 
-                            legend: { position: 'top', textStyle: { color: 666666, fontSize: 16, fontName: "Roboto", bold: false } },
-                            title: 'Porcentaje de usuarios que han contestado la encuesta',
-                            is3D: true
-                        }}
+                                    legend: { position: 'top', textStyle: { color: 666666, fontSize: 16, fontName: "Roboto", bold: false } },
+                                    title: 'Cantidad de usuarios que han contestado la encuesta',
+                                    is3D: true
+                                }}
 
-                        rootProps={{ 'data-testid': '2' }}
-                    />
-                           
+                                rootProps={{ 'data-testid': '2' }}
+                            />
+
                         </div>
                     </div>
                     <Footer />

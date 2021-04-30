@@ -7,7 +7,6 @@ import añadir from "./imagenes/editor.png";
 import basura from "./imagenes/basura.png";
 import Footer from './components/Footer/Footer';
 import { MyContext } from './contexts/MyContext';
-import { Link as LinkR } from 'react-router-dom';
 import { Redirect } from "react-router-dom";
 
 
