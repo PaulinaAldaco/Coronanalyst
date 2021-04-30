@@ -9,7 +9,7 @@ import SesionCerrada from './pantallas/SesionCerrada';
 import DatosPersonales from './DatosPersonales';
 import AdministrarEditores from './AdministrarEditores';
 import Resultados from './Resultados';
-
+import ResultadosEditor from './ResultadosEditor';
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
         <Route path='/DatosPersonales' component={DatosPersonales} exact />
         <Route path='/AdministrarEditores' component={AdministrarEditores} exact />
         <Route path='/Resultados' component={Resultados} exact />
+        <Route path='/ResultadosEditor' component={ResultadosEditor} exact />
       </Switch>
     </Router>
   );

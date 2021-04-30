@@ -38,8 +38,9 @@ else:
 
             $returnData =
             [
-                "no_usuarios" => $no_usuarios,
-                "answered" => $no_encuesta,
+                "success" => 1,
+                "no_usuarios" => (int)$no_usuarios,
+                "answered" => (int)$no_encuesta,
                 "notAnswered" => $no_usuarios - $no_encuesta
             ]; 
                 

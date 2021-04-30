@@ -1,13 +1,12 @@
 import './Login.css';
 import './AdministrarEditores.css';
 import React, { useContext, useState, useEffect } from 'react';
-import Navbar1 from './components/Navbar/Navbar';
-import Sidebar1 from './components/Sidebar/Sidebar';
+import Navbar from './components/Navbar/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
 import añadir from "./imagenes/editor.png";
 import basura from "./imagenes/basura.png";
 import Footer from './components/Footer/Footer';
 import { MyContext } from './contexts/MyContext';
-import { Link as LinkR } from 'react-router-dom';
 import { Redirect } from "react-router-dom";
 
 
@@ -144,11 +143,11 @@ function AdministrarEditores() {
     }
 
     if (isAuth) {
-        if (type == "admin") {
+        if (type === "admin") {
             return (
                 <>
-                    <Sidebar1 isOpen={isOpen} toggle={toggle} />
-                    <Navbar1 toggle={toggle} />
+                    <Sidebar isOpen={isOpen} toggle={toggle} />;
+                    <Navbar toggle={toggle} />;
                     <head>
                         <link rel="preconnect" href="https://fonts.gstatic.com" />
                         <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet" />
@@ -206,7 +205,7 @@ function AdministrarEditores() {
                 </>
             );
         }
-        else if (type == "editor") {
+        else if (type === "editor") {
             console.log("Redirecting to home (user is an editor)")
             return <Redirect to="/" />
         }

@@ -8,10 +8,12 @@ const Sidebar = ({ isOpen, toggle }) => {
 
   let SidebarButton;
   let SidebarLink1;
+  let SidebarLink2;
 
   if (isAuth) {
     if (type === "admin") {
       SidebarLink1 = <SidebarLink onClick={toggle} to="/AdministrarEditores"> AdministrarEditores </SidebarLink>;
+      SidebarLink2 = <SidebarLink onClick={toggle} to="/Resultados"> Resultados </SidebarLink>;
     }
     else if (type === "general") {
       if (profile)
@@ -24,6 +26,7 @@ const Sidebar = ({ isOpen, toggle }) => {
     }
     else if (type == "editor") {
       SidebarLink1 = <SidebarLink onClick={toggle} to="/Resultados"> Resultados </SidebarLink>;
+      SidebarLink2 = <SidebarLink onClick={toggle} to="/ResultadosEditor"> Encuestas contestadas </SidebarLink>;
     }
     SidebarButton = <SideBtnWrap><SidebarRoute onClick={toggle} to="/SesionCerrada">Cerrar sesión</SidebarRoute></SideBtnWrap>
   } else {
@@ -45,6 +48,7 @@ const Sidebar = ({ isOpen, toggle }) => {
             Sobre Nosotros
                     </SidebarLink>
           {SidebarLink1}
+          {SidebarLink2}
         </SidebarMenu>
         {SidebarButton}
       </SidebarWrapper>

@@ -179,12 +179,12 @@ function DatosPersonales() {
                                     <select name="estado" id="estado" value={state.userInfo.estado} onChange={onChangeValue} required>
                                     <option value="seleccione">Seleccione una opción</option>
                                     <option value="Aguascalientes">Aguascalientes</option>
-                                    <option value="Baja California">Baja California</option>
+                                    <option value="Baja California">Baja California Norte</option>
                                     <option value="Baja California Sur">Baja California Sur</option>
                                     <option value="Campeche">Campeche</option>
                                     <option value="Chiapas">Chiapas</option>
                                     <option value="Chihuahua">Chihuahua</option>
-                                    <option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
+                                    <option value="Coahuila de Zaragoza">Coahuila</option>
                                     <option value="Colima">Colima</option>
                                     <option value="Durango">Durango</option>
                                     <option value="Estado de México">Estado de México</option>
@@ -192,7 +192,7 @@ function DatosPersonales() {
                                     <option value="Guerrero">Guerrero</option>
                                     <option value="Hidalgo">Hidalgo</option>
                                     <option value="Jalisco">Jalisco</option>
-                                    <option value="Michoacán de Ocampo">Michoacán de Ocampo</option>
+                                    <option value="Michoacán de Ocampo">Michoacán</option>
                                     <option value="Morelos">Morelos</option>
                                     <option value="Nayarit">Nayarit</option>
                                     <option value="Nuevo León">Nuevo León</option>

@@ -28,6 +28,7 @@ const Navbar = ({toggle}) => {
         NavLink2 =  <NavLink to='/DatosPersonales' activeStyle> Datos Personales </NavLink>;
     }else if(type == "editor"){
       NavLink2 =  <NavLink to='/Resultados' activeStyle> Resultados </NavLink>;
+      NavLink1 =  <NavLink to='/ResultadosEditor' activeStyle> Encuestas contestadas </NavLink>;
     }
     NavButton = <NavBtn><NavBtnLink onClick={logoutUser} to='/SesionCerrada'>Cerrar sesión</NavBtnLink></NavBtn>;
   }else{
