@@ -190,47 +190,7 @@ function Encuesta() {
 
     }
 
-
-
     const [state, setState] = useState(initialState);
-
-    // const convertToString = () => {
-    //     const nombresPreguntas = [ "plataforma", "pago", "categoria", "plataformaPandemia", "metodoPago", "categoriaCompra", "condicionesMedicas", "situacionesPandemia"]
-
-        
-    //     var userInfo = {
-    //             compras: state.userInfo.compras,
-    //             plataforma: '',
-    //             pago: '',
-    //             categoria: '',
-    //             tiempo: state.userInfo.tiempo,
-    //             seguido: state.userInfo.seguido,
-    //             plataformaPandemia: '',
-    //             metodoPago: '',
-    //             categoriaCompra: '',
-    //             tiempoComputadora: state.userInfo.tiempoComputadora,
-    //             dineroEnLinea: state.userInfo.dineroEnLinea,
-    //             fisicoLinea: state.userInfo.fisicoLinea,
-    //             sintomas: state.userInfo.sintomas,
-    //             condicionesMedicas: '',
-    //             situacionesPandemia: '',
-    //             actFisica: state.userInfo.actFisica,
-    
-    //             id_user: state.userInfo.id_user
-    //     }
-
-    //     for (var nombre in nombresPreguntas){
-    //         var pregunta = state.userInfo[nombre]
-    //         for(var valor in pregunta){
-    //             userInfo[nombre] += valor + ","
-    //         }
-    //     }
-
-        
-        
-    //     return userInfo
-
-    // }
 
     // On Submit the Form
     const submitForm = async (event) => {
@@ -349,6 +309,7 @@ function Encuesta() {
                                 <div id="images2" href="#">
                                     <img id="images2" src={formImage} alt="form" />
                                 </div>
+                                <h3>Antes de la pandemia: </h3>
                                 <fieldset>
                                     <legend>¿Qué tan seguido compraba en línea?</legend>
                                     <div class="form-group">
@@ -438,7 +399,7 @@ function Encuesta() {
     
                                     </div>
                                 </fieldset>
-    
+                                <h3>Después de la pandemia: </h3>
                                 <fieldset>
                                     <legend>¿Qué tan seguido compra en línea ahora?</legend>
                                     <div class="form-group">
@@ -563,7 +524,7 @@ function Encuesta() {
                                     </div>
                                 </fieldset>
     
-    
+                                <h3>Preguntas de salud y bienestar: </h3>
                                 <fieldset>
                                     <legend>¿Desde que empezó la pandemia, ha presentado síntomas relacionados al COVID-19? </legend>
                                     <div class="form-group">

@@ -1,6 +1,6 @@
 import './Login.css';
 import './AdministrarEditores.css';
-import React, { useContext, useState, useEffect} from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Navbar1 from './components/Navbar/Navbar';
 import Sidebar1 from './components/Sidebar/Sidebar';
 import añadir from "./imagenes/editor.png";
@@ -19,7 +19,7 @@ function AdministrarEditores() {
         setIsOpen(!isOpen);
     };
 
-    const { rootState, registerUser,deleteEditor, searchEditors } = useContext(MyContext);
+    const { rootState, registerUser, deleteEditor, searchEditors } = useContext(MyContext);
     const { isAuth, type, profile, survey } = rootState;
 
     const initialState = {
@@ -36,9 +36,9 @@ function AdministrarEditores() {
         editors: []
     }
     const [state, setState] = useState(initialState);
-    
 
-    useEffect( () => {
+
+    useEffect(() => {
         console.log("Use effect");
         const getEditors = async () => {
             const allEditors = await searchEditors();
@@ -46,13 +46,12 @@ function AdministrarEditores() {
                 ...initialState,
                 editors: allEditors
             });
-            console.log("All editors:",state.editors);
-            console.log("New state:",state.editors);
+            console.log("All editors:", state.editors);
+            console.log("New state:", state.editors);
         }
         getEditors();
-        
+
     }, []);
-   
 
     //On submit form
     const submitAddForm = async (event) => {
@@ -63,7 +62,7 @@ function AdministrarEditores() {
             const allEditors = await searchEditors();
             setState({
                 ...state,
-                userInfo:{
+                userInfo: {
                     ...initialState.userInfo,
                 },
                 successMsgAdd: data.message,
@@ -82,9 +81,9 @@ function AdministrarEditores() {
 
     const submitDeleteForm = async (event) => {
         event.preventDefault();
-        console.log("Sending editor to delete:",state.deleteEditor);
+        console.log("Sending editor to delete:", state.deleteEditor);
         const data = await deleteEditor(state.deleteEditor);
-        
+
         if (data.success) {
             const allEditors = await searchEditors();
             setState({
@@ -109,9 +108,9 @@ function AdministrarEditores() {
     const onChangeValueAdd = (e) => {
         setState({
             ...state,
-            userInfo:{
+            userInfo: {
                 ...state.userInfo,
-                [e.target.name]:e.target.value
+                [e.target.name]: e.target.value
             }
         });
         console.log(e.target.value);
@@ -131,16 +130,16 @@ function AdministrarEditores() {
     let errorMsgAdd = '';
     let successMsgDelete = '';
     let errorMsgDelete = '';
-    if(state.errorMsgAdd){
+    if (state.errorMsgAdd) {
         errorMsgAdd = <div className="error-msg">{state.errorMsgAdd}</div>;
     }
-    if(state.successMsgAdd){
+    if (state.successMsgAdd) {
         successMsgAdd = <div className="success-msg">{state.successMsgAdd}</div>;
     }
-    if(state.errorMsgDelete){
+    if (state.errorMsgDelete) {
         errorMsgDelete = <div className="error-msg">{state.errorMsgDelete}</div>;
     }
-    if(state.successMsgDelete){
+    if (state.successMsgDelete) {
         successMsgDelete = <div className="success-msg">{state.successMsgDelete}</div>;
     }
 
@@ -174,7 +173,7 @@ function AdministrarEditores() {
                                     {errorMsgAdd}
                                     {successMsgAdd}
                                 </form>
-                                
+
                             </div>
 
 
@@ -198,8 +197,6 @@ function AdministrarEditores() {
                                     {errorMsgDelete}
                                     {successMsgDelete}
                                 </form>
-                                {/* {errorMsgDelete}
-                                {successMsgDelete} */}
                             </div>
 
 
