@@ -11,7 +11,7 @@ import {Redirect} from "react-router-dom";
 
 function Resultados() {
     const { rootState, verResultados } = useContext(MyContext);
-    const { isAuth, type, survey} = rootState;
+    const { isAuth, type, survey, profile} = rootState;
 
     const initialState = {
         errorMsg: '',
