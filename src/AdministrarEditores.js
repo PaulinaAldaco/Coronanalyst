@@ -147,8 +147,8 @@ function AdministrarEditores() {
         if (type == "admin") {
             return (
                 <>
-                    <Sidebar1 isOpen={isOpen} toggle={toggle} />;
-                    <Navbar1 toggle={toggle} />;
+                    <Sidebar1 isOpen={isOpen} toggle={toggle} />
+                    <Navbar1 toggle={toggle} />
                     <head>
                         <link rel="preconnect" href="https://fonts.gstatic.com" />
                         <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet" />
