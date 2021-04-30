@@ -7,10 +7,11 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
 import { MyContext } from './contexts/MyContext';
 import { Chart } from "react-google-charts";
+import {Redirect} from "react-router-dom";
 
 function Resultados() {
     const { rootState, verResultados } = useContext(MyContext);
-    const { isAuth, type } = rootState;
+    const { isAuth, type, survey, profile} = rootState;
 
     const initialState = {
         errorMsg: '',
@@ -40,9 +41,9 @@ function Resultados() {
             const { data } = await verResultados();
             console.log(data);
             console.log(data.respuestas.dineroEnLinea);
-            // data.respuestas.plataforma[6][0] = "E-Shop";
-            // data.respuestas.categoria[2][0] = "Comida a domicilio";
-            // data.respuestas.categoria[9][0] = "Entretenimiento";
+            data.respuestas.plataforma[6][0] = "E-Shop";
+            data.respuestas.categoria[2][0] = "Comida a domicilio";
+            data.respuestas.categoria[9][0] = "Entretenimiento";
 
             setState({
                 ...initialState,
@@ -63,7 +64,18 @@ function Resultados() {
         getResultados();
     }, []);
 
-    return (
+    if(isAuth){
+        if(type == "general"){
+            if(!profile){
+                console.log("Redirecting to personal data")
+                return <Redirect to="/DatosPersonales" />
+            }
+            else if(!survey){
+                console.log("Redirecting to survey")
+                return <Redirect to="/Encuesta" />
+            }
+        }
+        return (
         <>
             <Navbar toggle={toggle} />
             <Sidebar isOpen={isOpen} toggle={toggle} />
@@ -247,6 +259,10 @@ function Resultados() {
             </div>
         </>
     )
+    }else{
+        console.log("Redirecting to login")
+        return <Redirect to="/Login" />
+    }
 }
 
 export default Resultados;
