@@ -44,19 +44,19 @@ else :
             "E-shop propia de cada marca (Nike, Supreme, Walmart, Liverpool, etc)" => 0
         ],
         'seguido' => [
-            "Más de 10 veces por mes." => 0,
-            "6 a 10 veces al mes." => 0,
-            "5 a 1 vez al mes" => 0,
-            "1 vez cada varios meses." => 0,
-            "No realizo compras en línea" => 0
+             "1 a 5 veces al mes" => 0,
+             "6 a 10 veces al mes" => 0,
+             "Más de 10 veces por mes" => 0,
+             "1 vez cada varios meses" => 0,
+             "No realizaba compras en línea" => 0,
         ],
 
         'seguidoDespues' => [
-            "Más de 10 veces por mes." => 0,
-            "6 a 10 veces al mes." => 0,
-            "5 a 1 vez al mes" => 0,
-            "1 vez cada varios meses." => 0,
-            "No realizo compras en línea" => 0
+            "1 a 5 veces al mes" => 0,
+            "6 a 10 veces al mes" => 0,
+            "Más de 10 veces por mes" => 0,
+            "1 vez cada varios meses" => 0,
+            "No realizaba compras en línea" => 0,
         ],
 
         'categoria' => [

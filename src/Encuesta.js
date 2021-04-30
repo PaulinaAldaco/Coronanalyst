@@ -55,10 +55,10 @@ function Encuesta() {
             { id: 15, value: "Otros", isChecked: false }
         ],
         compras: [
-            { id: 1, value: "1 a 5 veces al mes.", isChecked: false },
-            { id: 2, value: "6 a 10 veces al mes.", isChecked: false },
-            { id: 3, value: "Más de 10 veces por mes.", isChecked: false },
-            { id: 4, value: "1 vez cada varios meses.", isChecked: false },
+            { id: 1, value: "1 a 5 veces al mes", isChecked: false },
+            { id: 2, value: "6 a 10 veces al mes", isChecked: false },
+            { id: 3, value: "Más de 10 veces por mes", isChecked: false },
+            { id: 4, value: "1 vez cada varios meses", isChecked: false },
             { id: 5, value: "No realizaba compras en línea", isChecked: false }
         ],
 
@@ -92,11 +92,11 @@ function Encuesta() {
             { id: 4, value: "Menos de 2 horas a la semana", isChecked: false }
         ],
         seguido: [
-            { id: 1, value: "Más de 10 veces por mes.", isChecked: false },
-            { id: 2, value: "10 a 6 veces al mes.", isChecked: false },
-            { id: 3, value: "5 a 1 vez al mes.", isChecked: false },
-            { id: 4, value: "1 vez cada varios meses.", isChecked: false },
-            { id: 5, value: "No realizo compras en línea", isChecked: false }
+            { id: 1, value: "1 a 5 veces al mes", isChecked: false },
+            { id: 2, value: "6 a 10 veces al mes", isChecked: false },
+            { id: 3, value: "Más de 10 veces por mes", isChecked: false },
+            { id: 4, value: "1 vez cada varios meses", isChecked: false },
+            { id: 5, value: "No realizaba compras en línea", isChecked: false }
         ],
 
         plataformaPandemia: [

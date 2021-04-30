@@ -10,7 +10,7 @@ import { Chart } from "react-google-charts";
 
 function Resultados() {
     const { rootState, verResultados } = useContext(MyContext);
-    const { isAuth } = rootState;
+    const { isAuth, type } = rootState;
 
     const initialState = {
         errorMsg: '',
@@ -62,7 +62,6 @@ function Resultados() {
         }
         getResultados();
     }, []);
-
 
     return (
         <>
@@ -248,8 +247,6 @@ function Resultados() {
             </div>
         </>
     )
-
-
 }
 
 export default Resultados;
