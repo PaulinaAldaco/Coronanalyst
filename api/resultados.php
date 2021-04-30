@@ -242,3 +242,5 @@ else :
     }
 
 endif;
+
+echo json_encode($returnData);
