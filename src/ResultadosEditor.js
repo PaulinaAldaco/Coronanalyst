@@ -20,7 +20,7 @@ function ResultadosEditor() {
     const { isAuth, type, profile, survey } = rootState;
 
     const initialState = {
-        resultados: [],
+        resultados: []
     }
 
     const [state, setState] = useState(initialState);
@@ -29,18 +29,17 @@ function ResultadosEditor() {
     useEffect(() => {
         console.log("Use effect");
         const getResultados = async () => {
-            const data = await verResultadosEditor();
+            const {data} = await verResultadosEditor();
 
             if (data.success) {
 
                 var resultadosTemp = [
                     ['Encuesta', 'Estado de los usuarios'],
-                    ['Han contestado', data.answered]
+                    ['Han contestado', data.answered],
                     ['No han contestado', data.notAnswered]
                 ]
 
                 setState({
-                    ...initialState,
                     resultados: resultadosTemp
                 });
                 console.log("Resultados recibidos:", state.resultados);
@@ -49,15 +48,14 @@ function ResultadosEditor() {
 
                 var resultadosTemp = [
                     ['Encuesta', 'Estado de los usuarios'],
-                    ['Han contestado', 0]
+                    ['Han contestado', 0],
                     ['No han contestado', 0]
                 ]
 
                 setState({
-                    ...initialState,
                     resultados: resultadosTemp
                 });
-
+                console.log("Resultados NO recibidos:", state.resultados);
             }
         }
         getResultados();
