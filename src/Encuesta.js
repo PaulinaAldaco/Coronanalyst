@@ -87,8 +87,8 @@ function Encuesta() {
 
         tiempo: [
             { id: 1, value: "7 horas o más al día", isChecked: false },
-            { id: 2, value: "6 a 2 horas al día", isChecked: false },
-            { id: 3, value: "6 a 2 horas a la semana", isChecked: false },
+            { id: 2, value: "2 a 6 horas al día", isChecked: false },
+            { id: 3, value: "2 a 6 horas a la semana", isChecked: false },
             { id: 4, value: "Menos de 2 horas a la semana", isChecked: false }
         ],
         seguido: [
@@ -140,8 +140,8 @@ function Encuesta() {
         ],
         tiempoComputadora: [
             { id: 1, value: "7 horas o más al día", isChecked: false },
-            { id: 2, value: "6 a 2 horas al día", isChecked: false },
-            { id: 3, value: "6 a 2 horas a la semana", isChecked: false },
+            { id: 2, value: "2 a 6 horas al día", isChecked: false },
+            { id: 3, value: "2 a 6 horas a la semana", isChecked: false },
             { id: 4, value: "Menos de 2 horas a la semana", isChecked: false }
         ],
         dineroEnLinea: [
