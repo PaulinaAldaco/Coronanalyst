@@ -36,10 +36,10 @@ function SobreNos(){
         <div> 
             <div id = "main-contentSobreNos">
                 <h1>¿Qué es Blue Desert? </h1>
-                <div class="splitSN leftSobreNos">
-                    <img class="imgSN" src={logo}/> 
+                <div className="splitSN leftSobreNos">
+                    <img className="imgSN" src={logo}/> 
                 </div>   
-                <div class="splitSN rightSobreNos">
+                <div className="splitSN rightSobreNos">
                 <p className="texto2"> 
                     Blue Desert es un grupo de estudiantes de 4to semestre del Tecnológico de Monterrey campus Chihuahua y campus Sonora, quienes a petición de la empresa PK Global 
                     desarrollaron el sitio Coronanalyst, un sistema que tiene como finalidad identificar los cambios, afectaciones y nuevas tendencias 
@@ -51,22 +51,22 @@ function SobreNos(){
                 </div> 
 
                 <h1>Equipo</h1>
-                <img class="imgIntegrante" src={Logo_itesm}/> 
+                <img className="imgIntegrante" src={Logo_itesm}/> 
                 <p>Blue desert está conformado por estudiantes de Ingeniería en Tecnologías Computacionales del Tecnológico de Monterrey campus Chihuahua y campus Sonora.</p>
-                <div class="splitSN leftSobreNos">
-                    <img class="imgIntegrante" src={Paulina}/> 
+                <div className="splitSN leftSobreNos">
+                    <img className="imgIntegrante" src={Paulina}/> 
                     <h2>Paulina Aldaco</h2>
                 </div>
-                <div class="splitSN rightSobreNos">
-                    <img class="imgIntegrante" src={Isaac}/> 
+                <div className="splitSN rightSobreNos">
+                    <img className="imgIntegrante" src={Isaac}/> 
                     <h2>Isaac Garcia</h2>
                 </div> 
-                <div class="splitSN rightSobreNos">
-                    <img class="imgIntegrante" src={Arali}/> 
+                <div className="splitSN rightSobreNos">
+                    <img className="imgIntegrante" src={Arali}/> 
                     <h2>Aralí Mata</h2>
                 </div>
-                <div class="splitSN rightSobreNos">
-                    <img class="imgIntegrante" src={Eduardo}/> 
+                <div className="splitSN rightSobreNos">
+                    <img className="imgIntegrante" src={Eduardo}/> 
                     <h2>Eduardo Maldonado</h2>
                 </div>
 

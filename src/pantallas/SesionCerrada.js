@@ -101,8 +101,8 @@ function SesionCerrada() {
       <>
         <Sidebar />
         <Navbar />
-        <div class="split left">
-          <div class="centered">
+        <div className="split left">
+          <div className="centered">
             <h1>Sesión cerrada</h1>
             <p>Introduce tu correo y contraseña para acceder</p>
             <form onSubmit={submitForm} noValidate>
@@ -117,8 +117,8 @@ function SesionCerrada() {
           </div>
         </div>
 
-        <div class="split right">
-          <div class="centered">
+        <div className="split right">
+          <div className="centered">
             <img src={logo} alt="Logo coronanalyst" />
             <button className="link">
               <LinkR to="/">Regresar a inicio</LinkR>

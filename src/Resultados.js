@@ -28,6 +28,7 @@ function Resultados() {
     }
 
     const [isOpen, setIsOpen] = useState(false);
+    const [state, setState] = useState(initialState);
 
     const toggle = () => {
         setIsOpen(!isOpen);
