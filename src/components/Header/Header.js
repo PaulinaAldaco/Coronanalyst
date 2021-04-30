@@ -1,10 +1,7 @@
 import React from'react';
 import './Header.css';
-<<<<<<< HEAD
-=======
 import { AppBar} from "@material-ui/core";
->>>>>>> origin/main
-import logo from "../../imagenes/logo_coronanalyst_horizontal.png"
+import logo from "../../imagenes/logo_coronanalyst_horizontal.png";
 
 
 
