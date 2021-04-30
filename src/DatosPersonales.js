@@ -35,7 +35,7 @@ function DatosPersonales() {
         if(data.success){
             setState({
                 ...initialState,
-                successMsg:data.message,
+                successMsg:data.message
             });
             await updateUserState();
             console.log("Survey: ",survey);

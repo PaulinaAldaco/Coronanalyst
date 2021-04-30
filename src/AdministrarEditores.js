@@ -1,6 +1,6 @@
 import './Login.css';
 import './AdministrarEditores.css';
-import React, { useContext, useState, useEffect} from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Navbar1 from './components/Navbar/Navbar';
 import Sidebar1 from './components/Sidebar/Sidebar';
 import añadir from "./imagenes/editor.png";
@@ -19,7 +19,7 @@ function AdministrarEditores() {
         setIsOpen(!isOpen);
     };
 
-    const { rootState, registerUser,deleteEditor, searchEditors } = useContext(MyContext);
+    const { rootState, registerUser, deleteEditor, searchEditors } = useContext(MyContext);
     const { isAuth, type, profile, survey } = rootState;
 
     const initialState = {
@@ -31,14 +31,14 @@ function AdministrarEditores() {
         deleteEditor: '',
         errorMsg: '',
         successMsg: '',
-        errorMsgDelete:'',
-        successMsgDelete:'',
+        errorMsgDelete: '',
+        successMsgDelete: '',
         editors: []
     }
     const [state, setState] = useState(initialState);
-    
 
-    useEffect( () => {
+
+    useEffect(() => {
         console.log("Use effect");
         const getEditors = async () => {
             const allEditors = await searchEditors();
@@ -46,13 +46,12 @@ function AdministrarEditores() {
                 ...initialState,
                 editors: allEditors
             });
-            console.log("All editors:",state.editors);
-            console.log("New state:",state.editors);
+            console.log("All editors:", state.editors);
+            console.log("New state:", state.editors);
         }
         getEditors();
-        
+
     }, []);
-   
 
     //On submit form
     const submitAddForm = async (event) => {
@@ -76,9 +75,9 @@ function AdministrarEditores() {
 
     const submitDeleteForm = async (event) => {
         event.preventDefault();
-        console.log("Sending editor to delete:",state.deleteEditor);
+        console.log("Sending editor to delete:", state.deleteEditor);
         const data = await deleteEditor(state.deleteEditor);
-        
+
         if (data.success) {
             const allEditors = await searchEditors();
             setState({

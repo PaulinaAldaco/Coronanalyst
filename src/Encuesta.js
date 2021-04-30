@@ -308,6 +308,7 @@ function Encuesta() {
                                 <div id="images2" href="#">
                                     <img id="images2" src={formImage} alt="form" />
                                 </div>
+                                <h3>Antes de la pandemia: </h3>
                                 <fieldset>
                                     <legend>¿Qué tan seguido compraba en línea?</legend>
                                     <div class="form-group">
@@ -397,7 +398,7 @@ function Encuesta() {
     
                                     </div>
                                 </fieldset>
-    
+                                <h3>Después de la pandemia: </h3>
                                 <fieldset>
                                     <legend>¿Qué tan seguido compra en línea ahora?</legend>
                                     <div class="form-group">
@@ -522,7 +523,7 @@ function Encuesta() {
                                     </div>
                                 </fieldset>
     
-    
+                                <h3>Preguntas de salud y bienestar: </h3>
                                 <fieldset>
                                     <legend>¿Desde que empezó la pandemia, ha presentado síntomas relacionados al COVID-19? </legend>
                                     <div class="form-group">

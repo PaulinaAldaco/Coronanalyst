@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect} from 'react';
 import './Login.css';
 import './SobreNos.css'
 import logo from "./imagenes/logo_blue_desert2.png";
@@ -78,10 +78,33 @@ function Resultados() {
 
     const [state, setState] = useState(initialState);
 
+    useEffect(() => {
+        const getResultados = () =>{
+        const data = await verResultados();
+
+        if (data.success) {
+            setState({
+                ...initialState,
+                successMsg: data.message,
+                plataforma: data.respuestas.plataformas,
+                seguido: data.respuestas.seguido
+            });
+        }
+        else {
+            setState({
+                ...state,
+                successMsg: '',
+                errorMsg: data.message
+            });
+        }
+        }
+        getResultados();
+    }, []);
+
     const submitForm = async (event) => {
         event.preventDefault();
         const data = await verResultados();
-        
+
         if (data.success) {
             setState({
                 ...initialState,
@@ -100,7 +123,7 @@ function Resultados() {
 
         var output = [];
         types = state.seguido;
-        for(let key in types){
+        for (let key in types) {
             output.push([types[key]]);
         }
     }
