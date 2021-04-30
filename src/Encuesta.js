@@ -312,8 +312,8 @@ function Encuesta() {
                                 <h3>Antes de la pandemia: </h3>
                                 <fieldset>
                                     <legend>¿Qué tan seguido compraba en línea?</legend>
-                                    <div class="form-group">
-                                        <div class="radio">
+                                    <div className="form-group">
+                                        <div className="radio">
                                             <React.Fragment>{
                                                 initialState.compras.map(item => (
                                                     <label>
@@ -330,8 +330,8 @@ function Encuesta() {
     
                                 <fieldset>
                                     <legend>¿Qué plataformas utilizaba para realizar compras en línea?</legend>
-                                    <div class="form-group">
-                                        <div class="checkbox">
+                                    <div className="form-group">
+                                        <div className="checkbox">
                                             <React.Fragment>{
                                                 initialState.plataforma.map(item => (
                                                     <label>
@@ -348,8 +348,8 @@ function Encuesta() {
     
                                 <fieldset>
                                     <legend>¿Qué métodos de pago utilizaba más para realizar sus compras en línea?</legend>
-                                    <div class="form-group">
-                                        <div class="checkbox">
+                                    <div className="form-group">
+                                        <div className="checkbox">
                                             <React.Fragment>{
                                                 initialState.pago.map(item => (
                                                     <label>
@@ -367,8 +367,8 @@ function Encuesta() {
     
                                 <fieldset>
                                     <legend>¿De cuáles de las siguientes categorías realizaba compras?</legend>
-                                    <div class="form-group">
-                                        <div class="checkbox">
+                                    <div className="form-group">
+                                        <div className="checkbox">
                                             <React.Fragment>{
                                                 initialState.categoria.map(item => (
                                                     <label>
@@ -384,8 +384,8 @@ function Encuesta() {
     
                                 <fieldset>
                                     <legend>¿Cuánto tiempo estima que se encontraba usando la computadora para actividades diarias?</legend>
-                                    <div class="form-group">
-                                        <div class="radio">
+                                    <div className="form-group">
+                                        <div className="radio">
                                             <React.Fragment>{
                                                 initialState.tiempo.map(item => (
                                                     <label>
@@ -402,8 +402,8 @@ function Encuesta() {
                                 <h3>Después de la pandemia: </h3>
                                 <fieldset>
                                     <legend>¿Qué tan seguido compra en línea ahora?</legend>
-                                    <div class="form-group">
-                                        <div class="radio">
+                                    <div className="form-group">
+                                        <div className="radio">
                                             <React.Fragment>{
                                                 initialState.seguido.map(item => (
                                                     <label>
@@ -419,8 +419,8 @@ function Encuesta() {
     
                                 <fieldset>
                                     <legend>¿Qué plataformas utiliza para realizar compras en línea?</legend>
-                                    <div class="form-group">
-                                        <div class="checkbox">
+                                    <div className="form-group">
+                                        <div className="checkbox">
                                             <React.Fragment>{
                                                 initialState.plataformaPandemia.map(item => (
                                                     <label>
@@ -437,8 +437,8 @@ function Encuesta() {
     
                                 <fieldset>
                                     <legend>¿Qué método de pago utiliza usted para sus compras en internet?</legend>
-                                    <div class="form-group">
-                                        <div class="checkbox">
+                                    <div className="form-group">
+                                        <div className="checkbox">
                                             <React.Fragment>{
                                                 initialState.metodoPago.map(item => (
                                                     <label>
@@ -455,8 +455,8 @@ function Encuesta() {
     
                                 <fieldset>
                                     <legend>¿De cuáles de las siguientes categorías ha realizado compras?</legend>
-                                    <div class="form-group">
-                                        <div class="checkbox">
+                                    <div className="form-group">
+                                        <div className="checkbox">
                                             <React.Fragment>{
                                                 initialState.categoriaCompra.map(item => (
                                                     <label>
@@ -473,8 +473,8 @@ function Encuesta() {
     
                                 <fieldset>
                                     <legend>¿Cuánto tiempo estima que usa la computadora para actividades diarias? </legend>
-                                    <div class="form-group">
-                                        <div class="radio">
+                                    <div className="form-group">
+                                        <div className="radio">
                                             <React.Fragment>{
                                                 initialState.tiempoComputadora.map(item => (
                                                     <label>
@@ -491,8 +491,8 @@ function Encuesta() {
     
                                 <fieldset>
                                     <legend>¿En promedio cuánto dinero estima que gasta en compras en línea al mes? </legend>
-                                    <div class="form-group">
-                                        <div class="radio">
+                                    <div className="form-group">
+                                        <div className="radio">
                                             <React.Fragment>{
                                                 initialState.dineroEnLinea.map(item => (
                                                     <label>
@@ -509,8 +509,8 @@ function Encuesta() {
     
                                 <fieldset>
                                     <legend>¿Actualmente compras más seguido en físico o en línea? </legend>
-                                    <div class="form-group">
-                                        <div class="radio">
+                                    <div className="form-group">
+                                        <div className="radio">
                                             <React.Fragment>{
                                                 initialState.fisicoLinea.map(item => (
                                                     <label>
@@ -527,8 +527,8 @@ function Encuesta() {
                                 <h3>Preguntas de salud y bienestar: </h3>
                                 <fieldset>
                                     <legend>¿Desde que empezó la pandemia, ha presentado síntomas relacionados al COVID-19? </legend>
-                                    <div class="form-group">
-                                        <div class="radio">
+                                    <div className="form-group">
+                                        <div className="radio">
                                             <React.Fragment>{
                                                 initialState.sintomas.map(item => (
                                                     <label>
@@ -545,8 +545,8 @@ function Encuesta() {
     
                                 <fieldset>
                                     <legend>¿Usted sufre de alguna de las siguientes condiciones médicas? </legend>
-                                    <div class="form-group">
-                                        <div class="checkbox">
+                                    <div className="form-group">
+                                        <div className="checkbox">
                                             <React.Fragment>{
                                                 initialState.condicionesMedicas.map(item => (
                                                     <label>
@@ -563,8 +563,8 @@ function Encuesta() {
     
                                 <fieldset>
                                     <legend>¿A causa de la pandemia usted se ha sentido relacionado con algunas de las siguientes situaciones? </legend>
-                                    <div class="form-group">
-                                        <div class="checkbox">
+                                    <div className="form-group">
+                                        <div className="checkbox">
                                             <React.Fragment>{
                                                 initialState.situacionesPandemia.map(item => (
                                                     <label>
@@ -580,8 +580,8 @@ function Encuesta() {
     
                                 <fieldset>
                                     <legend>Durante la pandemia ¿Cómo ha cambiado su actividad física? </legend>
-                                    <div class="form-group">
-                                        <div class="radio">
+                                    <div className="form-group">
+                                        <div className="radio">
                                             <React.Fragment>{
                                                 initialState.actFisica.map(item => (
                                                     <label>
@@ -595,7 +595,7 @@ function Encuesta() {
                                     </div>
                                 </fieldset>
     
-                                <button class="registrarse" type="submit">Enviar respuestas</button>
+                                <button className="registrarse" type="submit">Enviar respuestas</button>
                             </form>
                         </section>
                         <Footer />

@@ -41,9 +41,9 @@ function Inicio(){
         <div id = "uno">
             
             <main>
-                    <div class="bloque">
+                    <div className="bloque">
                         <h1>Analizando los efectos del COVID-19 </h1>
-                        <div class="b1 ">
+                        <div className="b1 ">
                             <img className="imgInicio" src={grafica}/>     
                         </div>
                         <div class="b2 ">
@@ -56,7 +56,7 @@ function Inicio(){
                         </div>
                     </div>
                     
-                    <p class="texto">
+                    <p className="texto">
                     Es por ello que el equipo de Blue Desert se dio a la tarea de crear este sitio con la finalidad de recabar información
                              del público en México para analizar cómo ha afectado la pandemia en la vida de las personas y detectar las nuevas tendencias de
                               consumo que se han generado por esta situación. 
